@@ -8,7 +8,7 @@ Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ U�
 
 ## Usage
 
-Like most LaTeX packages: \usepackage{truecaps}. There are no further options or patameters at this time. Loading the package will redefine `\textsc{…}` and additionally provide `\oldtextsc{…}`.
+`\usepackage{truecaps}` will redefine `\textsc{…}` and additionally provide `\oldtextsc{…}`. There are no further options or parameters at this time. 
 
 ## History
 
