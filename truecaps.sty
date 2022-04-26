@@ -1,0 +1,302 @@
+% ----------------------------------------------------------
+% This is file "truecaps.sty" v0.1 (2022-04-26)
+% It was forked from निरंजन's "unisc.sty" v0.1 (2022-04-21)
+%
+% This file and possibly later versions can be found on
+% <https://https://github.com/igreil/truecaps>
+%
+% The original files can be found on CTAN 
+% <https://ctan.org/pkg/truecaps> and at 
+% <https://puszcza.gnu.org.ua/projects/truecaps>
+%
+% License: GPLv3+, GFDLv1.3+
+% ----------------------------------------------------------
+% 
+% LaTeX Package truecaps v0.1
+% Copyright © 2022 निरंजन and Ingmar Greil
+% 
+% This program is free software: you can redistribute it
+% and/or modify it under the terms of the GNU General Public
+% License as published by the Free Software Foundation, either
+% version 3 of the License, or (at your option) any later
+% version.
+% 
+% This program is distributed in the hope that it will be
+% useful, but WITHOUT ANY WARRANTY; without even the implied
+% warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+% PURPOSE. See the GNU General Public License for more
+% details.
+% 
+% You should have received a copy of the GNU General Public
+% License along with this program. If not, see
+% <https://www.gnu.org/licenses/>.
+% 
+% ----------------------------------------------------------
+\def\truecapsname{truecaps}
+\def\truecapsversion{0.1}
+\def\truecapsdate{2022-04-26}
+\def\truecapsdescription{True Unicode Small Caps with LuaLaTex/XeLaTeX}
+
+\ProvidesPackage{truecaps}[2022/04/26 v0.1 \truecapsdescription]
+
+\RequirePackage{pgfparser}
+\RequirePackage{xpatch}
+
+\NewCommandCopy\oldtextsc\textsc
+\NewCommandCopy\oldscshape\scshape
+\xpatchcmd{\oldtextsc}{\scshape}{\oldscshape}{}{\ERROR}
+\xpatchcmd{\oldtextsc}{\scshape}{\oldscshape}{}{\ERROR}
+\protected\long\def\truecaps@output#1{%
+  \xdef\truecaps@outputcontainer{%
+    \unexpanded\expandafter{%
+      \truecaps@outputcontainer\unexpanded{#1}%
+    }%
+  }%
+}
+\protected\long\def\truecaps@outputexpanded#1{%
+  \xdef\truecaps@outputcontainer{%
+    \unexpanded\expandafter{\truecaps@outputcontainer#1%
+    }%
+  }%
+}
+\providecommand\@gobbletwo[2]{}
+\pgfparserdefunknown{scparser}{initial}{%
+  \let\truecaps@initiated\@empty
+  \pgfparserswitch{initiated}%
+  \pgfparserreinsert
+}
+\pgfparserset{scparser/silent=true}
+\pgfparserdefunknown{scparser}{all}{%
+  \expandafter\truecaps@output\expandafter{\pgfparserletter}%
+}
+\newcommand*\truecaps@bgroup{\expandafter{\iffalse}\fi}
+\newcommand*\truecaps@egroup{\iffalse{\fi}}
+\pgfparserdef{scparser}{all}\begingroup
+  {\begingroup\truecaps@outputexpanded\begingroup}
+\pgfparserdef{scparser}{all}\endgroup
+  {\truecaps@checkend\endgroup}
+\pgfparserdef{scparser}{all}{\meaning\bgroup}{%
+  \truecaps@bgroup\truecaps@outputexpanded\truecaps@bgroup
+}
+\pgfparserdef{scparser}{all}{\meaning\egroup}
+  {\truecaps@checkend\truecaps@egroup}
+\newcommand\truecaps@savedefinition[1]
+  {\unexpanded{\def#1}{\unexpanded\expandafter{#1}}}
+\protected\def\truecaps@checkend#1{%
+  \expanded{%
+    \unexpanded{#1}%
+    \unexpanded{\ifdefined\truecaps@initiated}%
+    \truecaps@savedefinition\pgfparserstate
+    \unexpanded{\truecaps@outputexpanded#1}%
+    \unexpanded{\else}%
+    \unexpanded{\pgfparserswitch{final}}%
+    \truecaps@savedefinition\pgfparser@current
+    \truecaps@savedefinition\pgfparser@usersname
+    \unexpanded{\fi}%
+  }%
+}
+
+% 			LETTER DEFINITIONS BELOW
+
+% LATIN LETTER SMALL CAPITAL A (U+1D00)
+\pgfparserdef{scparser}{initiated}a {\truecaps@outputexpanded{ᴀ}}
+\pgfparserdef{scparser}{initiated}A {\truecaps@outputexpanded{A}}
+
+	% TODO: Ä Á À Â ̌Å Ą Æ
+
+% LATIN LETTER SMALL CAPITAL B (U+0299)
+\pgfparserdef{scparser}{initiated}b {\truecaps@outputexpanded{ʙ}}
+\pgfparserdef{scparser}{initiated}B {\truecaps@outputexpanded{B}}
+
+% LATIN LETTER SMALL CAPITAL C (U+1D04)
+\pgfparserdef{scparser}{initiated}c {\truecaps@outputexpanded{ᴄ}}
+\pgfparserdef{scparser}{initiated}C {\truecaps@outputexpanded{C}}
+
+	% LATIN LETTER SMALL CAPITAL C (U+1D04) + COMBINING CEDILLA (U+0327)
+	\pgfparserdef{scparser}{initiated}ç {\truecaps@outputexpanded{ᴄ̧}}
+	\pgfparserdef{scparser}{initiated}Ç {\truecaps@outputexpanded{Ç}}
+
+	% LATIN LETTER SMALL CAPITAL C (U+1D04) + COMBINING CARON (U+030C)
+	\pgfparserdef{scparser}{initiated}č {\truecaps@outputexpanded{ᴄ̌}}
+	\pgfparserdef{scparser}{initiated}Č {\truecaps@outputexpanded{Č}}
+
+% LATIN LETTER SMALL CAPITAL D (U+1D05)
+\pgfparserdef{scparser}{initiated}d {\truecaps@outputexpanded{ᴅ}}
+\pgfparserdef{scparser}{initiated}D {\truecaps@outputexpanded{D}}
+
+	% TODO: Ð
+
+% LATIN LETTER SMALL CAPITAL E (U+1D07)
+\pgfparserdef{scparser}{initiated}e {\truecaps@outputexpanded{ᴇ}}
+\pgfparserdef{scparser}{initiated}E {\truecaps@outputexpanded{E}}
+
+	% LATIN LETTER SMALL CAPITAL E (U+1D07) + COMBINING ACUTE ACCENT (U+0301)
+	\pgfparserdef{scparser}{initiated}é {\truecaps@outputexpanded{ᴇ́}}
+	\pgfparserdef{scparser}{initiated}É {\truecaps@outputexpanded{É}}
+
+	% LATIN LETTER SMALL CAPITAL E (U+1D07) + COMBINING GRAVE ACCENT (U+0300)
+	\pgfparserdef{scparser}{initiated}è {\truecaps@outputexpanded{ᴇ̀}}
+	\pgfparserdef{scparser}{initiated}È {\truecaps@outputexpanded{È}}
+
+	% TODO: Ë Ê Ę
+
+% LATIN LETTER SMALL CAPITAL F (U+A730)
+\pgfparserdef{scparser}{initiated}f {\truecaps@outputexpanded{ꜰ}}
+\pgfparserdef{scparser}{initiated}F {\truecaps@outputexpanded{F}}
+
+% LATIN LETTER SMALL CAPITAL G (U+0262)
+\pgfparserdef{scparser}{initiated}g {\truecaps@outputexpanded{ɢ}}
+\pgfparserdef{scparser}{initiated}G {\truecaps@outputexpanded{G}}
+
+	% TODO: Ğ
+
+% LATIN LETTER SMALL CAPITAL H (U+029C)
+\pgfparserdef{scparser}{initiated}h {\truecaps@outputexpanded{ʜ}}
+\pgfparserdef{scparser}{initiated}H {\truecaps@outputexpanded{H}}
+
+% LATIN LETTER SMALL CAPITAL I (U+026A)
+\pgfparserdef{scparser}{initiated}i {\truecaps@outputexpanded{ɪ}}
+\pgfparserdef{scparser}{initiated}I {\truecaps@outputexpanded{I}}
+
+	% TODO: İ Ï Í Ì Î Į
+
+% LATIN LETTER SMALL CAPITAL J (U+1D0A)
+\pgfparserdef{scparser}{initiated}j {\truecaps@outputexpanded{ᴊ}}
+\pgfparserdef{scparser}{initiated}J {\truecaps@outputexpanded{J}}
+
+% LATIN LETTER SMALL CAPITAL K (U+1D0B)
+\pgfparserdef{scparser}{initiated}k {\truecaps@outputexpanded{ᴋ}}
+\pgfparserdef{scparser}{initiated}K {\truecaps@outputexpanded{K}}
+
+%% LATIN LETTER SMALL CAPITAL L (U+029F)
+\pgfparserdef{scparser}{initiated}l {\truecaps@outputexpanded{ʟ}}
+\pgfparserdef{scparser}{initiated}L {\truecaps@outputexpanded{L}}
+
+% LATIN LETTER SMALL CAPITAL M (U+1D0D)
+\pgfparserdef{scparser}{initiated}m {\truecaps@outputexpanded{ᴍ}}
+\pgfparserdef{scparser}{initiated}M {\truecaps@outputexpanded{M}}
+
+% YXZZY LETS CALL IT A DAY
+
+%% LATIN LETTER SMALL CAPITAL N
+\pgfparserdef{scparser}{initiated}n%
+  {\truecaps@outputexpanded{\symbol{"0274}}}
+\pgfparserdef{scparser}{initiated}N%
+  {\truecaps@outputexpanded{\symbol{"0274}}}
+%% LATIN LETTER SMALL CAPITAL O
+\pgfparserdef{scparser}{initiated}o%
+  {\truecaps@outputexpanded{\symbol{"1D0F}}}
+\pgfparserdef{scparser}{initiated}O%
+  {\truecaps@outputexpanded{\symbol{"1D0F}}}
+
+%% LATIN LETTER SMALL CAPITAL (U+1D0F) + COMBINING DIAERESIS (U+0308)
+\pgfparserdef{scparser}{initiated}ö%
+  {\truecaps@outputexpanded{ᴏ̈}}
+\pgfparserdef{scparser}{initiated}Ö%
+  {\truecaps@outputexpanded{Ö}}
+
+%% LATIN LETTER SMALL CAPITAL P
+\pgfparserdef{scparser}{initiated}p%
+  {\truecaps@outputexpanded{\symbol{"1D18}}}
+\pgfparserdef{scparser}{initiated}P%
+  {\truecaps@outputexpanded{\symbol{"1D18}}}
+%% LATIN LETTER SMALL CAPITAL Q
+\pgfparserdef{scparser}{initiated}q%
+  {\truecaps@outputexpanded{\symbol{"A7AF}}}
+\pgfparserdef{scparser}{initiated}Q%
+  {\truecaps@outputexpanded{\symbol{"A7AF}}}
+%% LATIN LETTER SMALL CAPITAL R
+\pgfparserdef{scparser}{initiated}r%
+  {\truecaps@outputexpanded{\symbol{"0280}}}
+\pgfparserdef{scparser}{initiated}R%
+  {\truecaps@outputexpanded{\symbol{"0280}}}
+%% LATIN LETTER SMALL CAPITAL S
+\pgfparserdef{scparser}{initiated}s%
+  {\truecaps@outputexpanded{\symbol{"A731}}}
+\pgfparserdef{scparser}{initiated}S%
+  {\truecaps@outputexpanded{\symbol{"A731}}}
+%% LATIN LETTER SMALL CAPITAL T
+\pgfparserdef{scparser}{initiated}t%
+  {\truecaps@outputexpanded{\symbol{"1D1B}}}
+\pgfparserdef{scparser}{initiated}T%
+  {\truecaps@outputexpanded{\symbol{"1D1B}}}
+%% LATIN LETTER SMALL CAPITAL U
+\pgfparserdef{scparser}{initiated}u%
+  {\truecaps@outputexpanded{\symbol{"1D1C}}}
+\pgfparserdef{scparser}{initiated}U%
+  {\truecaps@outputexpanded{\symbol{"1D1C}}}
+
+%% LATIN LETTER SMALL CAPITAL V
+\pgfparserdef{scparser}{initiated}v%
+  {\truecaps@outputexpanded{ᴠ}}
+\pgfparserdef{scparser}{initiated}V%
+  {\truecaps@outputexpanded{V}}
+
+%% LATIN LETTER SMALL CAPITAL W
+\pgfparserdef{scparser}{initiated}w%
+  {\truecaps@outputexpanded{ᴡ}}
+\pgfparserdef{scparser}{initiated}W%
+  {\truecaps@outputexpanded{W}}
+%% LATIN LETTER X
+\pgfparserdef{scparser}{initiated}x{%
+  \truecaps@outputexpanded{\symbol{"0078}}%
+  \PackageWarning{truecaps}{%
+    You have used the unsupported character `x' in the\MessageBreak
+    argument of \string\textsc
+  }%
+}
+\pgfparserdef{scparser}{initiated}X{%
+  \truecaps@outputexpanded{\symbol{"0078}}%
+  \PackageWarning{truecaps}{%
+    You have used the unsupported character `X' in the\MessageBreak
+    argument of \string\textsc
+  }%
+}
+%% No Unicode number for small capital x as of now.
+%% \textsc{X} == \textsc{x} for size-consistency.
+%% LATIN LETTER SMALL CAPITAL Y
+\pgfparserdef{scparser}{initiated}y%
+  {\truecaps@outputexpanded{\symbol{"028F}}}
+\pgfparserdef{scparser}{initiated}Y%
+  {\truecaps@outputexpanded{\symbol{"028F}}}
+
+%% LATIN LETTER SMALL CAPITAL Z
+\pgfparserdef{scparser}{initiated}z%
+  {\truecaps@outputexpanded{\symbol{"1D22}}}
+\pgfparserdef{scparser}{initiated}Z%
+  {\truecaps@outputexpanded{\symbol{"1D22}}}
+
+%% LATIN LETTER SMALL CAPITAL Z (U+1D22) +  COMBINING CARON (U+030C)
+\pgfparserdef{scparser}{initiated}z%
+  {\truecaps@outputexpanded{ᴢ̌}}
+\pgfparserdef{scparser}{initiated}Z%
+  {\truecaps@outputexpanded{Ž}}
+
+%% BLANK SPACE
+\pgfparserdef{scparser}{initiated}{blank space}%
+  {\truecaps@outputexpanded{ }}
+
+% 			LETTER DEFINITIONS ABOVE
+
+\pgfparserdeffinal{scparser}%
+  {\expanded{\truecaps@outputcontainer}}
+\AddToHook{begindocument/end}{%
+  \RenewDocumentCommand\scshape{  }{%
+    \ifdefined\truecaps@initiated
+      \PackageError{truecaps}{Nested use not allowed}{%
+        You somehow made \string\nirshape\space expand inside
+        the parser. This isn't supported.%
+      }%
+      \expandafter\@gobbletwo
+    \else
+      \global\let\truecaps@outputcontainer\@empty
+    \fi
+    \pgfparserparse{scparser}%
+  }
+  \RenewDocumentCommand\textsc{ m }{%
+    \begingroup\scshape #1\endgroup
+  }%
+}
+\endinput
+
+% EOF "truecaps.sty"
