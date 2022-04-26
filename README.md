@@ -9,6 +9,6 @@ provide “real” Unicode Small Caps, using the
 
 ## History
 
-*v.01* Initial fork from निरंजन's "unisc.sty" v0.1 (2022-04-21).
+*v0.1* Initial fork from निरंजन's "unisc.sty" v0.1 (2022-04-21).
 https://puszcza.gnu.org.ua/projects/unisc
 
