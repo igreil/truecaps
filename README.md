@@ -10,6 +10,24 @@ Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ U�
 
 `\usepackage{truecaps}` will redefine `\textsc{…}` and additionally provide `\oldtextsc{…}`. There are no further options or parameters at this time. 
 
+### Full Example
+
+```
+\documentclass{article}
+
+\usepackage{truecaps}
+\usepackage{fontspec}
+	\setmainfont[Ligatures={TeX,Common}]{Charis SIL}
+
+\begin{document}
+
+\noindent\textsc{The purpose of this LaTeX package is to seamlessly provide real Unicode Small Caps, using the Phonetic Extensions Unicode block.}\newline
+\par
+\noindent\oldtextsc{The purpose of this LaTeX package is to seamlessly provide real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
+
+\end{document}
+```
+
 ## History
 
 *v0.1* Initial fork from निरंजन's "unisc.sty" v0.1 (2022-04-21).
