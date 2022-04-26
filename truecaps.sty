@@ -129,7 +129,20 @@
 % ʏ	U+028F	LATIN LETTER SMALL CAPITAL Y
 % ᴢ	U+1D22	LATIN LETTER SMALL CAPITAL Z
 
-% TODO: ADD MODIFIERS
+% MODIFIERS:
+% GRAVE				COMBINING GRAVE ACCENT			(U+0300)
+% ACUTE				COMBINING ACUTE ACCENT			(U+0301)
+% CIRCUMFLEX		COMBINING CIRCUMFLEX ACCENT		(U+0302)
+% TILDE				COMBINING TILDE					(U+0303)
+% BREVE				COMBINING BREVE					(U+0306)
+% DOT ABOVE			COMBINING DOT ABOVE				(U+0307)
+% UMLAUT/DIARESIS	COMBINING DIAERESIS				(U+0308)
+% RING ABOVE		COMBINING RING ABOVE			(U+030A)
+% DOUBLE ACUTE		COMBINING DOUBLE ACUTE ACCENT	(U+030B)
+% CARON/HAČEK		COMBINING CARON					(U+030C)
+% COMMA BELOW		COMBINING COMMA BELOW			(U+0326)
+% CEDILLA			COMBINING CEDILLA				(U+0327)
+% OGONEK			COMBINING OGONEK				(U+0328)
 
 % LATIN LETTER SMALL CAPITAL A (U+1D00)
 \pgfparserdef{scparser}{initiated}a {\truecaps@outputexpanded{ᴀ}}
@@ -138,6 +151,14 @@
 	% LATIN LETTER SMALL CAPITAL A (U+1D00) + COMBINING GRAVE ACCENT (U+0300)
 	\pgfparserdef{scparser}{initiated}à {\truecaps@outputexpanded{ᴀ̀}}
 	\pgfparserdef{scparser}{initiated}À {\truecaps@outputexpanded{À}}
+
+
+
+acute
+circumflex
+tilde
+
+
 
 	% TODO: Á Â ̌Ã Ä Å Ą
 
@@ -251,33 +272,35 @@
   {\truecaps@outputexpanded{\symbol{"0280}}}
 \pgfparserdef{scparser}{initiated}R%
   {\truecaps@outputexpanded{\symbol{"0280}}}
-%% LATIN LETTER SMALL CAPITAL S
-\pgfparserdef{scparser}{initiated}s%
-  {\truecaps@outputexpanded{\symbol{"A731}}}
-\pgfparserdef{scparser}{initiated}S%
-  {\truecaps@outputexpanded{\symbol{"A731}}}
-%% LATIN LETTER SMALL CAPITAL T
-\pgfparserdef{scparser}{initiated}t%
-  {\truecaps@outputexpanded{\symbol{"1D1B}}}
-\pgfparserdef{scparser}{initiated}T%
-  {\truecaps@outputexpanded{\symbol{"1D1B}}}
+
+% LATIN LETTER SMALL CAPITAL S
+\pgfparserdef{scparser}{initiated}s {\truecaps@outputexpanded{\symbol{"A731}}}
+\pgfparserdef{scparser}{initiated}S {\truecaps@outputexpanded{\symbol{"A731}}}
+
+% ß AND ẞ
+\pgfparserdef{scparser}{initiated}ß {\truecaps@outputexpanded{ꜱꜱ}}
+%\pgfparserdef{scparser}{initiated}ẞ {\truecaps@outputexpanded{SS}}
+
+% LATIN LETTER SMALL CAPITAL T
+\pgfparserdef{scparser}{initiated}t {\truecaps@outputexpanded{\symbol{"1D1B}}}
+\pgfparserdef{scparser}{initiated}T {\truecaps@outputexpanded{\symbol{"1D1B}}}
+
 %% LATIN LETTER SMALL CAPITAL U
-\pgfparserdef{scparser}{initiated}u%
-  {\truecaps@outputexpanded{\symbol{"1D1C}}}
-\pgfparserdef{scparser}{initiated}U%
-  {\truecaps@outputexpanded{\symbol{"1D1C}}}
+\pgfparserdef{scparser}{initiated}u {\truecaps@outputexpanded{\symbol{"1D1C}}}
+\pgfparserdef{scparser}{initiated}U {\truecaps@outputexpanded{\symbol{"1D1C}}}
+
+% TODO Ú Ù Ü Ů Û Ǔ Ų 
 
 %% LATIN LETTER SMALL CAPITAL V
-\pgfparserdef{scparser}{initiated}v%
-  {\truecaps@outputexpanded{ᴠ}}
-\pgfparserdef{scparser}{initiated}V%
-  {\truecaps@outputexpanded{V}}
+\pgfparserdef{scparser}{initiated}v {\truecaps@outputexpanded{ᴠ}}
+\pgfparserdef{scparser}{initiated}V {\truecaps@outputexpanded{V}}
 
 %% LATIN LETTER SMALL CAPITAL W
-\pgfparserdef{scparser}{initiated}w%
-  {\truecaps@outputexpanded{ᴡ}}
-\pgfparserdef{scparser}{initiated}W%
-  {\truecaps@outputexpanded{W}}
+\pgfparserdef{scparser}{initiated}w {\truecaps@outputexpanded{ᴡ}}
+\pgfparserdef{scparser}{initiated}W {\truecaps@outputexpanded{W}}
+
+%TODO Ŵ Ẃ Ẁ 
+
 %% LATIN LETTER X
 \pgfparserdef{scparser}{initiated}x{%
   \truecaps@outputexpanded{\symbol{"0078}}%
@@ -295,17 +318,18 @@
 }
 %% No Unicode number for small capital x as of now.
 %% \textsc{X} == \textsc{x} for size-consistency.
-%% LATIN LETTER SMALL CAPITAL Y
-\pgfparserdef{scparser}{initiated}y%
-  {\truecaps@outputexpanded{\symbol{"028F}}}
-\pgfparserdef{scparser}{initiated}Y%
-  {\truecaps@outputexpanded{\symbol{"028F}}}
+
+% LATIN LETTER SMALL CAPITAL Y
+\pgfparserdef{scparser}{initiated}y {\truecaps@outputexpanded{\symbol{"028F}}}
+\pgfparserdef{scparser}{initiated}Y {\truecaps@outputexpanded{\symbol{"028F}}}
+
+% TODO Ÿ Ý Ỳ Ŷ 
 
 %% LATIN LETTER SMALL CAPITAL Z
-\pgfparserdef{scparser}{initiated}z%
-  {\truecaps@outputexpanded{\symbol{"1D22}}}
-\pgfparserdef{scparser}{initiated}Z%
-  {\truecaps@outputexpanded{\symbol{"1D22}}}
+\pgfparserdef{scparser}{initiated}z {\truecaps@outputexpanded{\symbol{"1D22}}}
+\pgfparserdef{scparser}{initiated}Z {\truecaps@outputexpanded{\symbol{"1D22}}}
+
+% TODO Ź Ž Ẑ Ż
 
 %% LATIN LETTER SMALL CAPITAL Z (U+1D22) +  COMBINING CARON (U+030C)
 \pgfparserdef{scparser}{initiated}z%
@@ -316,6 +340,8 @@
 %% BLANK SPACE
 \pgfparserdef{scparser}{initiated}{blank space}%
   {\truecaps@outputexpanded{ }}
+
+% TODO: Punctuation? !?
 
 % 			LETTER DEFINITIONS ABOVE
 
