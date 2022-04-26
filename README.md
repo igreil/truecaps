@@ -3,9 +3,8 @@ True Unicode Small Caps with LuaLaTex/XeLaTeX
 
 ## Purpose
 
-The purpose of this LaTeX package is to seamlessly 
-provide “real” Unicode Small Caps, using the 
-“Phonetic Extensions” Unicode block U+1D00 .. U+1D7F.
+Tʜᴇ ᴘᴜʀᴘᴏꜱᴇ ᴏꜰ ᴛʜɪꜱ LᴀTᴇX ᴘᴀᴄᴋᴀɢᴇ ɪꜱ ᴛᴏ ꜱᴇᴀᴍʟᴇꜱꜱʟʏ ᴘʀᴏᴠɪᴅᴇ ʀᴇᴀʟ Uɴɪᴄᴏᴅᴇ Sᴍᴀʟʟ
+Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ Uɴɪᴄᴏᴅᴇ ʙʟᴏᴄᴋ. (U+1D00 .. U+1D7F)
 
 ## History
 
