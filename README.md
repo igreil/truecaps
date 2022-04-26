@@ -29,6 +29,14 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 \end{document}
 ```
+## Todo
+
+* Add modifiers, accents, umlaute etc. for all letters.
+* Take care of punctuation and numbers
+* Add checks for missing glyphs
+* Switch from `\oldtextsc{…}` and `\textsc{…}` to `\textsc{…}` and `\texttc{…}`
+* Testsuite for common Latin (European) languages
+* Submit to CTAN
 
 ## History
 
