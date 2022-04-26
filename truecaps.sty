@@ -5,8 +5,8 @@
 % This file and possibly later versions can be found on
 % <https://https://github.com/igreil/truecaps>
 %
-% The original files can be found on CTAN 
-% <https://ctan.org/pkg/truecaps> and at 
+% The original files by निरंजन [Niranjan] can be found 
+% on CTAN <https://ctan.org/pkg/truecaps> and at 
 % <https://puszcza.gnu.org.ua/projects/truecaps>
 %
 % License: GPLv3+, GFDLv1.3+
@@ -32,12 +32,13 @@
 % <https://www.gnu.org/licenses/>.
 % 
 % ----------------------------------------------------------
-\def\truecapsname{truecaps}
 \def\truecapsversion{0.1}
 \def\truecapsdate{2022-04-26}
-\def\truecapsdescription{True Unicode Small Caps with LuaLaTex/XeLaTeX}
+\def\truecapsname{truecaps}
+\def\truecapsdescription{
+  True Unicode Small Caps with LuaLaTex/XeLaTeX}
 
-\ProvidesPackage{truecaps}[2022/04/26 v0.1 \truecapsdescription]
+\ProvidesPackage{\truecapsname}[\truecapsdate\truecapsdescription]
 
 \RequirePackage{pgfparser}
 \RequirePackage{xpatch}
