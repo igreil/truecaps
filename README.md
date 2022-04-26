@@ -21,9 +21,11 @@ Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ U�
 
 \begin{document}
 
-\noindent\textsc{The purpose of this LaTeX package is to seamlessly provide real Unicode Small Caps, using the Phonetic Extensions Unicode block.}\newline
+\noindent\textsc{The purpose of this LaTeX package is to seamlessly provide 
+real Unicode Small Caps, using the Phonetic Extensions Unicode block.}\newline
 \par
-\noindent\oldtextsc{The purpose of this LaTeX package is to seamlessly provide real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
+\noindent\oldtextsc{The purpose of this LaTeX package is to seamlessly provide 
+real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 \end{document}
 ```
