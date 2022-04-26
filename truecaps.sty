@@ -300,17 +300,18 @@
 \pgfparserdef{scparser}{initiated}R%
   {\truecaps@outputexpanded{\symbol{"0280}}}
 
-% LATIN LETTER SMALL CAPITAL S
-\pgfparserdef{scparser}{initiated}s {\truecaps@outputexpanded{\symbol{"A731}}}
-\pgfparserdef{scparser}{initiated}S {\truecaps@outputexpanded{\symbol{"A731}}}
-
-% ß AND ẞ
+% LATIN LETTER SMALL CAPITAL S (and ß)
+\pgfparserdef{scparser}{initiated}s {\truecaps@outputexpanded{ꜱ}}
+\pgfparserdef{scparser}{initiated}S {\truecaps@outputexpanded{S}}
 \pgfparserdef{scparser}{initiated}ß {\truecaps@outputexpanded{ꜱꜱ}}
-%\pgfparserdef{scparser}{initiated}ẞ {\truecaps@outputexpanded{SS}}
+
+% TODO S with comma
 
 % LATIN LETTER SMALL CAPITAL T
 \pgfparserdef{scparser}{initiated}t {\truecaps@outputexpanded{\symbol{"1D1B}}}
 \pgfparserdef{scparser}{initiated}T {\truecaps@outputexpanded{\symbol{"1D1B}}}
+
+% TODO Ţ
 
 %% LATIN LETTER SMALL CAPITAL U
 \pgfparserdef{scparser}{initiated}u {\truecaps@outputexpanded{\symbol{"1D1C}}}
