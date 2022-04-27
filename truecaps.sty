@@ -97,10 +97,9 @@
   }%
 }
 
-\newcommand\xwarning{%
+\newcommand\xwarning{% see line #393
 Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 }
-
 % 			LETTER DEFINITIONS BELOW
 % 
 % ᴀ	U+1D00	LATIN LETTER SMALL CAPITAL A
@@ -391,13 +390,15 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 
 	%TODO Ŵ Ẃ Ẁ 
 
-% LATIN LETTER X (U+0078)
+% LATIN SMALL LETTER X (U+0078) is the only letter without 
+% a matching LATIN LETTER SMALL CAPITAL * 
+% The best we can do is issue a warning (see line #100) 
+% and use regular LATIN SMALL LETTER X (U+0078):
 \pgfparserdef{scparser}{initiated}x{\truecaps@outputexpanded{x}%
 \PackageWarning{\truecapsname}{\xwarning}}
-\pgfparserdef{scparser}{initiated}X {\truecaps@outputexpanded{X}}
 
-%% No Unicode number for small capital x as of now.
-%% \textsc{X} == \textsc{x} for size-consistency.
+% LATIN CAPITAL LETTER X (U+0058) is not an issue:
+\pgfparserdef{scparser}{initiated}X {\truecaps@outputexpanded{X}}
 
 % LATIN LETTER SMALL CAPITAL Y
 \pgfparserdef{scparser}{initiated}y {\truecaps@outputexpanded{ʏ}}
