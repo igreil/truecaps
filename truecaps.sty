@@ -97,6 +97,10 @@
   }%
 }
 
+\newcommand\xwarning{%
+Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
+}
+
 % 			LETTER DEFINITIONS BELOW
 % 
 % ᴀ	U+1D00	LATIN LETTER SMALL CAPITAL A
@@ -109,7 +113,7 @@
 % ꜰ	U+A730	LATIN LETTER SMALL CAPITAL F
 % ɢ	U+0262	LATIN LETTER SMALL CAPITAL G
 % ʜ	U+029C	LATIN LETTER SMALL CAPITAL H
-% Ɪ		U+026A	LATIN LETTER SMALL CAPITAL I
+% Ɪ	U+026A	LATIN LETTER SMALL CAPITAL I
 % ᴊ	U+1D0A	LATIN LETTER SMALL CAPITAL J
 % ᴋ	U+1D0B	LATIN LETTER SMALL CAPITAL K
 % ʟ	U+029F	LATIN LETTER SMALL CAPITAL L
@@ -125,14 +129,14 @@
 % ᴜ	U+1D1C	LATIN LETTER SMALL CAPITAL U
 % ᴠ	U+1D20	LATIN LETTER SMALL CAPITAL V
 % ᴡ	U+1D21	LATIN LETTER SMALL CAPITAL W
-% 			NOTE: X IS UNDEFINED
+% 			NOTE: X IS UNDEFINED, see line #100
 % ʏ	U+028F	LATIN LETTER SMALL CAPITAL Y
 % ᴢ	U+1D22	LATIN LETTER SMALL CAPITAL Z
 
 % MODIFIERS:
 % 			-> COMBINING GRAVE ACCENT					(U+0300)
 % 			-> COMBINING ACUTE ACCENT					(U+0301)
-% 			-> COMBINING CIRCUMFLEX ACCENT			(U+0302)
+% 			-> COMBINING CIRCUMFLEX ACCENT				(U+0302)
 % 			-> COMBINING TILDE							(U+0303)
 % 			-> COMBINING BREVE							(U+0306)
 % 			-> COMBINING DOT ABOVE						(U+0307)
@@ -142,9 +146,9 @@
 % 			-> COMBINING CARON							(U+030C)
 % 			-> COMBINING DOUBLE GRAVE ACCENT			(U+030F)
 % 			-> COMBINING COMMA BELOW					(U+0326)
-% 			-> COMBINING CEDILLA							(U+0327)
+% 			-> COMBINING CEDILLA						(U+0327)
 % 			-> COMBINING OGONEK							(U+0328)
-%			-> COMBINING CIRCUMFLEX ACCENT BELOW	(U+032D)
+%			-> COMBINING CIRCUMFLEX ACCENT BELOW		(U+032D)
 %			-> COMBINING BREVE BELOW					(U+032E)
 
 % LATIN LETTER SMALL CAPITAL A (U+1D00)
@@ -388,8 +392,8 @@
 	%TODO Ŵ Ẃ Ẁ 
 
 % LATIN LETTER X (U+0078)
-\pgfparserdef{scparser}{initiated}x{\truecaps@outputexpanded{※}%
-\PackageWarning{truecaps}{Unsupported character LATIN SMALL LETTER X (U+0078)}}
+\pgfparserdef{scparser}{initiated}x{\truecaps@outputexpanded{x}%
+\PackageWarning{\truecapsname}{\xwarning}}
 \pgfparserdef{scparser}{initiated}X {\truecaps@outputexpanded{X}}
 
 %% No Unicode number for small capital x as of now.
