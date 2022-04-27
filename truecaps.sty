@@ -331,7 +331,11 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	\pgfparserdef{scparser}{initiated}ň {\truecaps@outputexpanded{ɴ̌}}
 	\pgfparserdef{scparser}{initiated}Ň {\truecaps@outputexpanded{Ň}}
 
-	% TODO Ñ Ń Ņ Ǹ Ṅ Ṇ Ṉ Ṋ
+	% LATIN LETTER SMALL CAPITAL N (U+0274) + COMBINING TILDE (U+0303)
+	\pgfparserdef{scparser}{initiated}ñ {\truecaps@outputexpanded{ɴ̃}}
+	\pgfparserdef{scparser}{initiated}Ñ {\truecaps@outputexpanded{Ñ}}
+
+	% TODO Ń Ņ Ǹ Ṅ Ṇ Ṉ Ṋ
 
 % LATIN LETTER SMALL CAPITAL O (U+1D0F)
 \pgfparserdef{scparser}{initiated}o {\truecaps@outputexpanded{ᴏ}}

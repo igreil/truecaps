@@ -49,7 +49,7 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 ## History
 
-**v0.2** Full support for English, German, French and Czech.
+**v0.2** Full support for English, German, French, Czech, Spanish and Catalan.
 **v0.1** Initial fork from निरंजन's "unisc.sty" v0.1 (2022-04-21).
 https://puszcza.gnu.org.ua/projects/unisc
 
