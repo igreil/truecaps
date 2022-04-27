@@ -1,4 +1,4 @@
-# truecaps (v0.1.2)
+# truecaps (v0.1.3)
 Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTex/XeLaTeX
 
 ## Purpose
