@@ -251,7 +251,11 @@
 \pgfparserdef{scparser}{initiated}i {\truecaps@outputexpanded{ɪ}}
 \pgfparserdef{scparser}{initiated}I {\truecaps@outputexpanded{I}}
 
-	% TODO: İ Ï Í Ì Î Į
+	% LATIN LETTER SMALL CAPITAL I (U+026A) + COMBINING DIAERESIS (U+0308)
+	\pgfparserdef{scparser}{initiated}ï {\truecaps@outputexpanded{ɪ̈}}
+	\pgfparserdef{scparser}{initiated}Ï {\truecaps@outputexpanded{Ï}}
+
+	% TODO: İ Í Ì Î Į
 
 % LATIN LETTER SMALL CAPITAL J (U+1D0A)
 \pgfparserdef{scparser}{initiated}j {\truecaps@outputexpanded{ᴊ}}
@@ -352,10 +356,14 @@
 %% \textsc{X} == \textsc{x} for size-consistency.
 
 % LATIN LETTER SMALL CAPITAL Y
-\pgfparserdef{scparser}{initiated}y {\truecaps@outputexpanded{\symbol{"028F}}}
-\pgfparserdef{scparser}{initiated}Y {\truecaps@outputexpanded{\symbol{"028F}}}
+\pgfparserdef{scparser}{initiated}y {\truecaps@outputexpanded{ʏ}}
+\pgfparserdef{scparser}{initiated}Y {\truecaps@outputexpanded{Y}}
 
-% TODO Ÿ Ý Ỳ Ŷ 
+	% LATIN LETTER SMALL CAPITAL Y (U+028F) + COMBINING DIAERESIS (U+0308)
+	\pgfparserdef{scparser}{initiated}ÿ {\truecaps@outputexpanded{ʏ̈}}
+	\pgfparserdef{scparser}{initiated}Ÿ {\truecaps@outputexpanded{Ÿ}}
+
+% TODO Ý Ỳ Ŷ 
 
 %% LATIN LETTER SMALL CAPITAL Z
 \pgfparserdef{scparser}{initiated}z {\truecaps@outputexpanded{\symbol{"1D22}}}
