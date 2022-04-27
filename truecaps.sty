@@ -308,11 +308,14 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 
 	% TODO Ķ Ǩ Ḱ Ḳ Ḵ
 
-%% LATIN LETTER SMALL CAPITAL L (U+029F)
+% LATIN LETTER SMALL CAPITAL L (U+029F)
 \pgfparserdef{scparser}{initiated}l {\truecaps@outputexpanded{ʟ}}
 \pgfparserdef{scparser}{initiated}L {\truecaps@outputexpanded{L}}
 
-	% TODO Ĺ Ļ Ľ Ŀ Ḷ Ḻ Ḽ
+	\pgfparserdef{scparser}{initiated}ŀ {\truecaps@outputexpanded{ʟ·}}
+	\pgfparserdef{scparser}{initiated}Ŀ {\truecaps@outputexpanded{L·}}
+
+	% TODO Ĺ Ļ Ľ Ḷ Ḻ Ḽ
 
 % LATIN LETTER SMALL CAPITAL M (U+1D0D)
 \pgfparserdef{scparser}{initiated}m {\truecaps@outputexpanded{ᴍ}}
