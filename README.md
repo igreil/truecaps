@@ -1,5 +1,5 @@
 # truecaps (v0.1.2)
-True Unicode Small Caps with LuaLaTex/XeLaTeX
+Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTex/XeLaTeX
 
 ## Purpose
 

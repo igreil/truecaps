@@ -1,5 +1,5 @@
 % ----------------------------------------------------------
-% This is file "truecaps.sty" v0.1.2 (2022-04-27)
+% This is file "truecaps.sty" v0.1.3 (2022-04-27)
 % It was forked from निरंजन's "unisc.sty" v0.1 (2022-04-21)
 %
 % This file and possibly later versions can be found on
@@ -32,11 +32,11 @@
 % <https://www.gnu.org/licenses/>.
 % 
 % ----------------------------------------------------------
-\def\truecapsversion{0.1.2}
+\def\truecapsversion{0.1.3}
 \def\truecapsdate{2022-04-27}
 \def\truecapsname{truecaps}
 \def\truecapsdescription{
-  True Unicode Small Caps with LuaLaTex/XeLaTeX}
+  Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTex/XeLaTeX}
 
 \ProvidesPackage{\truecapsname}[\truecapsdate\truecapsdescription]
 
@@ -237,6 +237,10 @@
 	\pgfparserdef{scparser}{initiated}ë {\truecaps@outputexpanded{ᴇ̈}}
 	\pgfparserdef{scparser}{initiated}Ë {\truecaps@outputexpanded{Ë}}
 
+	% LATIN LETTER SMALL CAPITAL E (U+1D07) + COMBINING CIRCUMFLEX ACCENT (U+0302)
+	\pgfparserdef{scparser}{initiated}ê {\truecaps@outputexpanded{ᴇ̂}}
+	\pgfparserdef{scparser}{initiated}Ê {\truecaps@outputexpanded{Ê}}
+
 	% TODO: Ê Ē Ĕ Ė Ę Ě etc -> https://www.compart.com/en/unicode/U+0045
 
 % LATIN LETTER SMALL CAPITAL F (U+A730)
@@ -301,11 +305,9 @@
 
 	% TODO Ḿ Ṁ Ṃ
 
-%% LATIN LETTER SMALL CAPITAL N
-\pgfparserdef{scparser}{initiated}n%
-  {\truecaps@outputexpanded{\symbol{"0274}}}
-\pgfparserdef{scparser}{initiated}N%
-  {\truecaps@outputexpanded{\symbol{"0274}}}
+%% LATIN LETTER SMALL CAPITAL N (U+0274)
+\pgfparserdef{scparser}{initiated}n {\truecaps@outputexpanded{ɴ}}
+\pgfparserdef{scparser}{initiated}N {\truecaps@outputexpanded{N}}
 
 	% TODO Ñ Ń Ņ Ň Ǹ Ṅ Ṇ Ṉ Ṋ
 
@@ -328,8 +330,8 @@
 \pgfparserdef{scparser}{initiated}P {\truecaps@outputexpanded{P}}
 
 %% LATIN LETTER SMALL CAPITAL Q (U+A7AF)
-\pgfparserdef{scparser}{initiated}q {\truecaps@outputexpanded{\symbol{ꞯ}}
-\pgfparserdef{scparser}{initiated}Q {\truecaps@outputexpanded{\symbol{Q}}
+\pgfparserdef{scparser}{initiated}q {\truecaps@outputexpanded{ꞯ}}
+\pgfparserdef{scparser}{initiated}Q {\truecaps@outputexpanded{Q}}
 
 %% LATIN LETTER SMALL CAPITAL R (U+0280)
 \pgfparserdef{scparser}{initiated}r {\truecaps@outputexpanded{ʀ}}
@@ -347,17 +349,33 @@
 
 	% TODO Ś Ŝ Ş Š Ș Ṡ Ṣ
 
-% LATIN LETTER SMALL CAPITAL T
-\pgfparserdef{scparser}{initiated}t {\truecaps@outputexpanded{\symbol{"1D1B}}}
-\pgfparserdef{scparser}{initiated}T {\truecaps@outputexpanded{\symbol{"1D1B}}}
+% LATIN LETTER SMALL CAPITAL T (U+1D1B)
+\pgfparserdef{scparser}{initiated}t {\truecaps@outputexpanded{ᴛ}}
+\pgfparserdef{scparser}{initiated}T {\truecaps@outputexpanded{T}}
 
 	% TODO Ţ Ť Ț Ṫ Ṭ Ṯ Ṱ
 
-%% LATIN LETTER SMALL CAPITAL U
-\pgfparserdef{scparser}{initiated}u {\truecaps@outputexpanded{\symbol{"1D1C}}}
-\pgfparserdef{scparser}{initiated}U {\truecaps@outputexpanded{\symbol{"1D1C}}}
+% LATIN LETTER SMALL CAPITAL U (U+1D1C)
+\pgfparserdef{scparser}{initiated}u {\truecaps@outputexpanded{ᴜ}}
+\pgfparserdef{scparser}{initiated}U {\truecaps@outputexpanded{U}}
 
-	% TODO Ú Ù Ü Ů Û Ǔ Ų 
+	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING RING ABOVE (U+030A)
+	\pgfparserdef{scparser}{initiated}ů {\truecaps@outputexpanded{ᴜ̊}}
+	\pgfparserdef{scparser}{initiated}Ů {\truecaps@outputexpanded{Ů}}
+
+	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING GRAVE ACCENT (U+0300)
+	\pgfparserdef{scparser}{initiated}ù {\truecaps@outputexpanded{ᴜ̀}}
+	\pgfparserdef{scparser}{initiated}Ù {\truecaps@outputexpanded{Ù}}
+
+	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING DIAERESIS (U+0308)	
+	\pgfparserdef{scparser}{initiated}ü {\truecaps@outputexpanded{ᴜ̈}}
+	\pgfparserdef{scparser}{initiated}Ü {\truecaps@outputexpanded{Ü}}
+
+	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING CIRCUMFLEX ACCENT (U+0302)
+	\pgfparserdef{scparser}{initiated}û {\truecaps@outputexpanded{ᴜ̂}}
+	\pgfparserdef{scparser}{initiated}Û {\truecaps@outputexpanded{Û}}
+
+	% TODO Ú Ǔ Ų 
 
 %% LATIN LETTER SMALL CAPITAL V
 \pgfparserdef{scparser}{initiated}v {\truecaps@outputexpanded{ᴠ}}
@@ -367,9 +385,9 @@
 \pgfparserdef{scparser}{initiated}w {\truecaps@outputexpanded{ᴡ}}
 \pgfparserdef{scparser}{initiated}W {\truecaps@outputexpanded{W}}
 
-%TODO Ŵ Ẃ Ẁ 
+	%TODO Ŵ Ẃ Ẁ 
 
-%% LATIN LETTER X
+% LATIN LETTER X
 \pgfparserdef{scparser}{initiated}x{%
   \truecaps@outputexpanded{\symbol{"0078}}%
   \PackageWarning{truecaps}{%
@@ -395,25 +413,22 @@
 	\pgfparserdef{scparser}{initiated}ÿ {\truecaps@outputexpanded{ʏ̈}}
 	\pgfparserdef{scparser}{initiated}Ÿ {\truecaps@outputexpanded{Ÿ}}
 
-% TODO Ý Ỳ Ŷ 
+	% TODO Ý Ỳ Ŷ
 
-%% LATIN LETTER SMALL CAPITAL Z
-\pgfparserdef{scparser}{initiated}z {\truecaps@outputexpanded{\symbol{"1D22}}}
-\pgfparserdef{scparser}{initiated}Z {\truecaps@outputexpanded{\symbol{"1D22}}}
+% LATIN LETTER SMALL CAPITAL Z (U+1D22)
+\pgfparserdef{scparser}{initiated}z {\truecaps@outputexpanded{ᴢ}}
+\pgfparserdef{scparser}{initiated}Z {\truecaps@outputexpanded{Z}}
 
-% TODO Ź Ž Ẑ Ż
+	% LATIN LETTER SMALL CAPITAL Z (U+1D22) + COMBINING CARON (U+030C)
+	\pgfparserdef{scparser}{initiated}ž {\truecaps@outputexpanded{ᴢ̌}}
+	\pgfparserdef{scparser}{initiated}Ž {\truecaps@outputexpanded{Ž}}
+	% TODO Ź Ž Ẑ Ż
 
-%% LATIN LETTER SMALL CAPITAL Z (U+1D22) +  COMBINING CARON (U+030C)
-\pgfparserdef{scparser}{initiated}z%
-  {\truecaps@outputexpanded{ᴢ̌}}
-\pgfparserdef{scparser}{initiated}Z%
-  {\truecaps@outputexpanded{Ž}}
-
-%% BLANK SPACE
+% BLANK SPACE
 \pgfparserdef{scparser}{initiated}{blank space}%
   {\truecaps@outputexpanded{ }}
 
-% TODO: Punctuation? !?
+	% TODO: Punctuation, Parentheses, common typographical symbols
 
 % 			LETTER DEFINITIONS ABOVE
 
