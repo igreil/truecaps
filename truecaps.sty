@@ -377,31 +377,21 @@
 
 	% TODO Ú Ǔ Ų 
 
-%% LATIN LETTER SMALL CAPITAL V
+% LATIN LETTER SMALL CAPITAL V (U+1D20)
 \pgfparserdef{scparser}{initiated}v {\truecaps@outputexpanded{ᴠ}}
 \pgfparserdef{scparser}{initiated}V {\truecaps@outputexpanded{V}}
 
-%% LATIN LETTER SMALL CAPITAL W
+% LATIN LETTER SMALL CAPITAL W (U+1D21)
 \pgfparserdef{scparser}{initiated}w {\truecaps@outputexpanded{ᴡ}}
 \pgfparserdef{scparser}{initiated}W {\truecaps@outputexpanded{W}}
 
 	%TODO Ŵ Ẃ Ẁ 
 
-% LATIN LETTER X
-\pgfparserdef{scparser}{initiated}x{%
-  \truecaps@outputexpanded{\symbol{"0078}}%
-  \PackageWarning{truecaps}{%
-    You have used the unsupported character `x' in the\MessageBreak
-    argument of \string\textsc
-  }%
-}
-\pgfparserdef{scparser}{initiated}X{%
-  \truecaps@outputexpanded{\symbol{"0078}}%
-  \PackageWarning{truecaps}{%
-    You have used the unsupported character `X' in the\MessageBreak
-    argument of \string\textsc
-  }%
-}
+% LATIN LETTER X (U+0078)
+\pgfparserdef{scparser}{initiated}x{\truecaps@outputexpanded{※}%
+\PackageWarning{truecaps}{Unsupported character LATIN SMALL LETTER X (U+0078)}}
+\pgfparserdef{scparser}{initiated}X {\truecaps@outputexpanded{X}}
+
 %% No Unicode number for small capital x as of now.
 %% \textsc{X} == \textsc{x} for size-consistency.
 
