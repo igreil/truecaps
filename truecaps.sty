@@ -293,17 +293,21 @@
 \pgfparserdef{scparser}{initiated}l {\truecaps@outputexpanded{ʟ}}
 \pgfparserdef{scparser}{initiated}L {\truecaps@outputexpanded{L}}
 
+	% TODO Ĺ Ļ Ľ Ŀ Ḷ Ḻ Ḽ
+
 % LATIN LETTER SMALL CAPITAL M (U+1D0D)
 \pgfparserdef{scparser}{initiated}m {\truecaps@outputexpanded{ᴍ}}
 \pgfparserdef{scparser}{initiated}M {\truecaps@outputexpanded{M}}
 
-% YXZZY LETS CALL IT A DAY
+	% TODO Ḿ Ṁ Ṃ
 
 %% LATIN LETTER SMALL CAPITAL N
 \pgfparserdef{scparser}{initiated}n%
   {\truecaps@outputexpanded{\symbol{"0274}}}
 \pgfparserdef{scparser}{initiated}N%
   {\truecaps@outputexpanded{\symbol{"0274}}}
+
+	% TODO Ñ Ń Ņ Ň Ǹ Ṅ Ṇ Ṉ Ṋ
 
 % LATIN LETTER SMALL CAPITAL O (U+1D0F)
 \pgfparserdef{scparser}{initiated}o {\truecaps@outputexpanded{ᴏ}}
@@ -313,44 +317,47 @@
 	\pgfparserdef{scparser}{initiated}ö {\truecaps@outputexpanded{ᴏ̈}}
 	\pgfparserdef{scparser}{initiated}Ö {\truecaps@outputexpanded{Ö}}
 
+	% TODO ==> https://www.compart.com/en/unicode/U+004F
+
 % LATIN LETTER SMALL CAPITAL OE (U+0276)
 \pgfparserdef{scparser}{initiated}œ {\truecaps@outputexpanded{ɶ}}
 \pgfparserdef{scparser}{initiated}Œ {\truecaps@outputexpanded{Œ}}
 
-%% LATIN LETTER SMALL CAPITAL P
-\pgfparserdef{scparser}{initiated}p%
-  {\truecaps@outputexpanded{\symbol{"1D18}}}
-\pgfparserdef{scparser}{initiated}P%
-  {\truecaps@outputexpanded{\symbol{"1D18}}}
-%% LATIN LETTER SMALL CAPITAL Q
-\pgfparserdef{scparser}{initiated}q%
-  {\truecaps@outputexpanded{\symbol{"A7AF}}}
-\pgfparserdef{scparser}{initiated}Q%
-  {\truecaps@outputexpanded{\symbol{"A7AF}}}
-%% LATIN LETTER SMALL CAPITAL R
-\pgfparserdef{scparser}{initiated}r%
-  {\truecaps@outputexpanded{\symbol{"0280}}}
-\pgfparserdef{scparser}{initiated}R%
-  {\truecaps@outputexpanded{\symbol{"0280}}}
+% LATIN LETTER SMALL CAPITAL P (U+1D18)
+\pgfparserdef{scparser}{initiated}p {\truecaps@outputexpanded{ᴘ}}
+\pgfparserdef{scparser}{initiated}P {\truecaps@outputexpanded{P}}
 
-% LATIN LETTER SMALL CAPITAL S (and ß)
+%% LATIN LETTER SMALL CAPITAL Q (U+A7AF)
+\pgfparserdef{scparser}{initiated}q {\truecaps@outputexpanded{\symbol{ꞯ}}
+\pgfparserdef{scparser}{initiated}Q {\truecaps@outputexpanded{\symbol{Q}}
+
+%% LATIN LETTER SMALL CAPITAL R (U+0280)
+\pgfparserdef{scparser}{initiated}r {\truecaps@outputexpanded{ʀ}}
+\pgfparserdef{scparser}{initiated}R {\truecaps@outputexpanded{R}}
+
+	% TODO ==> https://www.compart.com/en/unicode/U+0052
+
+% LATIN LETTER SMALL CAPITAL S (U+A731)
 \pgfparserdef{scparser}{initiated}s {\truecaps@outputexpanded{ꜱ}}
 \pgfparserdef{scparser}{initiated}S {\truecaps@outputexpanded{S}}
-\pgfparserdef{scparser}{initiated}ß {\truecaps@outputexpanded{ꜱꜱ}}
 
-% TODO S with comma
+	% There is no German word that starts with ẞ
+	% => No need for LATIN CAPITAL LETTER SHARP S (U+1E9E)
+	\pgfparserdef{scparser}{initiated}ß {\truecaps@outputexpanded{ꜱꜱ}}
+
+	% TODO Ś Ŝ Ş Š Ș Ṡ Ṣ
 
 % LATIN LETTER SMALL CAPITAL T
 \pgfparserdef{scparser}{initiated}t {\truecaps@outputexpanded{\symbol{"1D1B}}}
 \pgfparserdef{scparser}{initiated}T {\truecaps@outputexpanded{\symbol{"1D1B}}}
 
-% TODO Ţ
+	% TODO Ţ Ť Ț Ṫ Ṭ Ṯ Ṱ
 
 %% LATIN LETTER SMALL CAPITAL U
 \pgfparserdef{scparser}{initiated}u {\truecaps@outputexpanded{\symbol{"1D1C}}}
 \pgfparserdef{scparser}{initiated}U {\truecaps@outputexpanded{\symbol{"1D1C}}}
 
-% TODO Ú Ù Ü Ů Û Ǔ Ų 
+	% TODO Ú Ù Ü Ů Û Ǔ Ų 
 
 %% LATIN LETTER SMALL CAPITAL V
 \pgfparserdef{scparser}{initiated}v {\truecaps@outputexpanded{ᴠ}}
