@@ -1,4 +1,4 @@
-# truecaps (v0.1.3)
+# truecaps (v0.2)
 Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTex/XeLaTeX
 
 ## Purpose
@@ -49,6 +49,7 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 ## History
 
+*v0.2* Full support for German and French
 *v0.1* Initial fork from निरंजन's "unisc.sty" v0.1 (2022-04-21).
 https://puszcza.gnu.org.ua/projects/unisc
 
