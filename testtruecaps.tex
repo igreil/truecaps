@@ -1,6 +1,11 @@
-\documentclass{scrartcl}
+\documentclass{article}
 
+\usepackage{pifont,xcolor}
 \usepackage{truecaps}
+
+\def\checkno	{\textcolor{red}{\textbf{\ding{55}~~}}}
+\def\checkyes	{\textcolor{green}{\textbf{\ding{51}~~}}}
+
 %\usepackage{fontspec}	\setmainfont[SmallCapsFeatures={LetterSpace={1}}]{Source Sans Pro}
 %						\setsansfont[SmallCapsFeatures={LetterSpace={1}}]{Source Sans Pro}
 %						\setmonofont{Source Code Pro}
@@ -8,12 +13,53 @@
 \usepackage{fontspec}
 \setmainfont[Ligatures={TeX,Common}]{Charis SIL}
 
+%\usepackage{multicol}
+
 \begin{document}
-\textsc{The purpose of the \textbf{TrueCaps} LaTeX package is to seamlessly provide “real” 
-Unicode Small Chaps, using the “Phonetic Extensions” Unicode block u+1d00 .. u+1d7f.}
 
-\textsc{Nechť již hříšné saxofony ďáblů rozzvučí síň úděsnými tóny waltzu, tanga a quickstepu. Muß es sein? Es muss.}
+\hfill{\Large \textbf{truecaps} v0.2 (2022-04-27) Testsuite}
 
-\textsc{Dès Noël où un zéphyr haï me vêt de glaçons würmiens je dîne d’exquis rôtis de bœuf au kir à l’aÿ d’âge mûr \& cætera !}
+\vspace{-1em}\section*{\checkyes English}
+\textsc{The quick brown fox jumps over the lazy dog.
+The five boxing wizards jump quickly because 
+a quick movement of the enemy will jeopardize six gunboats.}
+
+\vspace{-1em}\section*{\checkyes German}
+\noindent\textsc{Falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
+Üben von Xylophon und Querflöte ist ja zweckmäßig. 
+Zornig und gequält rügen jeweils Pontifex und Volk die maßlose bischöfliche Hybris.}
+
+\vspace{-1em}\section*{\checkyes French}
+\noindent\textsc{Voyez le brick géant que j’examine près du wharf.
+Voulez-vous que je porte ce vieux whisky au juge blond qui fume\medspace?
+Dès Noël où un zéphyr haï me vêt de glaçons würmiens 
+je dîne d’exquis rôtis de bœuf au kir à l’aÿ d’âge mûr \& cætera\medspace!}
+
+\vspace{-1em}\section*{\checkyes Czech}
+\noindent\textsc{Nechť již hříšné saxofony ďáblů rozzvučí síň úděsnými 
+tóny waltzu, tanga a quickstepu.}
+
+\vspace{-1em}\section*{\checkno Polish (missing \string żłśćęźń)}
+\noindent\textsc{
+Stróż pchnął kość w quiz gędźb vel fax myjń. 
+Pchnąć w tę łódź jeża lub ośm skrzyń fig.
+W niżach mógł zjeść truflę koń bądź psy.
+}
+
+\vspace{-1em}\section*{\checkno Slovene}
+\noindent\textsc{
+V kožuščku hudobnega fanta stopiclja mizar in kliče.
+}
+
+\vspace{-1em}\section*{\checkno Spanish (missing ñ)}
+\noindent\textsc{
+Whisky bueno: ¡excitad mi frágil pequeña vejez!
+Extraño pan de col y kiwi se quemó bajo fugaz vaho. 
+}
+
+\vspace{-1em}\section*{\checkno Hungarian (missing ű and ő)}
+\noindent\textsc{
+Árvíztűrő tükörfúrógép.
+}
 
 \end{document}
