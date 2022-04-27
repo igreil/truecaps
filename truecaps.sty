@@ -151,52 +151,7 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 %			-> COMBINING BREVE BELOW					(U+032E)
 
 % LATIN LETTER SMALL CAPITAL A (U+1D00)
-\pgfparserdef{scparser}{initiated}a {\truecaps@outputexpanded{ᴀ}}
-\pgfparserdef{scparser}{initiated}A {\truecaps@outputexpanded{A}}
-
-	% LATIN LETTER SMALL CAPITAL A (U+1D00) + COMBINING GRAVE ACCENT (U+0300)
-	\pgfparserdef{scparser}{initiated}à {\truecaps@outputexpanded{ᴀ̀}}
-	\pgfparserdef{scparser}{initiated}À {\truecaps@outputexpanded{À}}
-
-	% LATIN LETTER SMALL CAPITAL A (U+1D00) + COMBINING ACUTE ACCENT (U+0301)
-	\pgfparserdef{scparser}{initiated}á {\truecaps@outputexpanded{ᴀ́}}
-	\pgfparserdef{scparser}{initiated}Á {\truecaps@outputexpanded{Á}}
-
-	% LATIN LETTER SMALL CAPITAL A (U+1D00) + COMBINING CIRCUMFLEX ACCENT (U+0302)
-	\pgfparserdef{scparser}{initiated}â {\truecaps@outputexpanded{ᴀ̂}}
-	\pgfparserdef{scparser}{initiated}Â {\truecaps@outputexpanded{Â}}
-
-	% LATIN LETTER SMALL CAPITAL A (U+1D00) + COMBINING TILDE (U+0303)
-	\pgfparserdef{scparser}{initiated}ã {\truecaps@outputexpanded{ᴀ̃}}
-	\pgfparserdef{scparser}{initiated}Ã {\truecaps@outputexpanded{Ã}}
-
-	% LATIN LETTER SMALL CAPITAL A (U+1D00) + COMBINING DIAERESIS (U+0308)
-	\pgfparserdef{scparser}{initiated}ä {\truecaps@outputexpanded{ᴀ̈}}
-	\pgfparserdef{scparser}{initiated}Ä {\truecaps@outputexpanded{Ä}}
-
-	% LATIN LETTER SMALL CAPITAL A (U+1D00) + COMBINING RING ABOVE (U+030A)
-	\pgfparserdef{scparser}{initiated}å {\truecaps@outputexpanded{ᴀ̊}}
-	\pgfparserdef{scparser}{initiated}Å {\truecaps@outputexpanded{Å}}
-
-	% LATIN LETTER SMALL CAPITAL A (U+1D00) + COMBINING CARON (U+030C)
-	\pgfparserdef{scparser}{initiated}ǎ {\truecaps@outputexpanded{ᴀ̌}}
-	\pgfparserdef{scparser}{initiated}Ǎ {\truecaps@outputexpanded{Ǎ}}
-
-	% LATIN LETTER SMALL CAPITAL A (U+1D00) + COMBINING DOUBLE GRAVE ACCENT (U+030F)
-	\pgfparserdef{scparser}{initiated}ȁ {\truecaps@outputexpanded{ᴀ̏}}
-	\pgfparserdef{scparser}{initiated}Ȁ {\truecaps@outputexpanded{Ȁ}}
-
-	% LATIN LETTER SMALL CAPITAL A (U+1D00) + COMBINING COMBINING OGONEK (U+0328)
-	\pgfparserdef{scparser}{initiated}ą {\truecaps@outputexpanded{ᴀ̨}}
-	\pgfparserdef{scparser}{initiated}Ą {\truecaps@outputexpanded{Ą}}
-
-	% LATIN LETTER SMALL CAPITAL A (U+1D00) + % COMBINING DOT ABOVE (U+0307)
-	\pgfparserdef{scparser}{initiated}ȧ {\truecaps@outputexpanded{ᴀ̇}}
-	\pgfparserdef{scparser}{initiated}Ȧ {\truecaps@outputexpanded{Ȧ}}
-
-% LATIN LETTER SMALL CAPITAL AE (U+1D01)
-\pgfparserdef{scparser}{initiated}æ {\truecaps@outputexpanded{ᴁ}}
-\pgfparserdef{scparser}{initiated}Æ {\truecaps@outputexpanded{Æ}}
+\input{A.tex}
 
 % LATIN LETTER SMALL CAPITAL B (U+0299)
 \pgfparserdef{scparser}{initiated}b {\truecaps@outputexpanded{ʙ}}
@@ -349,6 +304,14 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	\pgfparserdef{scparser}{initiated}ó {\truecaps@outputexpanded{ᴏ́}}
 	\pgfparserdef{scparser}{initiated}Ó {\truecaps@outputexpanded{Ó}}
 
+	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING DOUBLE GRAVE ACCENT (U+030F)
+	\pgfparserdef{scparser}{initiated}ȍ {\truecaps@outputexpanded{ᴏ̏}}
+	\pgfparserdef{scparser}{initiated}Ȍ {\truecaps@outputexpanded{Ȍ}}
+
+	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING DOUBLE ACUTE ACCENT (U+030B)
+	\pgfparserdef{scparser}{initiated}ő {\truecaps@outputexpanded{ᴏ̋}}
+	\pgfparserdef{scparser}{initiated}Ő {\truecaps@outputexpanded{Ő}}
+
 	% TODO ==> https://www.compart.com/en/unicode/U+004F
 
 % LATIN LETTER SMALL CAPITAL OE (U+0276)
@@ -420,6 +383,14 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING CIRCUMFLEX ACCENT (U+0302)
 	\pgfparserdef{scparser}{initiated}û {\truecaps@outputexpanded{ᴜ̂}}
 	\pgfparserdef{scparser}{initiated}Û {\truecaps@outputexpanded{Û}}
+
+	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING DOUBLE GRAVE ACCENT (U+030F)
+	\pgfparserdef{scparser}{initiated}ȕ {\truecaps@outputexpanded{ᴜ̏}}
+	\pgfparserdef{scparser}{initiated}Ȕ {\truecaps@outputexpanded{Ȕ}}
+
+	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING DOUBLE ACUTE ACCENT (U+030B)
+	\pgfparserdef{scparser}{initiated}ű {\truecaps@outputexpanded{ᴜ̋}}
+	\pgfparserdef{scparser}{initiated}Ű {\truecaps@outputexpanded{Ű}}
 
 	% TODO Ú Ǔ Ų 
 
