@@ -33,6 +33,8 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 * Add modifiers, accents, umlaute etc. for all letters.
 * Take care of punctuation and numbers
+* Special cases like Ŀ, ß/ẞ etc.
+* Full Support for Basic Latin (U+0000 .. U+007F), Latin-1 Supplement (U+0080 .. U+00FF), Latin Extended-A (U+0100 .. U+017F) and Latin Extended-B (U+0180 .. U+024F)
 * Modularization with `\input`
 * Add checks for missing glyphs
 * Switch from `\oldtextsc{…}` and `\textsc{…}` to `\textsc{…}` and `\texttc{…}`
