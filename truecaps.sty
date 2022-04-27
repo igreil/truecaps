@@ -280,17 +280,18 @@
   {\truecaps@outputexpanded{\symbol{"0274}}}
 \pgfparserdef{scparser}{initiated}N%
   {\truecaps@outputexpanded{\symbol{"0274}}}
-%% LATIN LETTER SMALL CAPITAL O
-\pgfparserdef{scparser}{initiated}o%
-  {\truecaps@outputexpanded{\symbol{"1D0F}}}
-\pgfparserdef{scparser}{initiated}O%
-  {\truecaps@outputexpanded{\symbol{"1D0F}}}
 
-%% LATIN LETTER SMALL CAPITAL (U+1D0F) + COMBINING DIAERESIS (U+0308)
-\pgfparserdef{scparser}{initiated}ö%
-  {\truecaps@outputexpanded{ᴏ̈}}
-\pgfparserdef{scparser}{initiated}Ö%
-  {\truecaps@outputexpanded{Ö}}
+% LATIN LETTER SMALL CAPITAL O (U+1D0F)
+\pgfparserdef{scparser}{initiated}o {\truecaps@outputexpanded{\symbol{ᴏ}}
+\pgfparserdef{scparser}{initiated}O {\truecaps@outputexpanded{\symbol{O}}
+
+	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING DIAERESIS (U+0308)
+	\pgfparserdef{scparser}{initiated}ö {\truecaps@outputexpanded{ᴏ̈}}
+	\pgfparserdef{scparser}{initiated}Ö {\truecaps@outputexpanded{Ö}}
+
+% LATIN LETTER SMALL CAPITAL OE (U+0276)
+\pgfparserdef{scparser}{initiated}œ {\truecaps@outputexpanded{ɶ}}
+\pgfparserdef{scparser}{initiated}Œ {\truecaps@outputexpanded{Œ}}
 
 %% LATIN LETTER SMALL CAPITAL P
 \pgfparserdef{scparser}{initiated}p%
