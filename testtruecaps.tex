@@ -6,110 +6,73 @@
 \def\checkno	{\textcolor{red}{\textbf{\ding{55}~~}}}
 \def\checkyes	{\textcolor{green}{\textbf{\ding{51}~~}}}
 
-%\usepackage{fontspec}	\setmainfont[SmallCapsFeatures={LetterSpace={1}}]{Source Sans Pro}
-%						\setsansfont[SmallCapsFeatures={LetterSpace={1}}]{Source Sans Pro}
-%						\setmonofont{Source Code Pro}
+\usepackage{fontspec}	
 
-\usepackage{fontspec}
-\setmainfont[Ligatures={TeX,Common}]{Charis SIL}
-
-%\usepackage{multicol}
+		\setmainfont[Ligatures={TeX,Common}]{Charis SIL}
+%		\setmainfont[Ligatures={TeX,Common}]{Noto Serif}
+%		\setmainfont[Ligatures={TeX,Common}]{Iosevka}
+%		\setmainfont[Ligatures={TeX,Common}]{Andika}
 
 \begin{document}
-
-\hfill{\Large \textbf{truecaps} v0.3 (2022-04-27) Testsuite}
-
-\vspace{-1em}\section*{\checkyes English}
-\textsc{The quick brown fox jumps over the lazy dog.
-The five boxing wizards jump quickly because such movement 
-of the enemy will jeopardize six gunboats.}
-
-\vspace{-1em}\section*{\checkyes German}
-\noindent\textsc{Üben von Xylophon und Querflöte ist ja zweckmäßig, 
-aber falsches Üben von Xylophonmusik quält jeden größeren Zwerg.
-Zornig und gequält rügen jeweils Pontifex und Volk die maßlose bischöfliche Hybris.}
-
-\vspace{-1em}\section*{\checkyes Czech}
-\noindent\textsc{Nechť již hříšné saxofony ďáblů rozzvučí síň úděsnými 
-tóny waltzu, tanga a quickstepu. Příliš žluťoučký kůň úpěl ďábelské ódy.}
-
-\vspace{-1em}\section*{\checkno Polish (missing \string żłśćęźń)}
-\noindent\textsc{
-Stróż pchnął kość w quiz gędźb vel fax myjń. 
-Pchnąć w tę łódź jeża lub ośm skrzyń fig.
-W niżach mógł zjeść truflę koń bądź psy.
+\begin{flushright}
+\Large \textbf{truecaps} v0.3 (2022-04-27) Testsuite\par
+\large Font: \directlua{
+  local str = font.fonts[font.current()].fullname
+  tex.sprint(-2, str)
 }
+\end{flushright}
 
-\noindent\oldtextsc{L} ʟ ʟ̷ ʟ̸
+\def\presection		{\vspace{-1em}}
+\def\postsection	{\vspace{-.5em}\hrule\vspace{.5em}}
 
-\vspace{-1em}\section*{\checkyes Slovene}
-\noindent\textsc{
-V kožuščku hudobnega fanta stopiclja mizar in kliče.
-Šerif bo za vajo spet kuhal domače žgance.
-Piškur molče grabi fižol z dna cezijeve hoste.}
+% Various language test cases. Use what you need:
 
-\vspace{-1em}\section*{\checkyes French}
-\noindent\textsc{Voyez le brick géant que j’examine près du wharf.
-Voulez-vous que je porte ce vieux whisky au juge blond qui fume\medspace?
-Dès Noël où un zéphyr haï me vêt de glaçons würmiens 
-je dîne d’exquis rôtis de bœuf au kir à l’aÿ d’âge mûr \& cætera\medspace!}
+\input{testcases/english.tex}
+\input{testcases/polish.tex}
+\input{testcases/french.tex}
+\input{testcases/german.tex}
 
-\vspace{-1em}\section*{\checkyes Spanish and Catalan}
-\noindent\textsc{
-Whisky bueno: ¡excitad mi frágil pequeña vejez!
-Extraño pan de col y kiwi se quemó bajo fugaz vaho. 
-L'avinguda del Paraŀlel y la Funicular de Montjuïc.
-El faŀlaç pingüí zoòfob menja un yg d'haixix, roques i kiwis covats.
-}
-
-\vspace{-1em}\section*{\checkyes Hungarian}
-\noindent\textsc{
-Árvíztűrő tükörfúrógép.
-Egy hűtlen vejét fülöncsípő, dühös mexikói úr Wesselényinél mázol Quitóban.
-}
+%\input{testcases/slovene.tex}
+%\input{testcases/czech.tex}
+%\input{testcases/spanish.tex}
+%\input{testcases/hungarian.tex}
 
 \vspace{-1em}\section*{\checkno Finnish}
-\noindent\textsc{
-Törkylempijävongahdus.
-}
+\vspace{-.5em}\hrule\vspace{.5em}
+\noindent\textsc{Törkylempijävongahdus.}
 
 \vspace{-1em}\section*{\checkno Danish}
-\noindent\textsc{
-Quizdeltagerne spiste jordbær med fløde, 
+\vspace{-.5em}\hrule\vspace{.5em}
+\noindent\textsc{Quizdeltagerne spiste jordbær med fløde, 
 mens cirkusklovnen Walther spillede på xylofon. 
-Høj bly gom vandt fræk sexquiz på wc.
-}
+Høj bly gom vandt fræk sexquiz på wc.}
 
 \vspace{-1em}\section*{\checkno Turkish}
-\noindent\textsc{
-Pijamalı hasta yağız şoföre çabucak güvendi.
-}
+\vspace{-.5em}\hrule\vspace{.5em}
+\noindent\textsc{Pijamalı hasta yağız şoföre çabucak güvendi.}
 
 \vspace{-1em}\section*{\checkno Gaelic}
+\vspace{-.5em}\hrule\vspace{.5em}
 \noindent\textsc{
 D'fhuascail íosa, Úrmhac na hóighe Beannaithe, pór Éava agus adhaimh.
 }
 
 \vspace{-1em}\section*{\checkno Icelandic}
-\noindent\textsc{
-Kæmi ný öxi hér ykist þjófum nú bæði víl og ádrepa.
-}
+\vspace{-.5em}\hrule\vspace{.5em}
+\noindent\textsc{Kæmi ný öxi hér ykist þjófum nú bæði víl og ádrepa.}
 
 \vspace{-1em}\section*{\checkno Norwegian}
+\vspace{-.5em}\hrule\vspace{.5em}
 \noindent\textsc{
 Vår sære Zulu fra badeøya spilte jo whist og quickstep i min taxi. 
-Høvdingens kjære squaw får litt pizza i Mexico by.
-}
+Høvdingens kjære squaw får litt pizza i Mexico by.}
 
 \vspace{-1em}\section*{\checkno Esperanto}
-\noindent\textsc{
-Laŭ Ludoviko Zamenhof bongustas freŝa ĉeĥa manĝaĵo kun spicoj.}
+\vspace{-.5em}\hrule\vspace{.5em}
+\noindent\textsc{Laŭ Ludoviko Zamenhof bongustas freŝa ĉeĥa manĝaĵo kun spicoj.}
 
 \vspace{-1em}\section*{\checkno Latvian}
-\noindent\textsc{
-Glāžšķūņa rūķīši dzērumā čiepj Baha koncertflīģeļu vākus.
-}
-
-
+\vspace{-.5em}\hrule\vspace{.5em}
+\noindent\textsc{Glāžšķūņa rūķīši dzērumā čiepj Baha koncertflīģeļu vākus.}
 
 \end{document}

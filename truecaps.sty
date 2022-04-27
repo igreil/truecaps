@@ -46,7 +46,7 @@
 \NewCommandCopy\oldtextsc\textsc
 \NewCommandCopy\oldscshape\scshape
 \xpatchcmd{\oldtextsc}{\scshape}{\oldscshape}{}{\ERROR}
-\xpatchcmd{\oldtextsc}{\scshape}{\oldscshape}{}{\ERROR}
+
 \protected\long\def\truecaps@output#1{%
   \xdef\truecaps@outputcontainer{%
     \unexpanded\expandafter{%
@@ -462,6 +462,7 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
     \fi
     \pgfparserparse{scparser}%
   }
+
   \RenewDocumentCommand\textsc{ m }{%
     \begingroup\scshape #1\endgroup
   }%
