@@ -171,7 +171,11 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	\pgfparserdef{scparser}{initiated}č {\truecaps@outputexpanded{ᴄ̌}}
 	\pgfparserdef{scparser}{initiated}Č {\truecaps@outputexpanded{Č}}
 
-	% TODO Ć Ĉ Ċ 
+	% LATIN LETTER SMALL CAPITAL C (U+1D04) + COMBINING ACUTE ACCENT (U+0301)
+	\pgfparserdef{scparser}{initiated}ć {\truecaps@outputexpanded{ᴄ́}}
+	\pgfparserdef{scparser}{initiated}Ć {\truecaps@outputexpanded{Ć}}
+
+	% TODO Ĉ Ċ
 
 % LATIN LETTER SMALL CAPITAL D (U+1D05)
 \pgfparserdef{scparser}{initiated}d {\truecaps@outputexpanded{ᴅ}}
@@ -180,6 +184,11 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	% LATIN LETTER SMALL CAPITAL D (U+1D05) + COMBINING CARON (U+030C)
 	\pgfparserdef{scparser}{initiated}ď {\truecaps@outputexpanded{ᴅ̌}}
 	\pgfparserdef{scparser}{initiated}Ď {\truecaps@outputexpanded{Ď}}
+
+	% LATIN LETTER SMALL LETTER D WITH STROKE (U+0111)
+	\pgfparserdef{scparser}{initiated}đ {\truecaps@outputexpanded{ᴆ}}
+	\pgfparserdef{scparser}{initiated}ð {\truecaps@outputexpanded{ᴆ}}
+	%\pgfparserdef{scparser}{initiated}Ď {\truecaps@outputexpanded{Ď}}
 
 	% TODO: Ð Ḋ Ḍ Ḏ Ḑ Ḓ
 
