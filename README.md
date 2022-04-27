@@ -43,7 +43,7 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 * Modularization with `\input`
 * Add checks for missing glyphs
 * Switch from `\oldtextsc{…}` and `\textsc{…}` to `\textsc{…}` and `\texttc{…}`
-* Simplify code
+* Simplify and optimize code
 * Testsuite for common Latin (European) languages
 * Submit to CTAN
 
