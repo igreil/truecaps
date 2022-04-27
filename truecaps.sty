@@ -1,5 +1,5 @@
 % ----------------------------------------------------------
-% This is file "truecaps.sty" v0.1 (2022-04-26)
+% This is file "truecaps.sty" v0.1.2 (2022-04-27)
 % It was forked from निरंजन's "unisc.sty" v0.1 (2022-04-21)
 %
 % This file and possibly later versions can be found on
@@ -32,8 +32,8 @@
 % <https://www.gnu.org/licenses/>.
 % 
 % ----------------------------------------------------------
-\def\truecapsversion{0.1}
-\def\truecapsdate{2022-04-26}
+\def\truecapsversion{0.1.2}
+\def\truecapsdate{2022-04-27}
 \def\truecapsname{truecaps}
 \def\truecapsdescription{
   True Unicode Small Caps with LuaLaTex/XeLaTeX}
@@ -132,7 +132,7 @@
 % MODIFIERS:
 % 			-> COMBINING GRAVE ACCENT			(U+0300)
 % 			-> COMBINING ACUTE ACCENT			(U+0301)
-% 			-> COMBINING CIRCUMFLEX ACCENT		(U+0302)
+% 			-> COMBINING CIRCUMFLEX ACCENT	(U+0302)
 % 			-> COMBINING TILDE					(U+0303)
 % 			-> COMBINING BREVE					(U+0306)
 % 			-> COMBINING DOT ABOVE				(U+0307)
@@ -142,8 +142,9 @@
 % 			-> COMBINING CARON					(U+030C)
 % 			-> COMBINING DOUBLE GRAVE ACCENT	(U+030F)
 % 			-> COMBINING COMMA BELOW			(U+0326)
-% 			-> COMBINING CEDILLA				(U+0327)
+% 			-> COMBINING CEDILLA					(U+0327)
 % 			-> COMBINING OGONEK					(U+0328)
+%			-> COMBINING BREVE BELOW			(U+032E)
 
 % LATIN LETTER SMALL CAPITAL A (U+1D00)
 \pgfparserdef{scparser}{initiated}a {\truecaps@outputexpanded{ᴀ}}
@@ -241,11 +242,21 @@
 \pgfparserdef{scparser}{initiated}g {\truecaps@outputexpanded{ɢ}}
 \pgfparserdef{scparser}{initiated}G {\truecaps@outputexpanded{G}}
 
-	% TODO: Ğ
+	% LATIN LETTER SMALL CAPITAL G (U+0262) + COMBINING BREVE (U+0306)
+	\pgfparserdef{scparser}{initiated}ğ {\truecaps@outputexpanded{ɢ̆}}
+	\pgfparserdef{scparser}{initiated}Ğ {\truecaps@outputexpanded{Ğ}}
+
+	% TODO Ǧ Ġ Ģ Ĝ Ǵ Ḡ
 
 % LATIN LETTER SMALL CAPITAL H (U+029C)
 \pgfparserdef{scparser}{initiated}h {\truecaps@outputexpanded{ʜ}}
 \pgfparserdef{scparser}{initiated}H {\truecaps@outputexpanded{H}}
+
+	% LATIN LETTER SMALL CAPITAL H (U+029C) + COMBINING BREVE BELOW (U+032E)
+	\pgfparserdef{scparser}{initiated}ḫ {\truecaps@outputexpanded{ʜ̮}}
+	\pgfparserdef{scparser}{initiated}Ḫ {\truecaps@outputexpanded{Ḫ}}
+
+	% TODO Ĥ Ȟ Ḣ Ḥ Ḧ Ḩ 
 
 % LATIN LETTER SMALL CAPITAL I (U+026A)
 \pgfparserdef{scparser}{initiated}i {\truecaps@outputexpanded{ɪ}}
@@ -261,9 +272,15 @@
 \pgfparserdef{scparser}{initiated}j {\truecaps@outputexpanded{ᴊ}}
 \pgfparserdef{scparser}{initiated}J {\truecaps@outputexpanded{J}}
 
+	% LATIN LETTER SMALL CAPITAL J (U+1D0A) + COMBINING CIRCUMFLEX ACCENT (U+0302)
+	\pgfparserdef{scparser}{initiated}ĵ {\truecaps@outputexpanded{ᴊ̂}}
+	\pgfparserdef{scparser}{initiated}Ĵ {\truecaps@outputexpanded{Ĵ}}
+
 % LATIN LETTER SMALL CAPITAL K (U+1D0B)
 \pgfparserdef{scparser}{initiated}k {\truecaps@outputexpanded{ᴋ}}
 \pgfparserdef{scparser}{initiated}K {\truecaps@outputexpanded{K}}
+
+	% TODO Ķ Ǩ Ḱ Ḳ Ḵ
 
 %% LATIN LETTER SMALL CAPITAL L (U+029F)
 \pgfparserdef{scparser}{initiated}l {\truecaps@outputexpanded{ʟ}}
