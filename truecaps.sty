@@ -227,7 +227,11 @@
 	\pgfparserdef{scparser}{initiated}è {\truecaps@outputexpanded{ᴇ̀}}
 	\pgfparserdef{scparser}{initiated}È {\truecaps@outputexpanded{È}}
 
-	% TODO: Ë Ê Ę
+	% LATIN LETTER SMALL CAPITAL E (U+1D07) + COMBINING DIAERESIS (U+0308)
+	\pgfparserdef{scparser}{initiated}ë {\truecaps@outputexpanded{ᴇ̈}}
+	\pgfparserdef{scparser}{initiated}Ë {\truecaps@outputexpanded{Ë}}
+
+	% TODO: Ê Ę
 
 % LATIN LETTER SMALL CAPITAL F (U+A730)
 \pgfparserdef{scparser}{initiated}f {\truecaps@outputexpanded{ꜰ}}
