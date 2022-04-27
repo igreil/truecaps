@@ -1,12 +1,15 @@
 \documentclass{article}
 
-\usepackage{pifont,xcolor}
 \usepackage{truecaps}
 
-\def\checkno	{\textcolor{red}{\textbf{\ding{55}~~}}}
-\def\checkyes	{\textcolor{green}{\textbf{\ding{51}~~}}}
+\usepackage{pifont,xcolor}
+	\def\checkno	{\textcolor{red}{\textbf{\ding{55}~~}}}
+	\def\checkyes	{\textcolor{green}{\textbf{\ding{51}~~}}}
 
 \usepackage{fontspec}	
+
+% You will need a good font, supporting the required glyphs. 
+% Many offer only partial support. Here are a few recommendations:
 
 		\setmainfont[Ligatures={TeX,Common}]{Charis SIL}
 %		\setmainfont[Ligatures={TeX,Common}]{Noto Serif}
@@ -15,17 +18,18 @@
 
 \begin{document}
 \begin{flushright}
-\Large \textbf{truecaps} v0.3 (2022-04-27) Testsuite\par
-\large Font: \directlua{
-  local str = font.fonts[font.current()].fullname
-  tex.sprint(-2, str)
+	\Large\textbf{truecaps} v0.3 (2022-04-27) Testsuite\par
+	\large Font: \directlua{
+		local str = font.fonts[font.current()].fullname
+		tex.sprint(-2, str)
 }
 \end{flushright}
 
-\def\presection		{\vspace{-1em}}
-\def\postsection	{\vspace{-.5em}\hrule\vspace{.5em}}
+% Various language test cases. Use what you need,
+% comment out what you don't need.
 
-% Various language test cases. Use what you need:
+	\def\presection		{\vspace{-1em}}
+	\def\postsection	{\vspace{-.5em}\hrule\vspace{.5em}}
 
 \input{testcases/english.tex}
 \input{testcases/polish.tex}
