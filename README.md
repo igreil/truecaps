@@ -42,6 +42,7 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 	- possibly `Latin Extended Additional` (U+1E00 ..U+1EFF)
 * Modularization with `\input`
 * Add checks for missing glyphs
+* Silent option to disable warnings
 * Switch from `\oldtextsc{…}` and `\textsc{…}` to `\textsc{…}` and `\texttc{…}`
 * Simplify and optimize code
 * Testsuite for common Latin (European) languages
@@ -49,7 +50,7 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 ## History
 
-* v0.3 Full support for Czech, Spanish and Catalan.
+* v0.3 Full support for Czech, Slovene, Spanish and Catalan.
 * v0.2 Full support for English, German and French.
 * v0.1 Initial fork from निरंजन's "unisc.sty" v0.1 (2022-04-21).
 https://puszcza.gnu.org.ua/projects/unisc
