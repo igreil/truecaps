@@ -222,7 +222,11 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 \pgfparserdef{scparser}{initiated}d {\truecaps@outputexpanded{ᴅ}}
 \pgfparserdef{scparser}{initiated}D {\truecaps@outputexpanded{D}}
 
-	% TODO: Ð Ď Ḋ Ḍ Ḏ Ḑ Ḓ
+	% LATIN LETTER SMALL CAPITAL D (U+1D05) + COMBINING CARON (U+030C)
+	\pgfparserdef{scparser}{initiated}ď {\truecaps@outputexpanded{ᴅ̌}}
+	\pgfparserdef{scparser}{initiated}Ď {\truecaps@outputexpanded{Ď}}
+
+	% TODO: Ð Ḋ Ḍ Ḏ Ḑ Ḓ
 
 % LATIN LETTER SMALL CAPITAL E (U+1D07)
 \pgfparserdef{scparser}{initiated}e {\truecaps@outputexpanded{ᴇ}}
@@ -244,7 +248,11 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	\pgfparserdef{scparser}{initiated}ê {\truecaps@outputexpanded{ᴇ̂}}
 	\pgfparserdef{scparser}{initiated}Ê {\truecaps@outputexpanded{Ê}}
 
-	% TODO: Ê Ē Ĕ Ė Ę Ě etc -> https://www.compart.com/en/unicode/U+0045
+	% LATIN LETTER SMALL CAPITAL E (U+1D07) + COMBINING CARON (U+030C)
+	\pgfparserdef{scparser}{initiated}ě {\truecaps@outputexpanded{ᴇ̌}}
+	\pgfparserdef{scparser}{initiated}Ě {\truecaps@outputexpanded{Ě}}
+
+	% TODO: Ē Ĕ Ė Ę etc -> https://www.compart.com/en/unicode/U+0045
 
 % LATIN LETTER SMALL CAPITAL F (U+A730)
 \pgfparserdef{scparser}{initiated}f {\truecaps@outputexpanded{ꜰ}}
@@ -280,7 +288,11 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	\pgfparserdef{scparser}{initiated}ï {\truecaps@outputexpanded{ɪ̈}}
 	\pgfparserdef{scparser}{initiated}Ï {\truecaps@outputexpanded{Ï}}
 
-	% TODO: İ Í Ì Î Į
+	% LATIN LETTER SMALL CAPITAL I (U+026A) + COMBINING ACUTE ACCENT (U+0301)
+	\pgfparserdef{scparser}{initiated}í {\truecaps@outputexpanded{ɪ́}}
+	\pgfparserdef{scparser}{initiated}Í {\truecaps@outputexpanded{Í}}
+
+	% TODO: İ Ì Î Į
 
 % LATIN LETTER SMALL CAPITAL J (U+1D0A)
 \pgfparserdef{scparser}{initiated}j {\truecaps@outputexpanded{ᴊ}}
@@ -308,11 +320,15 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 
 	% TODO Ḿ Ṁ Ṃ
 
-%% LATIN LETTER SMALL CAPITAL N (U+0274)
+% LATIN LETTER SMALL CAPITAL N (U+0274)
 \pgfparserdef{scparser}{initiated}n {\truecaps@outputexpanded{ɴ}}
 \pgfparserdef{scparser}{initiated}N {\truecaps@outputexpanded{N}}
 
-	% TODO Ñ Ń Ņ Ň Ǹ Ṅ Ṇ Ṉ Ṋ
+	% LATIN LETTER SMALL CAPITAL N (U+0274) + COMBINING CARON (U+030C)
+	\pgfparserdef{scparser}{initiated}ň {\truecaps@outputexpanded{ɴ̌}}
+	\pgfparserdef{scparser}{initiated}Ň {\truecaps@outputexpanded{Ň}}
+
+	% TODO Ñ Ń Ņ Ǹ Ṅ Ṇ Ṉ Ṋ
 
 % LATIN LETTER SMALL CAPITAL O (U+1D0F)
 \pgfparserdef{scparser}{initiated}o {\truecaps@outputexpanded{ᴏ}}
@@ -321,6 +337,10 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING DIAERESIS (U+0308)
 	\pgfparserdef{scparser}{initiated}ö {\truecaps@outputexpanded{ᴏ̈}}
 	\pgfparserdef{scparser}{initiated}Ö {\truecaps@outputexpanded{Ö}}
+
+	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING ACUTE ACCENT (U+0301)
+	\pgfparserdef{scparser}{initiated}ó {\truecaps@outputexpanded{ᴏ́}}
+	\pgfparserdef{scparser}{initiated}Ó {\truecaps@outputexpanded{Ó}}
 
 	% TODO ==> https://www.compart.com/en/unicode/U+004F
 
@@ -336,9 +356,13 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 \pgfparserdef{scparser}{initiated}q {\truecaps@outputexpanded{ꞯ}}
 \pgfparserdef{scparser}{initiated}Q {\truecaps@outputexpanded{Q}}
 
-%% LATIN LETTER SMALL CAPITAL R (U+0280)
+% LATIN LETTER SMALL CAPITAL R (U+0280)
 \pgfparserdef{scparser}{initiated}r {\truecaps@outputexpanded{ʀ}}
 \pgfparserdef{scparser}{initiated}R {\truecaps@outputexpanded{R}}
+
+	% LATIN LETTER SMALL CAPITAL R (U+0280)	+ COMBINING CARON (U+030C)
+	\pgfparserdef{scparser}{initiated}ř {\truecaps@outputexpanded{ʀ̌}}
+	\pgfparserdef{scparser}{initiated}Ř {\truecaps@outputexpanded{Ř}}
 
 	% TODO ==> https://www.compart.com/en/unicode/U+0052
 
@@ -350,13 +374,21 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	% => No need for LATIN CAPITAL LETTER SHARP S (U+1E9E)
 	\pgfparserdef{scparser}{initiated}ß {\truecaps@outputexpanded{ꜱꜱ}}
 
-	% TODO Ś Ŝ Ş Š Ș Ṡ Ṣ
+	% LATIN LETTER SMALL CAPITAL S (U+A731) COMBINING CARON	(U+030C)
+	\pgfparserdef{scparser}{initiated}š {\truecaps@outputexpanded{ꜱ̌}}
+	\pgfparserdef{scparser}{initiated}Š {\truecaps@outputexpanded{Š}}
+
+	% TODO Ś Ŝ Ş Ș Ṡ Ṣ
 
 % LATIN LETTER SMALL CAPITAL T (U+1D1B)
 \pgfparserdef{scparser}{initiated}t {\truecaps@outputexpanded{ᴛ}}
 \pgfparserdef{scparser}{initiated}T {\truecaps@outputexpanded{T}}
 
-	% TODO Ţ Ť Ț Ṫ Ṭ Ṯ Ṱ
+	% LATIN LETTER SMALL CAPITAL T (U+1D1B) + COMBINING CARON (U+030C)
+	\pgfparserdef{scparser}{initiated}ť {\truecaps@outputexpanded{ᴛ̌}}
+	\pgfparserdef{scparser}{initiated}Ť {\truecaps@outputexpanded{Ť}}
+
+	% TODO Ţ Ț Ṫ Ṭ Ṯ Ṱ
 
 % LATIN LETTER SMALL CAPITAL U (U+1D1C)
 \pgfparserdef{scparser}{initiated}u {\truecaps@outputexpanded{ᴜ}}
@@ -369,6 +401,10 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING GRAVE ACCENT (U+0300)
 	\pgfparserdef{scparser}{initiated}ù {\truecaps@outputexpanded{ᴜ̀}}
 	\pgfparserdef{scparser}{initiated}Ù {\truecaps@outputexpanded{Ù}}
+
+	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING ACUTE ACCENT (U+0301)
+	\pgfparserdef{scparser}{initiated}ú {\truecaps@outputexpanded{ᴜ́}}
+	\pgfparserdef{scparser}{initiated}Ú {\truecaps@outputexpanded{Ú}}
 
 	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING DIAERESIS (U+0308)	
 	\pgfparserdef{scparser}{initiated}ü {\truecaps@outputexpanded{ᴜ̈}}
@@ -408,7 +444,11 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	\pgfparserdef{scparser}{initiated}ÿ {\truecaps@outputexpanded{ʏ̈}}
 	\pgfparserdef{scparser}{initiated}Ÿ {\truecaps@outputexpanded{Ÿ}}
 
-	% TODO Ý Ỳ Ŷ
+	% LATIN LETTER SMALL CAPITAL Y (U+028F) + COMBINING ACUTE ACCENT (U+0301)
+	\pgfparserdef{scparser}{initiated}ý {\truecaps@outputexpanded{ʏ́}}
+	\pgfparserdef{scparser}{initiated}Ý {\truecaps@outputexpanded{Ý}}
+
+	% TODO Ỳ Ŷ
 
 % LATIN LETTER SMALL CAPITAL Z (U+1D22)
 \pgfparserdef{scparser}{initiated}z {\truecaps@outputexpanded{ᴢ}}
