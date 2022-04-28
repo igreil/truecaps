@@ -6,8 +6,8 @@
 % <https://https://github.com/igreil/truecaps>
 %
 % The original files by निरंजन [Niranjan] can be found 
-% on CTAN <https://ctan.org/pkg/truecaps> and at 
-% <https://puszcza.gnu.org.ua/projects/truecaps>
+% on CTAN <https://ctan.org/pkg/unisc> and at 
+% <https://puszcza.gnu.org.ua/projects/unisc>
 %
 % License: GPLv3+, GFDLv1.3+
 % ----------------------------------------------------------
@@ -32,6 +32,7 @@
 % <https://www.gnu.org/licenses/>.
 % 
 % ----------------------------------------------------------
+
 \def\truecapsversion{0.4}
 \def\truecapsdate{2022-04-28}
 \def\truecapsname{truecaps}
@@ -45,74 +46,80 @@
 
 \NewCommandCopy\oldtextsc\textsc
 \NewCommandCopy\oldscshape\scshape
+
+% Yes, we actually need this twice:
 \xpatchcmd{\oldtextsc}{\scshape}{\oldscshape}{}{\ERROR}
+\xpatchcmd{\oldtextsc}{\scshape}{\oldscshape}{}{\ERROR}%	You're welcome.
+% https://topanswers.xyz/transcript?room=2050&id=138859#c138859
 
 \protected\long\def\truecaps@output#1{%
-  \xdef\truecaps@outputcontainer{%
-    \unexpanded\expandafter{%
-      \truecaps@outputcontainer\unexpanded{#1}%
-    }%
-  }%
+	\xdef\truecaps@outputcontainer{%
+		\unexpanded\expandafter{%
+			\truecaps@outputcontainer\unexpanded{#1}%
+		}%
+	}%
 }
 
 \protected\long\def\truecaps@outputexpanded#1{%
-  \xdef\truecaps@outputcontainer{%
-    \unexpanded\expandafter{\truecaps@outputcontainer#1%
-    }%
-  }%
+	\xdef\truecaps@outputcontainer{%
+		\unexpanded\expandafter{\truecaps@outputcontainer#1%
+		}%
+	}%
 }
 
 \providecommand\@gobbletwo[2]{}
+
 \pgfparserdefunknown{scparser}{initial}{%
-  \let\truecaps@initiated\@empty
-  \pgfparserswitch{initiated}%
-  \pgfparserreinsert
+	\let\truecaps@initiated\@empty
+	\pgfparserswitch{initiated}%
+	\pgfparserreinsert
 }
 
 \pgfparserset{scparser/silent=true}
+
 \pgfparserdefunknown{scparser}{all}{%
-  \expandafter\truecaps@output\expandafter{\pgfparserletter}%
+	\expandafter\truecaps@output\expandafter{\pgfparserletter}%
 }
 
 \newcommand*\truecaps@bgroup{\expandafter{\iffalse}\fi}
 \newcommand*\truecaps@egroup{\iffalse{\fi}}
 
 \pgfparserdef{scparser}{all}\begingroup
-  {\begingroup\truecaps@outputexpanded\begingroup}
+	{\begingroup\truecaps@outputexpanded\begingroup}
 
 \pgfparserdef{scparser}{all}\endgroup
-  {\truecaps@checkend\endgroup}
+	{\truecaps@checkend\endgroup}
 
 \pgfparserdef{scparser}{all}{\meaning\bgroup}{%
-  \truecaps@bgroup\truecaps@outputexpanded\truecaps@bgroup
+	\truecaps@bgroup\truecaps@outputexpanded\truecaps@bgroup
 }
 
 \pgfparserdef{scparser}{all}{\meaning\egroup}
-  {\truecaps@checkend\truecaps@egroup}
+	{\truecaps@checkend\truecaps@egroup}
 
 \newcommand\truecaps@savedefinition[1]
-  {\unexpanded{\def#1}{\unexpanded\expandafter{#1}}}
+	{\unexpanded{\def#1}{\unexpanded\expandafter{#1}}}
 
 \protected\def\truecaps@checkend#1{%
-  \expanded{%
-    \unexpanded{#1}%
-    \unexpanded{\ifdefined\truecaps@initiated}%
-    \truecaps@savedefinition\pgfparserstate
-    \unexpanded{\truecaps@outputexpanded#1}%
-    \unexpanded{\else}%
-    \unexpanded{\pgfparserswitch{final}}%
-    \truecaps@savedefinition\pgfparser@current
-    \truecaps@savedefinition\pgfparser@usersname
-    \unexpanded{\fi}%
-  }%
+	\expanded{%
+		\unexpanded{#1}%
+		\unexpanded{\ifdefined\truecaps@initiated}%
+		\truecaps@savedefinition\pgfparserstate
+		\unexpanded{\truecaps@outputexpanded#1}%
+		\unexpanded{\else}%
+		\unexpanded{\pgfparserswitch{final}}%
+		\truecaps@savedefinition\pgfparser@current
+		\truecaps@savedefinition\pgfparser@usersname
+		\unexpanded{\fi}%
+	}%
 }
 
-\newcommand\thornwarning{	% see line #369
+\newcommand\thornwarning{		% see line ~ #369
 Unsupported character LATIN SMALL LETTER THORN (U+00FE): 
 substituted by LATIN CAPITAL LETTER THORN (U+00DE)%
 }
 
-\newcommand\xwarning{		% see line #469
+\newcommand\xwarning{				% see line ~ #469
 Unsupported character LATIN SMALL LETTER X (U+0078): %
 inserted as is%
 }
