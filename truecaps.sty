@@ -114,13 +114,13 @@
 	}%
 }
 
-\newcommand\thornwarning{		% see line ~ #369
+\newcommand\thornwarning{			% see ~ line #369
 Unsupported character LATIN SMALL LETTER THORN (U+00FE): 
-substituted by LATIN CAPITAL LETTER THORN (U+00DE)%
+substituted with LATIN CAPITAL LETTER THORN (U+00DE)%
 }
 
-\newcommand\xwarning{				% see line ~ #469
-Unsupported character LATIN SMALL LETTER X (U+0078): %
+\newcommand\xwarning{				% see ~ line #469
+Unsupported character LATIN SMALL LETTER X (U+0078): 
 inserted as is%
 }
 
@@ -271,23 +271,27 @@ inserted as is%
 
 	% TODO Ĥ Ȟ Ḣ Ḥ Ḧ Ḩ 
 
-% LATIN LETTER SMALL CAPITAL I (U+026A)
+% LATIN LETTER SMALL CAPITAL I 		(U+026A)
 \pgfparserdef{scparser}{initiated}i {\truecaps@outputexpanded{ɪ}}
 \pgfparserdef{scparser}{initiated}I {\truecaps@outputexpanded{I}}
 
-	% LATIN LETTER SMALL CAPITAL I (U+026A) + COMBINING DIAERESIS (U+0308)
+	% LATIN LETTER SMALL CAPITAL I 	(U+026A)
+		%+ COMBINING DIAERESIS 		(U+0308)
 	\pgfparserdef{scparser}{initiated}ï {\truecaps@outputexpanded{ɪ̈}}
 	\pgfparserdef{scparser}{initiated}Ï {\truecaps@outputexpanded{Ï}}
 
-	% LATIN LETTER SMALL CAPITAL I (U+026A) + COMBINING GRAVE ACCENT (U+0300)
+	% LATIN LETTER SMALL CAPITAL I 	(U+026A)
+		% + COMBINING GRAVE ACCENT 	(U+0300)
 	\pgfparserdef{scparser}{initiated}ì {\truecaps@outputexpanded{ɪ̀}}
 	\pgfparserdef{scparser}{initiated}Ì {\truecaps@outputexpanded{Ì}}
 
-	% LATIN LETTER SMALL CAPITAL I (U+026A) + COMBINING ACUTE ACCENT (U+0301)
+	% LATIN LETTER SMALL CAPITAL I 	(U+026A)
+		% + COMBINING ACUTE ACCENT 	(U+0301)
 	\pgfparserdef{scparser}{initiated}í {\truecaps@outputexpanded{ɪ́}}
 	\pgfparserdef{scparser}{initiated}Í {\truecaps@outputexpanded{Í}}
 
-	% LATIN LETTER SMALL CAPITAL I (U+026A) + COMBINING ACUTE ACCENT (U+0302)
+	% LATIN LETTER SMALL CAPITAL I 	(U+026A)
+		% + COMBINING ACUTE ACCENT 	(U+0302)
 	\pgfparserdef{scparser}{initiated}î {\truecaps@outputexpanded{ɪ̂}}
 	\pgfparserdef{scparser}{initiated}Î {\truecaps@outputexpanded{Î}}
 
@@ -297,7 +301,8 @@ inserted as is%
 \pgfparserdef{scparser}{initiated}j {\truecaps@outputexpanded{ᴊ}}
 \pgfparserdef{scparser}{initiated}J {\truecaps@outputexpanded{J}}
 
-	% LATIN LETTER SMALL CAPITAL J (U+1D0A) + COMBINING CIRCUMFLEX ACCENT (U+0302)
+	% LATIN LETTER SMALL CAPITAL J (U+1D0A)
+		% + COMBINING CIRCUMFLEX ACCENT (U+0302)
 	\pgfparserdef{scparser}{initiated}ĵ {\truecaps@outputexpanded{ᴊ̂}}
 	\pgfparserdef{scparser}{initiated}Ĵ {\truecaps@outputexpanded{Ĵ}}
 
