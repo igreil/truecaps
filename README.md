@@ -1,4 +1,4 @@
-# truecaps (v0.4)
+# truecaps (v0.5)
 Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTex.
 
 ## Purpose
@@ -8,7 +8,7 @@ Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ U�
 
 ## Usage
 
-`\usepackage{truecaps}` will redefine `\textsc{…}` and additionally provide `\oldtextsc{…}`. There are no further options or parameters at this time. 
+`\usepackage{truecaps}` will create a new command `\texttc{…}`. `\textsc{…}` continues to work as before.
 
 ### Full Example
 
@@ -21,37 +21,37 @@ Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ U�
 
 \begin{document}
 
-\noindent\textsc{The purpose of this LaTeX package is to seamlessly provide 
+\noindent\texttc{The purpose of this LaTeX package is to seamlessly provide 
 real Unicode Small Caps, using the Phonetic Extensions Unicode block.}\newline
 \par
-\noindent\oldtextsc{The purpose of this LaTeX package is to seamlessly provide 
-real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
+\noindent\textsc{Classic Small Caps continue to work as before.}
 
 \end{document}
 ```
+
 ## Todo
 
-* Add modifiers, accents, umlauts etc. for all letters.
+* Add modifiers, accents, umlauts etc. for all letters. (70% done)
 * Take care of punctuation and numbers
 * Special cases like Ł, ß/ẞ etc. =>
-* Testsuite for common Latin (European) languages
+* Testsuite for common Latin (European) languages (90% done)
 * Full Support for 
 	- `Basic Latin` (U+0000 .. U+007F), 
 	- `Latin-1 Supplement` (U+0080 .. U+00FF), 
 	- `Latin Extended-A` (U+0100 .. U+017F) and 
 	- `Latin Extended-B` (U+0180 .. U+024F partial support)
-	- possibly `Latin Extended Additional` (U+1E00 ..U+1EFF)
+	- possibly `Latin Extended Additional` (U+1E00 ..U+1EFF partial support)
 * Modularization with `\input`
-* Look into support for more exotic (yet Latin-based) languages, 
+* Look into support for more exotic (Latin-based) languages, 
 like Vietnamese, Yoruba and some other African or native American writing systems
 * Add sanity checks for missing glyphs
 * Silent option to disable warnings (Letter X will remain unsupported)
-* Switch from `\oldtextsc{…}` and `\textsc{…}` to `\textsc{…}` and `\texttc{…}`
 * Simplify and optimize code
 * Submit to CTAN
 
 ## History
 
+* v0.5 Reversed the command structure: `textsc{…}` works as always, `texttc{…}` becomes a new option.
 * v0.4 Dropped XeLaTeX compatibility. Added support for Italian, Swedish, Danish, Icelandic.
 * v0.3 Full support for Czech, Slovenian, Hungarian, Spanish and Catalan.
 * v0.2 Full support for English, German and French.
