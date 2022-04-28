@@ -39,7 +39,7 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 	- `Basic Latin` (U+0000 .. U+007F), 
 	- `Latin-1 Supplement` (U+0080 .. U+00FF), 
 	- `Latin Extended-A` (U+0100 .. U+017F) and 
-	- `Latin Extended-B` (U+0180 .. U+024F)
+	- `Latin Extended-B` (U+0180 .. U+024F partial support)
 	- possibly `Latin Extended Additional` (U+1E00 ..U+1EFF)
 * Modularization with `\input`
 * Look into support for more exotic (yet Latin-based) languages, 
