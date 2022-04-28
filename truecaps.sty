@@ -418,7 +418,7 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 % The best we can do is issue a warning (see line #100) 
 % and use regular LATIN SMALL LETTER X (U+0078):
 \pgfparserdef{scparser}{initiated}x{\truecaps@outputexpanded{x}%
-%\PackageWarning{\truecapsname}{\xwarning}
+%\PackageWarning{\truecapsname}{\xwarning} FIXME AFTER DEBUGGING
 }
 
 % LATIN CAPITAL LETTER X (U+0058) is not an issue:
