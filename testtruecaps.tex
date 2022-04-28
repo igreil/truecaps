@@ -8,17 +8,18 @@
 
 \usepackage{fontspec}	
 
-% You will need a good font, supporting the required glyphs. 
-% Many offer only partial support. Here are a few recommendations:
+% You will need a good font, containing the required glyphs.
+% Many offer only partial support, very few offer 
+% U+A7AF LATIN LETTER SMALL CAPITAL Q (yet?), none "X" 
+% (for obvious reasons). Here are a few recommendations:
 
-		\setmainfont[Ligatures={TeX,Common}]{Charis SIL}
-%		\setmainfont[Ligatures={TeX,Common}]{Noto Serif}
+%		\setmainfont[Ligatures={TeX,Common}]{Charis SIL}
+		\setmainfont[Ligatures={TeX,Common}]{Noto Serif}
 %		\setmainfont[Ligatures={TeX,Common}]{Iosevka}
-%		\setmainfont[Ligatures={TeX,Common}]{Andika}
 
 \begin{document}
 \begin{flushright}
-	\Large\textbf{truecaps} v0.3 (2022-04-27) Testsuite\par
+	\Large\textbf{truecaps} v0.3 (2022-04-27) test suite\par
 	\large Font: \directlua{
 		local str = font.fonts[font.current()].fullname
 		tex.sprint(-2, str)
@@ -31,52 +32,35 @@
 	\def\presection		{\vspace{-1em}}
 	\def\postsection	{\vspace{-.5em}\hrule\vspace{.5em}}
 
+% In no particular order:
+
 \input{testcases/english.tex}
-\input{testcases/polish.tex}
-\input{testcases/french.tex}
 \input{testcases/german.tex}
-\input{testcases/slovene.tex}
+\input{testcases/french.tex}
+\input{testcases/italian.tex}
+\input{testcases/spanish.tex}
+\input{testcases/portuguese.tex}
+\input{testcases/norwegian.tex}
+\input{testcases/swedish.tex}
+\input{testcases/finnish.tex}
+\input{testcases/danish.tex}
+\input{testcases/icelandic.tex}
+\input{testcases/gaelic.tex}
+\input{testcases/estonian.tex}
+\input{testcases/latvian.tex}
+\input{testcases/lithuanian.tex}
+\input{testcases/polish.tex}
+\input{testcases/czech.tex}
+\input{testcases/slovak.tex}
+\input{testcases/hungarian.tex}
+\input{testcases/romanian.tex}
+\input{testcases/turkish.tex}
+\input{testcases/slovenian.tex}
+\input{testcases/croatian.tex}
+\input{testcases/serbian.tex}
+\input{testcases/esperanto.tex}
+\input{testcases/welsh.tex}
+\input{testcases/yoruba.tex}
+\input{testcases/vietnamese.tex}
 
-%\input{testcases/czech.tex}
-%\input{testcases/spanish.tex}
-%\input{testcases/hungarian.tex}
-
-\vspace{-1em}\section*{\checkno Finnish}
-\vspace{-.5em}\hrule\vspace{.5em}
-\noindent\textsc{Törkylempijävongahdus.}
-
-\vspace{-1em}\section*{\checkno Danish}
-\vspace{-.5em}\hrule\vspace{.5em}
-\noindent\textsc{Quizdeltagerne spiste jordbær med fløde, 
-mens cirkusklovnen Walther spillede på xylofon. 
-Høj bly gom vandt fræk sexquiz på wc.}
-
-\vspace{-1em}\section*{\checkno Turkish}
-\vspace{-.5em}\hrule\vspace{.5em}
-\noindent\textsc{Pijamalı hasta yağız şoföre çabucak güvendi.}
-
-\vspace{-1em}\section*{\checkno Gaelic}
-\vspace{-.5em}\hrule\vspace{.5em}
-\noindent\textsc{
-D'fhuascail íosa, Úrmhac na hóighe Beannaithe, pór Éava agus adhaimh.
-}
-
-\vspace{-1em}\section*{\checkno Icelandic}
-\vspace{-.5em}\hrule\vspace{.5em}
-\noindent\textsc{Kæmi ný öxi hér ykist þjófum nú bæði víl og ádrepa.}
-
-\vspace{-1em}\section*{\checkno Norwegian}
-\vspace{-.5em}\hrule\vspace{.5em}
-\noindent\textsc{
-Vår sære Zulu fra badeøya spilte jo whist og quickstep i min taxi. 
-Høvdingens kjære squaw får litt pizza i Mexico by.}
-
-\vspace{-1em}\section*{\checkno Esperanto}
-\vspace{-.5em}\hrule\vspace{.5em}
-\noindent\textsc{Laŭ Ludoviko Zamenhof bongustas freŝa ĉeĥa manĝaĵo kun spicoj.}
-
-\vspace{-1em}\section*{\checkno Latvian}
-\vspace{-.5em}\hrule\vspace{.5em}
-\noindent\textsc{Glāžšķūņa rūķīši dzērumā čiepj Baha koncertflīģeļu vākus.}
-
-\end{document}
+\end{document}%

@@ -41,6 +41,8 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 	- `Latin Extended-B` (U+0180 .. U+024F)
 	- possibly `Latin Extended Additional` (U+1E00 ..U+1EFF)
 * Modularization with `\input`
+* Look into support for more exotic (yet Latin-based) languages, 
+like Vietnamese or some African or native American writing systems
 * Add checks for missing glyphs
 * Silent option to disable warnings
 * Switch from `\oldtextsc{…}` and `\textsc{…}` to `\textsc{…}` and `\texttc{…}`
