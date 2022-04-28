@@ -107,9 +107,16 @@
   }%
 }
 
-\newcommand\xwarning{% see line #428
-Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
+\newcommand\thornwarning{	% see line #369
+Unsupported character LATIN SMALL LETTER THORN (U+00FE): 
+substituted by LATIN CAPITAL LETTER THORN (U+00DE)%
 }
+
+\newcommand\xwarning{		% see line #469
+Unsupported character LATIN SMALL LETTER X (U+0078): %
+inserted as is%
+}
+
 %			SUPPORTED LETTERS BELOW
 %
 % ᴀ	U+1D00	LATIN LETTER SMALL CAPITAL A
@@ -160,6 +167,8 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 % COMBINING OGONEK					(U+0328)
 % COMBINING CIRCUMFLEX ACCENT BELOW	(U+032D)
 % COMBINING BREVE BELOW				(U+032E)
+% COMBINING SHORT SOLIDUS OVERLAY	(U+0337)
+% COMBINING LONG SOLIDUS OVERLAY	(U+0338)
 
 % LATIN LETTER SMALL CAPITAL A (U+1D00)
 \input{A.tex}
@@ -263,11 +272,19 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	\pgfparserdef{scparser}{initiated}ï {\truecaps@outputexpanded{ɪ̈}}
 	\pgfparserdef{scparser}{initiated}Ï {\truecaps@outputexpanded{Ï}}
 
+	% LATIN LETTER SMALL CAPITAL I (U+026A) + COMBINING GRAVE ACCENT (U+0300)
+	\pgfparserdef{scparser}{initiated}ì {\truecaps@outputexpanded{ɪ̀}}
+	\pgfparserdef{scparser}{initiated}Ì {\truecaps@outputexpanded{Ì}}
+
 	% LATIN LETTER SMALL CAPITAL I (U+026A) + COMBINING ACUTE ACCENT (U+0301)
 	\pgfparserdef{scparser}{initiated}í {\truecaps@outputexpanded{ɪ́}}
 	\pgfparserdef{scparser}{initiated}Í {\truecaps@outputexpanded{Í}}
 
-	% TODO: İ Ì Î Į
+	% LATIN LETTER SMALL CAPITAL I (U+026A) + COMBINING ACUTE ACCENT (U+0302)
+	\pgfparserdef{scparser}{initiated}î {\truecaps@outputexpanded{ɪ̂}}
+	\pgfparserdef{scparser}{initiated}Î {\truecaps@outputexpanded{Î}}
+
+	% TODO: İ Į
 
 % LATIN LETTER SMALL CAPITAL J (U+1D0A)
 \pgfparserdef{scparser}{initiated}j {\truecaps@outputexpanded{ᴊ}}
@@ -320,9 +337,17 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	\pgfparserdef{scparser}{initiated}ö {\truecaps@outputexpanded{ᴏ̈}}
 	\pgfparserdef{scparser}{initiated}Ö {\truecaps@outputexpanded{Ö}}
 
+	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING GRAVE ACCENT (U+0300)
+	\pgfparserdef{scparser}{initiated}ó {\truecaps@outputexpanded{ᴏ̀}}
+	\pgfparserdef{scparser}{initiated}Ò {\truecaps@outputexpanded{Ò}}
+
 	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING ACUTE ACCENT (U+0301)
 	\pgfparserdef{scparser}{initiated}ó {\truecaps@outputexpanded{ᴏ́}}
 	\pgfparserdef{scparser}{initiated}Ó {\truecaps@outputexpanded{Ó}}
+
+	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING ACUTE ACCENT (U+0302)
+	\pgfparserdef{scparser}{initiated}ô {\truecaps@outputexpanded{ᴏ̂}}
+	\pgfparserdef{scparser}{initiated}Ô {\truecaps@outputexpanded{Ô}}
 
 	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING DOUBLE GRAVE ACCENT (U+030F)
 	\pgfparserdef{scparser}{initiated}ȍ {\truecaps@outputexpanded{ᴏ̏}}
@@ -332,7 +357,22 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 	\pgfparserdef{scparser}{initiated}ő {\truecaps@outputexpanded{ᴏ̋}}
 	\pgfparserdef{scparser}{initiated}Ő {\truecaps@outputexpanded{Ő}}
 
-	% TODO ==> https://www.compart.com/en/unicode/U+004F
+	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING TILDE (U+0303)
+	\pgfparserdef{scparser}{initiated}õ {\truecaps@outputexpanded{ᴏ̃}}
+	\pgfparserdef{scparser}{initiated}Õ {\truecaps@outputexpanded{Õ}}
+
+	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING SHORT SOLIDUS OVERLAY (U+0337)
+	\pgfparserdef{scparser}{initiated}ø {\truecaps@outputexpanded{ᴏ̷}}
+	\pgfparserdef{scparser}{initiated}Ø {\truecaps@outputexpanded{Ø}}
+
+% LATIN CAPITAL LETTER THORN (U+00DE) 
+% There is no support for THORN. The best we can do is issue a 
+% warning (see line #110) and try to make do with the regular 
+% uppercase character.
+\pgfparserdef{scparser}{initiated}þ {\truecaps@outputexpanded{Þ}}
+\pgfparserdef{scparser}{initiated}Þ {\truecaps@outputexpanded{Þ}
+%\PackageWarning{\truecapsname}{\thornwarning}% 	see line #110	FIXME AFTER DEBUGGING
+}
 
 % LATIN LETTER SMALL CAPITAL OE (U+0276)
 \pgfparserdef{scparser}{initiated}œ {\truecaps@outputexpanded{ɶ}}
@@ -426,7 +466,7 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 
 % LATIN SMALL LETTER X (U+0078) is the only letter without 
 % a matching LATIN LETTER SMALL CAPITAL * 
-% The best we can do is issue a warning (see line #100) 
+% The best we can do is issue a warning (see line #115) 
 % and use regular LATIN SMALL LETTER X (U+0078):
 \pgfparserdef{scparser}{initiated}x{\truecaps@outputexpanded{x}%
 %\PackageWarning{\truecapsname}{\xwarning} FIXME AFTER DEBUGGING

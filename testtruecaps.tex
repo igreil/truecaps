@@ -5,6 +5,7 @@
 \usepackage{pifont,xcolor}
 	\def\checkno	{\textcolor{red}{\textbf{\ding{55}~~}}}
 	\def\checkyes	{\textcolor{green}{\textbf{\ding{51}~~}}}
+	\def\checkmeh	{\textcolor{orange}{\textbf{\textasciitilde~~}}}
 
 \usepackage{fontspec}	
 
@@ -34,29 +35,27 @@
 
 % In no particular order:
 
-\input{testcases/Unicode1.tex}
+\input{testcases/Unicode1_Basic_Latin.tex}
 \input{testcases/english.tex}
-
-\input{testcases/Unicode2.tex}
-\input{testcases/Unicode3.tex}
-\input{testcases/Unicode4.tex}
-
+\input{testcases/Unicode2_Latin-1_Supplement.tex}
+%\input{testcases/Unicode3_Latin_Extended-A.tex}
+%\input{testcases/Unicode4_Latin_Extended-B.tex}
 \input{testcases/german.tex}
 \input{testcases/french.tex}
 \input{testcases/italian.tex}
-%\input{testcases/spanish.tex}
-%\input{testcases/portuguese.tex}
+\input{testcases/spanish.tex}
+\input{testcases/portuguese.tex}
 \input{testcases/norwegian.tex}
 \input{testcases/swedish.tex}
-%\input{testcases/finnish.tex}
-%\input{testcases/danish.tex}
-%\input{testcases/icelandic.tex}
+\input{testcases/finnish.tex}
+\input{testcases/danish.tex}
+\input{testcases/icelandic.tex}
 %\input{testcases/gaelic.tex}
-\input{testcases/estonian.tex}
-\input{testcases/latvian.tex}
-\input{testcases/lithuanian.tex}
+%\input{testcases/estonian.tex}
+%\input{testcases/latvian.tex}
+%\input{testcases/lithuanian.tex}
 %\input{testcases/polish.tex}
-%\input{testcases/czech.tex}
+\input{testcases/czech.tex}
 %\input{testcases/slovak.tex}
 %\input{testcases/hungarian.tex}
 %\input{testcases/romanian.tex}
@@ -67,8 +66,8 @@
 \input{testcases/esperanto.tex}
 \input{testcases/welsh.tex}
 %\input{testcases/yoruba.tex}
-\input{testcases/Unicode5.tex}
-\input{testcases/vietnamese.tex}
+%\input{testcases/Unicode5_Latin_Extended_Additional.tex}
+%\input{testcases/vietnamese.tex}
 
 \vspace{1em}\hrule\vspace{3em}
 \noindent Your language is missing? Looking forward to your pull requests over at \newline
