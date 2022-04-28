@@ -1,14 +1,14 @@
 # truecaps (v0.5)
-Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTex.
+Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX.
 
 ## Purpose
 
-Tʜᴇ ᴘᴜʀᴘᴏꜱᴇ ᴏꜰ ᴛʜɪꜱ LᴀTᴇX ᴘᴀᴄᴋᴀɢᴇ ɪꜱ ᴛᴏ ꜱᴇᴀᴍʟᴇꜱꜱʟʏ ᴘʀᴏᴠɪᴅᴇ ʀᴇᴀʟ Uɴɪᴄᴏᴅᴇ Sᴍᴀʟʟ
+Tʜᴇ ᴘᴜʀᴘᴏꜱᴇ ᴏꜰ ᴛʜɪꜱ LuaLᴀTᴇX ᴘᴀᴄᴋᴀɢᴇ ɪꜱ ᴛᴏ ꜱᴇᴀᴍʟᴇꜱꜱʟʏ ᴘʀᴏᴠɪᴅᴇ ʀᴇᴀʟ Uɴɪᴄᴏᴅᴇ Sᴍᴀʟʟ
 Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ Uɴɪᴄᴏᴅᴇ ʙʟᴏᴄᴋ. (U+1D00 .. U+1D7F)
 
 ## Usage
 
-`\usepackage{truecaps}` will create a new command `\texttc{…}`. `\textsc{…}` continues to work as before.
+`\usepackage{truecaps}` will provide a new command `\texttc{…}`, while `\textsc{…}` continues to work as before.
 
 ### Full Example
 
@@ -25,16 +25,15 @@ Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ U�
 real Unicode Small Caps, using the Phonetic Extensions Unicode block.}\newline
 \par
 \noindent\textsc{Classic Small Caps continue to work as before.}
-
 \end{document}
 ```
 
 ## Todo
 
-* Add modifiers, accents, umlauts etc. for all letters. (70% done)
+* Add modifiers, accents, umlauts etc. for all letters. (75% done)
 * Take care of punctuation and numbers
 * Special cases like Ł, ß/ẞ etc. =>
-* Testsuite for common Latin (European) languages (90% done)
+* Testsuite for common Latin (European) languages (80% done)
 * Full Support for 
 	- `Basic Latin` (U+0000 .. U+007F), 
 	- `Latin-1 Supplement` (U+0080 .. U+00FF), 
@@ -43,11 +42,11 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}\newline
 	- possibly `Latin Extended Additional` (U+1E00 ..U+1EFF partial support)
 * Modularization with `\input`
 * Look into support for more exotic (Latin-based) languages, 
-like Vietnamese, Yoruba and some other African or native American writing systems
+like Vietnamese, Yoruba and some other African (Native American?) writing systems
 * Add sanity checks for missing glyphs
-* Silent option to disable warnings (Letter X will remain unsupported)
-* Simplify and optimize code
-* Submit to CTAN
+* Silent option to disable warnings (Letters X and Þ will remain unsupported for the forseeqble future)
+* Simplify and optimize code, remove redundancies
+* Submit v1.0 to CTAN
 
 ## History
 
