@@ -16,15 +16,21 @@ Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ U�
 \documentclass{article}
 
 \usepackage{truecaps}
+
+\usepackage{pifont}
+	\def\mypointer{\raisebox{-1ex}{\llap{\LARGE\ding{43}~}}}
+
 \usepackage{fontspec}
 	\setmainfont[Ligatures={TeX,Common}]{Charis SIL}
 
 \begin{document}
 
-\noindent\texttc{The purpose of this LaTeX package is to seamlessly provide 
-real Unicode Small Caps, using the Phonetic Extensions Unicode block.}\newline
-\par
-\noindent\textsc{Classic Small Caps continue to work as before.}
+\noindent\texttc{\mypointer The purpose of this LaTeX package is to seamlessly provide 
+real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
+
+\vspace{1.5em}
+\noindent\textsc{\mypointer Classic Small Caps continue to work as before.}
+
 \end{document}
 ```
 
@@ -44,7 +50,7 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}\newline
 * Look into support for more exotic (Latin-based) languages, 
 like Vietnamese, Yoruba and some other African (Native American?) writing systems
 * Add sanity checks for missing glyphs
-* Silent option to disable warnings (Letters X and Þ will remain unsupported for the forseeqble future)
+* Silent option to disable warnings (Letters X and Þ will remain unsupported for the foreseeable future)
 * Simplify and optimize code, remove redundancies
 * Submit v1.0 to CTAN
 
