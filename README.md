@@ -1,5 +1,5 @@
-# truecaps (v0.3)
-Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTex/XeLaTeX
+# truecaps (v0.4)
+Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTex.
 
 ## Purpose
 
@@ -31,9 +31,10 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 ```
 ## Todo
 
-* Add modifiers, accents, umlaute etc. for all letters.
+* Add modifiers, accents, umlauts etc. for all letters.
 * Take care of punctuation and numbers
 * Special cases like Ł, ß/ẞ etc. =>
+* Testsuite for common Latin (European) languages
 * Full Support for 
 	- `Basic Latin` (U+0000 .. U+007F), 
 	- `Latin-1 Supplement` (U+0080 .. U+00FF), 
@@ -42,16 +43,16 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 	- possibly `Latin Extended Additional` (U+1E00 ..U+1EFF)
 * Modularization with `\input`
 * Look into support for more exotic (yet Latin-based) languages, 
-like Vietnamese or some African or native American writing systems
-* Add checks for missing glyphs
-* Silent option to disable warnings
+like Vietnamese, Yoruba and some other African or native American writing systems
+* Add sanity checks for missing glyphs
+* Silent option to disable warnings (Letter X will remain unsupported)
 * Switch from `\oldtextsc{…}` and `\textsc{…}` to `\textsc{…}` and `\texttc{…}`
 * Simplify and optimize code
-* Testsuite for common Latin (European) languages
 * Submit to CTAN
 
 ## History
 
+* v0.4 Dropped XeLaTeX compatibility.
 * v0.3 Full support for Czech, Slovene, Hungarian, Spanish and Catalan.
 * v0.2 Full support for English, German and French.
 * v0.1 Initial fork from निरंजन's "unisc.sty" v0.1 (2022-04-21).
