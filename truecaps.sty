@@ -54,35 +54,45 @@
     }%
   }%
 }
+
 \protected\long\def\truecaps@outputexpanded#1{%
   \xdef\truecaps@outputcontainer{%
     \unexpanded\expandafter{\truecaps@outputcontainer#1%
     }%
   }%
 }
+
 \providecommand\@gobbletwo[2]{}
 \pgfparserdefunknown{scparser}{initial}{%
   \let\truecaps@initiated\@empty
   \pgfparserswitch{initiated}%
   \pgfparserreinsert
 }
+
 \pgfparserset{scparser/silent=true}
 \pgfparserdefunknown{scparser}{all}{%
   \expandafter\truecaps@output\expandafter{\pgfparserletter}%
 }
+
 \newcommand*\truecaps@bgroup{\expandafter{\iffalse}\fi}
 \newcommand*\truecaps@egroup{\iffalse{\fi}}
+
 \pgfparserdef{scparser}{all}\begingroup
   {\begingroup\truecaps@outputexpanded\begingroup}
+
 \pgfparserdef{scparser}{all}\endgroup
   {\truecaps@checkend\endgroup}
+
 \pgfparserdef{scparser}{all}{\meaning\bgroup}{%
   \truecaps@bgroup\truecaps@outputexpanded\truecaps@bgroup
 }
+
 \pgfparserdef{scparser}{all}{\meaning\egroup}
   {\truecaps@checkend\truecaps@egroup}
+
 \newcommand\truecaps@savedefinition[1]
   {\unexpanded{\def#1}{\unexpanded\expandafter{#1}}}
+
 \protected\def\truecaps@checkend#1{%
   \expanded{%
     \unexpanded{#1}%
@@ -97,11 +107,11 @@
   }%
 }
 
-\newcommand\xwarning{% see line #393
+\newcommand\xwarning{% see line #428
 Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 }
-% 			LETTER DEFINITIONS BELOW
-% 
+%			SUPPORTED LETTERS BELOW
+%
 % ᴀ	U+1D00	LATIN LETTER SMALL CAPITAL A
 % ᴁ	U+1D01	LATIN LETTER SMALL CAPITAL AE
 % ʙ	U+0299	LATIN LETTER SMALL CAPITAL B
@@ -132,23 +142,24 @@ Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 % ʏ	U+028F	LATIN LETTER SMALL CAPITAL Y
 % ᴢ	U+1D22	LATIN LETTER SMALL CAPITAL Z
 
-% MODIFIERS:
-% 			-> COMBINING GRAVE ACCENT					(U+0300)
-% 			-> COMBINING ACUTE ACCENT					(U+0301)
-% 			-> COMBINING CIRCUMFLEX ACCENT				(U+0302)
-% 			-> COMBINING TILDE							(U+0303)
-% 			-> COMBINING BREVE							(U+0306)
-% 			-> COMBINING DOT ABOVE						(U+0307)
-% 			-> COMBINING DIAERESIS						(U+0308)
-% 			-> COMBINING RING ABOVE						(U+030A)
-% 			-> COMBINING DOUBLE ACUTE ACCENT			(U+030B)
-% 			-> COMBINING CARON							(U+030C)
-% 			-> COMBINING DOUBLE GRAVE ACCENT			(U+030F)
-% 			-> COMBINING COMMA BELOW					(U+0326)
-% 			-> COMBINING CEDILLA						(U+0327)
-% 			-> COMBINING OGONEK							(U+0328)
-%			-> COMBINING CIRCUMFLEX ACCENT BELOW		(U+032D)
-%			-> COMBINING BREVE BELOW					(U+032E)
+%			AVAILABLE MODIFIERS
+%
+% COMBINING GRAVE ACCENT			(U+0300)
+% COMBINING ACUTE ACCENT			(U+0301)
+% COMBINING CIRCUMFLEX ACCENT		(U+0302)
+% COMBINING TILDE					(U+0303)
+% COMBINING BREVE					(U+0306)
+% COMBINING DOT ABOVE				(U+0307)
+% COMBINING DIAERESIS				(U+0308)
+% COMBINING RING ABOVE				(U+030A)
+% COMBINING DOUBLE ACUTE ACCENT		(U+030B)
+% COMBINING CARON					(U+030C)
+% COMBINING DOUBLE GRAVE ACCENT		(U+030F)
+% COMBINING COMMA BELOW				(U+0326)
+% COMBINING CEDILLA					(U+0327)
+% COMBINING OGONEK					(U+0328)
+% COMBINING CIRCUMFLEX ACCENT BELOW	(U+032D)
+% COMBINING BREVE BELOW				(U+032E)
 
 % LATIN LETTER SMALL CAPITAL A (U+1D00)
 \input{A.tex}
