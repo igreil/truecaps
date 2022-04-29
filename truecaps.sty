@@ -428,13 +428,39 @@ inserted as is%
 	\pgfparserdef{scparser}{initiated}ě {\truecaps@outputexpanded{ᴇ̌}}
 	\pgfparserdef{scparser}{initiated}Ě {\truecaps@outputexpanded{Ě}}
 
-	% TODO: Ē Ĕ Ė Ę etc -> https://www.compart.com/en/unicode/U+0045
+
+	% LATIN LETTER SMALL CAPITAL E							(U+1D07)
+	%	with	COMBINING MACRON							(U+0304)
+		\pgfparserdef{scparser}{initiated}ē {\truecaps@outputexpanded{ᴇ̄}}
+		\pgfparserdef{scparser}{initiated}Ē {\truecaps@outputexpanded{Ē}}
+
+	% LATIN LETTER SMALL CAPITAL E							(U+1D07)
+	%	with	COMBINING BREVE								(U+0306)
+		\pgfparserdef{scparser}{initiated}ĕ {\truecaps@outputexpanded{ᴇ̆}}
+		\pgfparserdef{scparser}{initiated}Ĕ {\truecaps@outputexpanded{Ĕ}}
+
+	% LATIN LETTER SMALL CAPITAL E							(U+1D07)
+	%	with	COMBINING DOT ABOVE							(U+0307)
+		\pgfparserdef{scparser}{initiated}ė {\truecaps@outputexpanded{ᴇ̇}}
+		\pgfparserdef{scparser}{initiated}Ė {\truecaps@outputexpanded{Ė}}
+
+	% LATIN LETTER SMALL CAPITAL E							(U+1D07)
+	%	with	COMBINING OGONEK							(U+0328)
+		\pgfparserdef{scparser}{initiated}ę {\truecaps@outputexpanded{ᴇ̨}}
+		\pgfparserdef{scparser}{initiated}Ę {\truecaps@outputexpanded{Ę}}
+
+	% TODO:Ȅ Ȇ Ȩ Ė Ẹ Ẻ Ẽ Ế Ề Ể Ễ Ệ -> https://www.compart.com/en/unicode/U+0045
 
 % LATIN LETTER SMALL CAPITAL F (U+A730)
 \pgfparserdef{scparser}{initiated}f {\truecaps@outputexpanded{ꜰ}}
 \pgfparserdef{scparser}{initiated}F {\truecaps@outputexpanded{F}}
 
-	% TODO: Ḟ
+
+	% LATIN LETTER SMALL CAPITAL E							(U+A730)
+	%	with	COMBINING DOT ABOVE							(U+0307)
+		\pgfparserdef{scparser}{initiated}ḟ {\truecaps@outputexpanded{ꜰ̇}}
+		\pgfparserdef{scparser}{initiated}Ḟ {\truecaps@outputexpanded{Ḟ}}
+
 
 % LATIN LETTER SMALL CAPITAL G (U+0262)
 \pgfparserdef{scparser}{initiated}g {\truecaps@outputexpanded{ɢ}}
