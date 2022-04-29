@@ -57,7 +57,7 @@ like Vietnamese, Yoruba and some other African (Native American?) writing system
 ## History
 
 * v0.5 Reversed the command structure: `textsc{…}` works as always, `texttc{…}` becomes a new option.
-* v0.4 Dropped XeLaTeX compatibility. Added support for Italian, Swedish, Danish, Icelandic.
+* v0.4 Dropped XeLaTeX compatibility. Added support for Italian, Swedish, Danish, Icelandic, Serbian, Croatian.
 * v0.3 Full support for Czech, Slovenian, Hungarian, Spanish and Catalan.
 * v0.2 Full support for English, German and French.
 * v0.1 Initial fork from निरंजन's "unisc.sty" v0.1 (2022-04-21).
