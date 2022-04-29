@@ -3,7 +3,7 @@ Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX.
 
 ## Purpose
 
-Tʜᴇ ᴘᴜʀᴘᴏꜱᴇ ᴏꜰ ᴛʜɪꜱ LuaLᴀTᴇX ᴘᴀᴄᴋᴀɢᴇ ɪꜱ ᴛᴏ ꜱᴇᴀᴍʟᴇꜱꜱʟʏ ᴘʀᴏᴠɪᴅᴇ ʀᴇᴀʟ Uɴɪᴄᴏᴅᴇ Sᴍᴀʟʟ
+Tʜᴇ ᴘᴜʀᴘᴏꜱᴇ ᴏꜰ ᴛʜɪꜱ LᴜᴀLᴀTᴇX ᴘᴀᴄᴋᴀɢᴇ ɪꜱ ᴛᴏ ꜱᴇᴀᴍʟᴇꜱꜱʟʏ ᴘʀᴏᴠɪᴅᴇ ʀᴇᴀʟ Uɴɪᴄᴏᴅᴇ Sᴍᴀʟʟ
 Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ Uɴɪᴄᴏᴅᴇ ʙʟᴏᴄᴋ. (U+1D00 .. U+1D7F)
 
 ## Usage
@@ -49,9 +49,10 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 * Modularization with `\input`
 * Look into support for more exotic (Latin-based) languages, 
 like Vietnamese, Yoruba and some other African (Native American?) writing systems
-* Add sanity checks for missing glyphs
+* Sanity checks for missing glyphs?
 * Silent option to disable warnings (Letters X and Þ will remain unsupported for the foreseeable future)
 * Simplify and optimize code, remove redundancies
+* Some more documentation
 * Submit v1.0 to CTAN
 
 ## History
