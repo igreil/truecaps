@@ -9,7 +9,7 @@
 % on CTAN <https://ctan.org/pkg/unisc> and at 
 % <https://puszcza.gnu.org.ua/projects/unisc>
 %
-% License: 		GPLv3 and GFDLv1.3+
+% License:		GPLv3 and GFDLv1.3+
 %
 %----------------------------------- -----------------------------------------
 %
@@ -179,7 +179,7 @@ inserted as is%
 % COMBINING SHORT SOLIDUS OVERLAY	(U+0337)	 ̷
 % COMBINING LONG SOLIDUS OVERLAY	(U+0338)	 ̸
 
-%----------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL A 				(U+1D00)
 \pgfparserdef{scparser}{initiated}a {\truecaps@outputexpanded{ᴀ}}
@@ -240,7 +240,7 @@ inserted as is%
 		\pgfparserdef{scparser}{initiated}ą {\truecaps@outputexpanded{ᴀ̨}}
 		\pgfparserdef{scparser}{initiated}Ą {\truecaps@outputexpanded{Ą}}
 
-%----------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL AE				(U+1D01)
 \pgfparserdef{scparser}{initiated}æ {\truecaps@outputexpanded{ᴁ}}
@@ -256,7 +256,7 @@ inserted as is%
 		\pgfparserdef{scparser}{initiated}ǣ {\truecaps@outputexpanded{ᴁ̄}}
 		\pgfparserdef{scparser}{initiated}Ǣ {\truecaps@outputexpanded{Ǣ}}
 
-%----------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL B 				(U+0299)
 \pgfparserdef{scparser}{initiated}b {\truecaps@outputexpanded{ʙ}}
@@ -277,7 +277,7 @@ inserted as is%
 		\pgfparserdef{scparser}{initiated}ḇ {\truecaps@outputexpanded{ʙ̱}}
 		\pgfparserdef{scparser}{initiated}Ḇ {\truecaps@outputexpanded{Ḇ}}
 
-%----------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL C				(U+1D04)
 \pgfparserdef{scparser}{initiated}c {\truecaps@outputexpanded{ᴄ}}
@@ -308,23 +308,32 @@ inserted as is%
 		\pgfparserdef{scparser}{initiated}ç {\truecaps@outputexpanded{ᴄ̧}}
 		\pgfparserdef{scparser}{initiated}Ç {\truecaps@outputexpanded{Ç}}
 
-%----------------------------------------------------------------------------
-% XYZZY
+%-----------------------------------------------------------------------------
 
-% LATIN LETTER SMALL CAPITAL D (U+1D05)
+% LATIN LETTER SMALL CAPITAL D				(U+1D05)
 \pgfparserdef{scparser}{initiated}d {\truecaps@outputexpanded{ᴅ}}
 \pgfparserdef{scparser}{initiated}D {\truecaps@outputexpanded{D}}
 
-	% LATIN LETTER SMALL CAPITAL D (U+1D05) + COMBINING CARON (U+030C)
-	\pgfparserdef{scparser}{initiated}ď {\truecaps@outputexpanded{ᴅ̌}}
-	\pgfparserdef{scparser}{initiated}Ď {\truecaps@outputexpanded{Ď}}
+	% LATIN SMALL LETTER D WITH STROKE		(U+0111)
+		\pgfparserdef{scparser}{initiated}đ {\truecaps@outputexpanded{ᴆ}}
+		\pgfparserdef{scparser}{initiated}Đ {\truecaps@outputexpanded{Đ}}
+	% LATIN LETTER SMALL LETTER ETH			(U+00F0)
+		\pgfparserdef{scparser}{initiated}ð {\truecaps@outputexpanded{ᴆ}}
+		\pgfparserdef{scparser}{initiated}Ð {\truecaps@outputexpanded{Ð}}
+	% LATIN SMALL LETTER D WITH TAIL		(U+0256)
+		\pgfparserdef{scparser}{initiated}ɖ {\truecaps@outputexpanded{ᴆ}}
+		\pgfparserdef{scparser}{initiated}Ɖ {\truecaps@outputexpanded{Ɖ}}
 
-	% LATIN LETTER SMALL LETTER D WITH STROKE (U+0111)
-	\pgfparserdef{scparser}{initiated}đ {\truecaps@outputexpanded{ᴆ}}
-	\pgfparserdef{scparser}{initiated}ð {\truecaps@outputexpanded{ᴆ}}
-	%\pgfparserdef{scparser}{initiated}Ď {\truecaps@outputexpanded{Ď}}
+	% LATIN LETTER SMALL CAPITAL D			(U+1D05)
+	%	with COMBINING CARON 				(U+030C)
+		\pgfparserdef{scparser}{initiated}ď {\truecaps@outputexpanded{ᴅ̌}}
+		\pgfparserdef{scparser}{initiated}Ď {\truecaps@outputexpanded{Ď}}
 
-	% TODO: Ð Ḋ Ḍ Ḏ Ḑ Ḓ
+% XYZZY
+
+	% TODO: Ḋ Ḍ Ḏ Ḑ Ḓ
+
+%-----------------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL E (U+1D07)
 \pgfparserdef{scparser}{initiated}e {\truecaps@outputexpanded{ᴇ}}
