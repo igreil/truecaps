@@ -164,6 +164,7 @@ inserted as is%
 % COMBINING DOT ABOVE							(U+0307)	 ̇
 % COMBINING DIAERESIS							(U+0308)	 ̈
 % COMBINING HOOK ABOVE							(U+0309)	 ̉
+% COMBINING INVERTED BREVE						(U+0311)	 ̑
 % COMBINING RING ABOVE							(U+030A)	 ̊
 % COMBINING DOUBLE ACUTE ACCENT					(U+030B)	 ̋
 % COMBINING CARON								(U+030C)	 ̌
@@ -181,12 +182,12 @@ inserted as is%
 
 %-----------------------------------------------------------------------------
 
-% LATIN LETTER SMALL CAPITAL A 					(U+1D00)
+% LATIN LETTER SMALL CAPITAL A					(U+1D00)
 \pgfparserdef{scparser}{initiated}a {\truecaps@outputexpanded{ᴀ}}
 \pgfparserdef{scparser}{initiated}A {\truecaps@outputexpanded{A}}
 
 	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
-	%	with COMBINING GRAVE ACCENT				(U+0300)
+	%	with 	COMBINING GRAVE ACCENT			(U+0300)
 		\pgfparserdef{scparser}{initiated}à	{\truecaps@outputexpanded{ᴀ̀}}
 		\pgfparserdef{scparser}{initiated}À	{\truecaps@outputexpanded{À}}
 
@@ -211,6 +212,11 @@ inserted as is%
 		\pgfparserdef{scparser}{initiated}Ā {\truecaps@outputexpanded{Ā}}
 
 	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
+	%	with COMBINING BREVE					(U+0306)
+		\pgfparserdef{scparser}{initiated}ă {\truecaps@outputexpanded{ᴀ̆}}
+		\pgfparserdef{scparser}{initiated}Ă {\truecaps@outputexpanded{Ă}}
+
+	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
 	%	with COMBINING DOT ABOVE				(U+0307)
 		\pgfparserdef{scparser}{initiated}ȧ {\truecaps@outputexpanded{ᴀ̇}}
 		\pgfparserdef{scparser}{initiated}Ȧ {\truecaps@outputexpanded{Ȧ}}
@@ -221,24 +227,52 @@ inserted as is%
 		\pgfparserdef{scparser}{initiated}Ä {\truecaps@outputexpanded{Ä}}
 
 	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
-	%	with COMBINING RING ABOVE				(U+030A)
+	%	with	COMBINING HOOK ABOVE 			(U+0309)
+		\pgfparserdef{scparser}{initiated}ả {\truecaps@outputexpanded{ᴀ̉}}
+		\pgfparserdef{scparser}{initiated}Ả {\truecaps@outputexpanded{Ả}}
+
+	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
+	%	with	COMBINING INVERTED BREVE		(U+0311)
+		\pgfparserdef{scparser}{initiated}ȃ {\truecaps@outputexpanded{ᴀ̑}}
+		\pgfparserdef{scparser}{initiated}Ȃ {\truecaps@outputexpanded{Ȃ}}
+
+	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
+	%	with	COMBINING RING ABOVE			(U+030A)
 		\pgfparserdef{scparser}{initiated}å {\truecaps@outputexpanded{ᴀ̊}}
 		\pgfparserdef{scparser}{initiated}Å {\truecaps@outputexpanded{Å}}
 
 	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
-	%	with COMBINING CARON 					(U+030C)
+	%	with	COMBINING CARON 				(U+030C)
 		\pgfparserdef{scparser}{initiated}ǎ {\truecaps@outputexpanded{ᴀ̌}}
 		\pgfparserdef{scparser}{initiated}Ǎ {\truecaps@outputexpanded{Ǎ}}
 
 	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
-	%	with COMBINING DOUBLE GRAVE ACCENT		(U+030F)
+	%	with	COMBINING DOUBLE GRAVE ACCENT	(U+030F)
 		\pgfparserdef{scparser}{initiated}ȁ {\truecaps@outputexpanded{ᴀ̏}}
 		\pgfparserdef{scparser}{initiated}Ȁ {\truecaps@outputexpanded{Ȁ}}
 
 	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
-	%	with COMBINING COMBINING OGONEK			(U+0328)
+	%	with	COMBINING DOT BELOW				(U+0323)
+		\pgfparserdef{scparser}{initiated}ạ {\truecaps@outputexpanded{ᴀ̣}}
+		\pgfparserdef{scparser}{initiated}Ạ {\truecaps@outputexpanded{Ạ}}
+
+	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
+	%	with	COMBINING RING BELOW			(U+0325)
+		\pgfparserdef{scparser}{initiated}ḁ {\truecaps@outputexpanded{ᴀ̥}}
+		\pgfparserdef{scparser}{initiated}Ḁ {\truecaps@outputexpanded{Ḁ}}
+
+	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
+	%	with	COMBINING OGONEK				(U+0328)
 		\pgfparserdef{scparser}{initiated}ą {\truecaps@outputexpanded{ᴀ̨}}
 		\pgfparserdef{scparser}{initiated}Ą {\truecaps@outputexpanded{Ą}}
+
+	% LATIN LETTER SMALL CAPITAL A				(U+1D00)
+	%	with	COMBINING RING ABOVE			(U+030A)
+	%	and		COMBINING ACUTE ACCENT			(U+030A)
+		\pgfparserdef{scparser}{initiated}ǻ {\truecaps@outputexpanded{ᴀ̊́}}
+		\pgfparserdef{scparser}{initiated}Ǻ {\truecaps@outputexpanded{Ǻ}}
+
+	%TODO: Ǟ Ǡ Ấ Ầ Ẩ Ẫ Ậ Ắ Ằ Ẳ Ẵ Ặ ẚ
 
 %-----------------------------------------------------------------------------
 
