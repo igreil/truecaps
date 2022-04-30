@@ -50,7 +50,6 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 * Look into support for more exotic (Latin-based) languages, 
 like Vietnamese, Yoruba and some other African (Native American?) writing systems
 * Sanity checks for missing glyphs?
-* Throw error if not being run under LuaLaTeX
 * Silent option to disable warnings (Letters X and Þ will remain unsupported for the foreseeable future)
 * Simplify and optimize code, remove redundancies
 * Some more documentation

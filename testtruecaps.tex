@@ -15,18 +15,20 @@
 % U+A7AF LATIN LETTER SMALL CAPITAL Q (yet?), none "X" 
 % (for obvious reasons). Here are a few recommendations:
 
-		\setmainfont[Ligatures={TeX,Common}]{DejaVu Sans}
-%		\setmainfont[Ligatures={TeX,Common}]{Charis SIL}
+%		\setmainfont[Ligatures={TeX,Common}]{DejaVu Sans}
+		\setmainfont[Ligatures={TeX,Common}]{Charis SIL}
 %		\setmainfont[Numbers={OldStyle, Proportional}, Ligatures={TeX,Common}]{Noto Serif}
 %		\setmainfont[Ligatures={TeX,Common}]{Iosevka}
 
 \begin{document}
 \begin{flushright}
 	\Large\textbf{\truecapsname} \truecapsversion ~(\truecapsdate) test suite\par
+	\ifluatex
 	\large Font: \directlua{
 		local str = font.fonts[font.current()].fullname
 		tex.sprint(-2, str)
-}
+		}
+	\fi
 \end{flushright}
 
 % Various language test cases. Use what you need,
@@ -59,7 +61,7 @@
 %\input{testcases/polish.tex}
 %\input{testcases/czech.tex}
 %\input{testcases/slovak.tex}
-%\input{testcases/hungarian.tex}
+%\input{testcases/hungarian.tex} 
 %\input{testcases/romanian.tex}
 %\input{testcases/turkish.tex}
 %\input{testcases/slovenian.tex}

@@ -29,18 +29,24 @@
 % You should have received a copy of the GNU General Public License along 
 % with this program. If not, see <https://www.gnu.org/licenses/>.
 %
-%----------------------------------- -----------------------------------------
-
-\def\truecapsversion{0.5}
-\def\truecapsdate{2022-04-29}
-\def\truecapsname{truecaps}
-\def\truecapsdescription{
-  Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTex}
+%----------------------------------------------------------------------------
+\def\truecapsname			{truecaps}		\def\truecapsversion		{0.5}
+\def\truecapsdate			{2022-04-29}
+\def\truecapsdescription	{Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTex}
 
 \ProvidesPackage{\truecapsname}[\truecapsdate\truecapsdescription]
+\RequirePackage{pgfparser,xpatch}
 
-\RequirePackage{pgfparser}
-\RequirePackage{xpatch}
+\ifdefined\directlua
+	\RequirePackage{ifluatex,luatexbase,luacode}
+	\RequirePackage{kvoptions,atveryend}
+\else
+	\PackageError{This package is meant for LuaTeX only! Aborting}
+				{No more information available, sorry!}
+\fi
+
+%FIXME & DEBUG:
+%https://mirror.clientvps.com/CTAN/macros/luatex/latex/lua-typo/lua-typo-2021-04-18.sty
 
 \NewCommandCopy\texttc\textsc
 \NewCommandCopy\tcshape\scshape
@@ -604,7 +610,7 @@ inserted as is%
 \pgfparserdef{scparser}{initiated}þ {\truecaps@outputexpanded{Þ}}
 \pgfparserdef{scparser}{initiated}Þ {\truecaps@outputexpanded{Þ}
 %\PackageWarning{\truecapsname}{\thornwarning}% 	see line #110	FIXME AFTER DEBUGGING
-}
+} % end of Þ
 
 % LATIN LETTER SMALL CAPITAL OE (U+0276)
 \pgfparserdef{scparser}{initiated}œ {\truecaps@outputexpanded{ɶ}}
@@ -701,7 +707,7 @@ inserted as is%
 % The best we can do is issue a warning (see line #115) 
 % and use regular LATIN SMALL LETTER X (U+0078):
 \pgfparserdef{scparser}{initiated}x{\truecaps@outputexpanded{x}%
-%\PackageWarning{\truecapsname}{\xwarning} FIXME AFTER DEBUGGING
+%\PackageWarning{\truecapsname}{\xwarning} %FIXME AFTER DEBUGGING
 }
 
 % LATIN CAPITAL LETTER X (U+0058) is not an issue:
