@@ -60,7 +60,7 @@
 \xpatchcmd{\textsc}{\scshape}{\tcshape}{}{\ERROR}	% You're welcome.
 % https://topanswers.xyz/transcript?room=2050&id=138859#c138859
 
-\protected\long\def\TC@output#1{%
+\protected\long\def\TC@out#1{%
 	\xdef\TC@cont{%
 		\unexpanded\expandafter{%
 			\TC@cont\unexpanded{#1}%
@@ -68,7 +68,7 @@
 	}%
 }
 
-\protected\long\def\TC@out#1{%
+\protected\long\def\TC@write#1{%
 	\xdef\TC@cont{%
 		\unexpanded\expandafter{\TC@cont#1%
 		}%
@@ -86,37 +86,37 @@
 \pgfparserset{scparser/silent=true}
 
 \pgfparserdefunknown{scparser}{all}{%
-	\expandafter\TC@output\expandafter{\pgfparserletter}%
+	\expandafter\TC@out\expandafter{\pgfparserletter}%
 }
 
 \newcommand*\TC@bgrp{\expandafter{\iffalse}\fi}
 \newcommand*\TC@egrp{\iffalse{\fi}}
 
 \pgfparserdef{scparser}{all}\begingroup
-	{\begingroup\TC@out\begingroup}
+	{\begingroup\TC@write\begingroup}
 
 \pgfparserdef{scparser}{all}\endgroup
 	{\TC@check\endgroup}
 
 \pgfparserdef{scparser}{all}{\meaning\bgroup}
-	{\TC@bgrp\TC@out\TC@bgrp}
+	{\TC@bgrp\TC@write\TC@bgrp}
 
 \pgfparserdef{scparser}{all}{\meaning\egroup}
 	{\TC@check\TC@egrp}
 
-\newcommand\truecaps@savedefinition[1]
+\newcommand\TC@savedef[1]
 	{\unexpanded{\def#1}{\unexpanded\expandafter{#1}}}
 
 \protected\def\TC@check#1{%
 	\expanded{%
 		\unexpanded{#1}%
 		\unexpanded{\ifdefined\TC@ini}%
-		\truecaps@savedefinition\pgfparserstate
-		\unexpanded{\TC@out#1}%
+		\TC@savedef\pgfparserstate
+		\unexpanded{\TC@write#1}%
 		\unexpanded{\else}%
 		\unexpanded{\pgfparserswitch{final}}%
-		\truecaps@savedefinition\pgfparser@current
-		\truecaps@savedefinition\pgfparser@usersname
+		\TC@savedef\pgfparser@current
+		\TC@savedef\pgfparser@usersname
 		\unexpanded{\fi}%
 	}%
 }
@@ -193,498 +193,488 @@ inserted as is%
 %-----------------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL A								(U+1D00)
-\pgfparserdef{scparser}{ini}a {\TC@out{ᴀ}}
-\pgfparserdef{scparser}{ini}A {\TC@out{A}}
+\pgfparserdef{scparser}{ini}a {\TC@write{ᴀ}}
+\pgfparserdef{scparser}{ini}A {\TC@write{A}}
 
 	%	with	COMBINING GRAVE ACCENT						(U+0300)
-		\pgfparserdef{scparser}{ini}à	{\TC@out{ᴀ̀}}
-		\pgfparserdef{scparser}{ini}À	{\TC@out{À}}
+		\pgfparserdef{scparser}{ini}à	{\TC@write{ᴀ̀}}
+		\pgfparserdef{scparser}{ini}À	{\TC@write{À}}
 
 	%	with	COMBINING ACUTE ACCENT						(U+0301)
-		\pgfparserdef{scparser}{ini}á {\TC@out{ᴀ́}}
-		\pgfparserdef{scparser}{ini}Á {\TC@out{Á}}
+		\pgfparserdef{scparser}{ini}á {\TC@write{ᴀ́}}
+		\pgfparserdef{scparser}{ini}Á {\TC@write{Á}}
 
 	%	with	COMBINING CIRCUMFLEX ACCENT					(U+0302)
-		\pgfparserdef{scparser}{ini}â {\TC@out{ᴀ̂}}
-		\pgfparserdef{scparser}{ini}Â {\TC@out{Â}}
+		\pgfparserdef{scparser}{ini}â {\TC@write{ᴀ̂}}
+		\pgfparserdef{scparser}{ini}Â {\TC@write{Â}}
 
 	%	with	COMBINING TILDE								(U+0303)
-		\pgfparserdef{scparser}{ini}ã {\TC@out{ᴀ̃}}
-		\pgfparserdef{scparser}{ini}Ã {\TC@out{Ã}}
+		\pgfparserdef{scparser}{ini}ã {\TC@write{ᴀ̃}}
+		\pgfparserdef{scparser}{ini}Ã {\TC@write{Ã}}
 
 	%	with	COMBINING MACRON							(U+0304)
-		\pgfparserdef{scparser}{ini}ā {\TC@out{ᴀ̄}}
-		\pgfparserdef{scparser}{ini}Ā {\TC@out{Ā}}
+		\pgfparserdef{scparser}{ini}ā {\TC@write{ᴀ̄}}
+		\pgfparserdef{scparser}{ini}Ā {\TC@write{Ā}}
 
 	%	with	COMBINING BREVE								(U+0306)
-		\pgfparserdef{scparser}{ini}ă {\TC@out{ᴀ̆}}
-		\pgfparserdef{scparser}{ini}Ă {\TC@out{Ă}}
+		\pgfparserdef{scparser}{ini}ă {\TC@write{ᴀ̆}}
+		\pgfparserdef{scparser}{ini}Ă {\TC@write{Ă}}
 
 	%	with	COMBINING DOT ABOVE							(U+0307)
-		\pgfparserdef{scparser}{ini}ȧ {\TC@out{ᴀ̇}}
-		\pgfparserdef{scparser}{ini}Ȧ {\TC@out{Ȧ}}
+		\pgfparserdef{scparser}{ini}ȧ {\TC@write{ᴀ̇}}
+		\pgfparserdef{scparser}{ini}Ȧ {\TC@write{Ȧ}}
 
 	%	with	COMBINING DIAERESIS							(U+0308)
-		\pgfparserdef{scparser}{ini}ä {\TC@out{ᴀ̈}}
-		\pgfparserdef{scparser}{ini}Ä {\TC@out{Ä}}
+		\pgfparserdef{scparser}{ini}ä {\TC@write{ᴀ̈}}
+		\pgfparserdef{scparser}{ini}Ä {\TC@write{Ä}}
 
 	%	with	COMBINING HOOK ABOVE 						(U+0309)
-		\pgfparserdef{scparser}{ini}ả {\TC@out{ᴀ̉}}
-		\pgfparserdef{scparser}{ini}Ả {\TC@out{Ả}}
+		\pgfparserdef{scparser}{ini}ả {\TC@write{ᴀ̉}}
+		\pgfparserdef{scparser}{ini}Ả {\TC@write{Ả}}
 
 	%	with	COMBINING INVERTED BREVE					(U+0311)
-		\pgfparserdef{scparser}{ini}ȃ {\TC@out{ᴀ̑}}
-		\pgfparserdef{scparser}{ini}Ȃ {\TC@out{Ȃ}}
+		\pgfparserdef{scparser}{ini}ȃ {\TC@write{ᴀ̑}}
+		\pgfparserdef{scparser}{ini}Ȃ {\TC@write{Ȃ}}
 
 	%	with	COMBINING RING ABOVE						(U+030A)
-		\pgfparserdef{scparser}{ini}å {\TC@out{ᴀ̊}}
-		\pgfparserdef{scparser}{ini}Å {\TC@out{Å}}
+		\pgfparserdef{scparser}{ini}å {\TC@write{ᴀ̊}}
+		\pgfparserdef{scparser}{ini}Å {\TC@write{Å}}
 
+		%	with	COMBINING RING ABOVE					(U+030A)
 		%	and		COMBINING ACUTE ACCENT					(U+030A)
-			\pgfparserdef{scparser}{ini}ǻ {\TC@out{ᴀ̊́}}
-			\pgfparserdef{scparser}{ini}Ǻ {\TC@out{Ǻ}}
+			\pgfparserdef{scparser}{ini}ǻ {\TC@write{ᴀ̊́}}
+			\pgfparserdef{scparser}{ini}Ǻ {\TC@write{Ǻ}}
 
 	%	with	COMBINING CARON 							(U+030C)
-		\pgfparserdef{scparser}{ini}ǎ {\TC@out{ᴀ̌}}
-		\pgfparserdef{scparser}{ini}Ǎ {\TC@out{Ǎ}}
+		\pgfparserdef{scparser}{ini}ǎ {\TC@write{ᴀ̌}}
+		\pgfparserdef{scparser}{ini}Ǎ {\TC@write{Ǎ}}
 
 	%	with	COMBINING DOUBLE GRAVE ACCENT				(U+030F)
-		\pgfparserdef{scparser}{ini}ȁ {\TC@out{ᴀ̏}}
-		\pgfparserdef{scparser}{ini}Ȁ {\TC@out{Ȁ}}
+		\pgfparserdef{scparser}{ini}ȁ {\TC@write{ᴀ̏}}
+		\pgfparserdef{scparser}{ini}Ȁ {\TC@write{Ȁ}}
 
 	%	with	COMBINING DOT BELOW							(U+0323)
-		\pgfparserdef{scparser}{ini}ạ {\TC@out{ᴀ̣}}
-		\pgfparserdef{scparser}{ini}Ạ {\TC@out{Ạ}}
+		\pgfparserdef{scparser}{ini}ạ {\TC@write{ᴀ̣}}
+		\pgfparserdef{scparser}{ini}Ạ {\TC@write{Ạ}}
 
 	%	with	COMBINING RING BELOW						(U+0325)
-		\pgfparserdef{scparser}{ini}ḁ {\TC@out{ᴀ̥}}
-		\pgfparserdef{scparser}{ini}Ḁ {\TC@out{Ḁ}}
+		\pgfparserdef{scparser}{ini}ḁ {\TC@write{ᴀ̥}}
+		\pgfparserdef{scparser}{ini}Ḁ {\TC@write{Ḁ}}
 
 	%	with	COMBINING OGONEK							(U+0328)
-		\pgfparserdef{scparser}{ini}ą {\TC@out{ᴀ̨}}
-		\pgfparserdef{scparser}{ini}Ą {\TC@out{Ą}}
+		\pgfparserdef{scparser}{ini}ą {\TC@write{ᴀ̨}}
+		\pgfparserdef{scparser}{ini}Ą {\TC@write{Ą}}
 
 	%TODO: Ǟ Ǡ Ấ Ầ Ẩ Ẫ Ậ Ắ Ằ Ẳ Ẵ Ặ ẚ
 
 %-----------------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL AE								(U+1D01)
-\pgfparserdef{scparser}{ini}æ {\TC@out{ᴁ}}
-\pgfparserdef{scparser}{ini}Æ {\TC@out{Æ}}
+\pgfparserdef{scparser}{ini}æ {\TC@write{ᴁ}}
+\pgfparserdef{scparser}{ini}Æ {\TC@write{Æ}}
 
-	% LATIN LETTER SMALL CAPITAL AE							(U+1D01)
 	%	with	COMBINING ACUTE ACCENT						(U+0301)
-		\pgfparserdef{scparser}{ini}ǽ {\TC@out{ᴁ́}}
-		\pgfparserdef{scparser}{ini}Ǽ {\TC@out{Ǽ}}
+		\pgfparserdef{scparser}{ini}ǽ {\TC@write{ᴁ́}}
+		\pgfparserdef{scparser}{ini}Ǽ {\TC@write{Ǽ}}
 
-	% LATIN LETTER SMALL CAPITAL AE							(U+1D01)
 	%	with	COMBINING MACRON							(U+0304)
-		\pgfparserdef{scparser}{ini}ǣ {\TC@out{ᴁ̄}}
-		\pgfparserdef{scparser}{ini}Ǣ {\TC@out{Ǣ}}
+		\pgfparserdef{scparser}{ini}ǣ {\TC@write{ᴁ̄}}
+		\pgfparserdef{scparser}{ini}Ǣ {\TC@write{Ǣ}}
 
 %-----------------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL B 								(U+0299)
-\pgfparserdef{scparser}{ini}b {\TC@out{ʙ}}
-\pgfparserdef{scparser}{ini}B {\TC@out{B}}
+\pgfparserdef{scparser}{ini}b {\TC@write{ʙ}}
+\pgfparserdef{scparser}{ini}B {\TC@write{B}}
 
-	% LATIN LETTER SMALL CAPITAL B							(U+0299)
 	%	with	COMBINING DOT ABOVE							(U+0307)
-		\pgfparserdef{scparser}{ini}ḃ {\TC@out{ʙ̇}}
-		\pgfparserdef{scparser}{ini}Ḃ {\TC@out{Ḃ}}
+		\pgfparserdef{scparser}{ini}ḃ {\TC@write{ʙ̇}}
+		\pgfparserdef{scparser}{ini}Ḃ {\TC@write{Ḃ}}
 
-	% LATIN LETTER SMALL CAPITAL B							(U+0299)
 	%	with	COMBINING DOT BELOW							(U+0323)
-		\pgfparserdef{scparser}{ini}ḅ {\TC@out{ʙ̣}}
-		\pgfparserdef{scparser}{ini}Ḅ {\TC@out{Ḅ}}
+		\pgfparserdef{scparser}{ini}ḅ {\TC@write{ʙ̣}}
+		\pgfparserdef{scparser}{ini}Ḅ {\TC@write{Ḅ}}
 
-	% LATIN LETTER SMALL CAPITAL B							(U+0299)
 	%	with	COMBINING MACRON BELOW						(U+0331)
-		\pgfparserdef{scparser}{ini}ḇ {\TC@out{ʙ̱}}
-		\pgfparserdef{scparser}{ini}Ḇ {\TC@out{Ḇ}}
+		\pgfparserdef{scparser}{ini}ḇ {\TC@write{ʙ̱}}
+		\pgfparserdef{scparser}{ini}Ḇ {\TC@write{Ḇ}}
 
 %-----------------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL C								(U+1D04)
-\pgfparserdef{scparser}{ini}c {\TC@out{ᴄ}}
-\pgfparserdef{scparser}{ini}C {\TC@out{C}}
+\pgfparserdef{scparser}{ini}c {\TC@write{ᴄ}}
+\pgfparserdef{scparser}{ini}C {\TC@write{C}}
 
 	% LATIN LETTER SMALL CAPITAL C							(U+1D04)
 	%	with	COMBINING ACUTE ACCENT						(U+0301)
-		\pgfparserdef{scparser}{ini}ć {\TC@out{ᴄ́}}
-		\pgfparserdef{scparser}{ini}Ć {\TC@out{Ć}}
+		\pgfparserdef{scparser}{ini}ć {\TC@write{ᴄ́}}
+		\pgfparserdef{scparser}{ini}Ć {\TC@write{Ć}}
 
 	% LATIN LETTER SMALL CAPITAL C							(U+1D04)
 	%	with	COMBINING CIRCUMFLEX ACCENT					(U+0302)
-		\pgfparserdef{scparser}{ini}ĉ {\TC@out{ᴄ̂}}
-		\pgfparserdef{scparser}{ini}Ĉ {\TC@out{Ĉ}}
+		\pgfparserdef{scparser}{ini}ĉ {\TC@write{ᴄ̂}}
+		\pgfparserdef{scparser}{ini}Ĉ {\TC@write{Ĉ}}
 
 	% LATIN LETTER SMALL CAPITAL C							(U+1D04)
 	%	with	COMBINING DOT ABOVE							(U+0307)
-		\pgfparserdef{scparser}{ini}ċ {\TC@out{ᴄ̇}}
-		\pgfparserdef{scparser}{ini}Ċ {\TC@out{Ċ}}
+		\pgfparserdef{scparser}{ini}ċ {\TC@write{ᴄ̇}}
+		\pgfparserdef{scparser}{ini}Ċ {\TC@write{Ċ}}
 
 	% LATIN LETTER SMALL CAPITAL C							(U+1D04)
 	%	with	COMBINING CARON								(U+030C)
-		\pgfparserdef{scparser}{ini}č {\TC@out{ᴄ̌}}
-		\pgfparserdef{scparser}{ini}Č {\TC@out{Č}}
+		\pgfparserdef{scparser}{ini}č {\TC@write{ᴄ̌}}
+		\pgfparserdef{scparser}{ini}Č {\TC@write{Č}}
 
 	% LATIN LETTER SMALL CAPITAL C							(U+1D04)
 	%	with	COMBINING CEDILLA							(U+0327)
-		\pgfparserdef{scparser}{ini}ç {\TC@out{ᴄ̧}}
-		\pgfparserdef{scparser}{ini}Ç {\TC@out{Ç}}
+		\pgfparserdef{scparser}{ini}ç {\TC@write{ᴄ̧}}
+		\pgfparserdef{scparser}{ini}Ç {\TC@write{Ç}}
 
 %-----------------------------------------------------------------------------
 
-% LATIN LETTER SMALL CAPITAL D								(U+1D05)
-\pgfparserdef{scparser}{ini}d {\TC@out{ᴅ}}
-\pgfparserdef{scparser}{ini}D {\TC@out{D}}
-
 	% LATIN LETTER SMALL LETTER ETH							(U+00F0)
-		\pgfparserdef{scparser}{ini}ð {\TC@out{ᴆ}}
-		\pgfparserdef{scparser}{ini}Ð {\TC@out{Ð}}
+		\pgfparserdef{scparser}{ini}ð {\TC@write{ᴆ}}
+		\pgfparserdef{scparser}{ini}Ð {\TC@write{Ð}}
 	% LATIN SMALL LETTER D WITH STROKE						(U+0111)
-		\pgfparserdef{scparser}{ini}đ {\TC@out{ᴆ}}
-		\pgfparserdef{scparser}{ini}Đ {\TC@out{Đ}}
+		\pgfparserdef{scparser}{ini}đ {\TC@write{ᴆ}}
+		\pgfparserdef{scparser}{ini}Đ {\TC@write{Đ}}
 	% LATIN SMALL LETTER D WITH TAIL						(U+0256)
-		\pgfparserdef{scparser}{ini}ɖ {\TC@out{ᴆ}}
-		\pgfparserdef{scparser}{ini}Ɖ {\TC@out{Ɖ}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING DOT ABOVE							(U+0307)
-		\pgfparserdef{scparser}{ini}ḋ {\TC@out{ᴅ̇}}
-		\pgfparserdef{scparser}{ini}Ḋ {\TC@out{Ḋ}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING CARON								(U+030C)
-		\pgfparserdef{scparser}{ini}ď {\TC@out{ᴅ̌}}
-		\pgfparserdef{scparser}{ini}Ď {\TC@out{Ď}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING DOT BELOW							(U+0323)
-		\pgfparserdef{scparser}{ini}ḍ {\TC@out{ᴅ̣}}
-		\pgfparserdef{scparser}{ini}Ḍ {\TC@out{Ḍ}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING CEDILLA							(U+0327)
-		\pgfparserdef{scparser}{ini}ḑ {\TC@out{ᴅ̧}}
-		\pgfparserdef{scparser}{ini}Ḑ {\TC@out{Ḑ}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING MACRON BELOW						(U+0331)
-		\pgfparserdef{scparser}{ini}ḏ {\TC@out{ᴅ̱}}
-		\pgfparserdef{scparser}{ini}Ḏ {\TC@out{Ḏ}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING CIRCUMFLEX ACCENT BELOW			(U+032D)
-		\pgfparserdef{scparser}{ini}ḓ {\TC@out{ᴅ̭}}
-		\pgfparserdef{scparser}{ini}Ḓ {\TC@out{Ḓ}}
+		\pgfparserdef{scparser}{ini}ɖ {\TC@write{ᴆ}}
+		\pgfparserdef{scparser}{ini}Ɖ {\TC@write{Ɖ}}
 
 	% LATIN CAPITAL LETTER DZ WITH CARON					(U+01C4)
-		\pgfparserdef{scparser}{ini}Ǆ {\TC@out{DŽ}}
+		\pgfparserdef{scparser}{ini}Ǆ {\TC@write{DŽ}}
 	% LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON	(U+01C5)
-		\pgfparserdef{scparser}{ini}ǅ {\TC@out{Dᴢ̌}}
+		\pgfparserdef{scparser}{ini}ǅ {\TC@write{Dᴢ̌}}
 	% LATIN SMALL LETTER DZ WITH CARON						(U+01C6)
-		\pgfparserdef{scparser}{ini}ǆ {\TC@out{ᴅᴢ̌}}
+		\pgfparserdef{scparser}{ini}ǆ {\TC@write{ᴅᴢ̌}}
 
 	% LATIN CAPITAL LETTER DZ								(U+01F1)
-		\pgfparserdef{scparser}{ini}Ǳ {\TC@out{DZ}}
+		\pgfparserdef{scparser}{ini}Ǳ {\TC@write{DZ}}
 	% LATIN CAPITAL LETTER D WITH SMALL LETTER Z			(U+01F2)
-		\pgfparserdef{scparser}{ini}ǲ {\TC@out{Dᴢ}}
+		\pgfparserdef{scparser}{ini}ǲ {\TC@write{Dᴢ}}
 	% LATIN SMALL LETTER DZ									(U+01F3)
-		\pgfparserdef{scparser}{ini}ǳ {\TC@out{ᴅᴢ}}
+		\pgfparserdef{scparser}{ini}ǳ {\TC@write{ᴅᴢ}}
+
+% LATIN LETTER SMALL CAPITAL D								(U+1D05)
+\pgfparserdef{scparser}{ini}d {\TC@write{ᴅ}}
+\pgfparserdef{scparser}{ini}D {\TC@write{D}}
+
+	%	with	COMBINING DOT ABOVE							(U+0307)
+		\pgfparserdef{scparser}{ini}ḋ {\TC@write{ᴅ̇}}
+		\pgfparserdef{scparser}{ini}Ḋ {\TC@write{Ḋ}}
+
+	%	with	COMBINING CARON								(U+030C)
+		\pgfparserdef{scparser}{ini}ď {\TC@write{ᴅ̌}}
+		\pgfparserdef{scparser}{ini}Ď {\TC@write{Ď}}
+
+	%	with	COMBINING DOT BELOW							(U+0323)
+		\pgfparserdef{scparser}{ini}ḍ {\TC@write{ᴅ̣}}
+		\pgfparserdef{scparser}{ini}Ḍ {\TC@write{Ḍ}}
+
+	%	with	COMBINING CEDILLA							(U+0327)
+		\pgfparserdef{scparser}{ini}ḑ {\TC@write{ᴅ̧}}
+		\pgfparserdef{scparser}{ini}Ḑ {\TC@write{Ḑ}}
+
+	%	with	COMBINING MACRON BELOW						(U+0331)
+		\pgfparserdef{scparser}{ini}ḏ {\TC@write{ᴅ̱}}
+		\pgfparserdef{scparser}{ini}Ḏ {\TC@write{Ḏ}}
+
+	%	with	COMBINING CIRCUMFLEX ACCENT BELOW			(U+032D)
+		\pgfparserdef{scparser}{ini}ḓ {\TC@write{ᴅ̭}}
+		\pgfparserdef{scparser}{ini}Ḓ {\TC@write{Ḓ}}
 
 % XYZZY-----------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL E (U+1D07)
-\pgfparserdef{scparser}{ini}e {\TC@out{ᴇ}}
-\pgfparserdef{scparser}{ini}E {\TC@out{E}}
+\pgfparserdef{scparser}{ini}e {\TC@write{ᴇ}}
+\pgfparserdef{scparser}{ini}E {\TC@write{E}}
 
 	% LATIN LETTER SMALL CAPITAL E (U+1D07) + COMBINING GRAVE ACCENT (U+0300)
-	\pgfparserdef{scparser}{ini}è {\TC@out{ᴇ̀}}
-	\pgfparserdef{scparser}{ini}È {\TC@out{È}}
+	\pgfparserdef{scparser}{ini}è {\TC@write{ᴇ̀}}
+	\pgfparserdef{scparser}{ini}È {\TC@write{È}}
 
 	% LATIN LETTER SMALL CAPITAL E (U+1D07) + COMBINING ACUTE ACCENT (U+0301)
-	\pgfparserdef{scparser}{ini}é {\TC@out{ᴇ́}}
-	\pgfparserdef{scparser}{ini}É {\TC@out{É}}
+	\pgfparserdef{scparser}{ini}é {\TC@write{ᴇ́}}
+	\pgfparserdef{scparser}{ini}É {\TC@write{É}}
 
 	% LATIN LETTER SMALL CAPITAL E (U+1D07) + COMBINING DIAERESIS (U+0308)
-	\pgfparserdef{scparser}{ini}ë {\TC@out{ᴇ̈}}
-	\pgfparserdef{scparser}{ini}Ë {\TC@out{Ë}}
+	\pgfparserdef{scparser}{ini}ë {\TC@write{ᴇ̈}}
+	\pgfparserdef{scparser}{ini}Ë {\TC@write{Ë}}
 
 	% LATIN LETTER SMALL CAPITAL E (U+1D07) + COMBINING CIRCUMFLEX ACCENT (U+0302)
-	\pgfparserdef{scparser}{ini}ê {\TC@out{ᴇ̂}}
-	\pgfparserdef{scparser}{ini}Ê {\TC@out{Ê}}
+	\pgfparserdef{scparser}{ini}ê {\TC@write{ᴇ̂}}
+	\pgfparserdef{scparser}{ini}Ê {\TC@write{Ê}}
 
 	% LATIN LETTER SMALL CAPITAL E (U+1D07) + COMBINING CARON (U+030C)
-	\pgfparserdef{scparser}{ini}ě {\TC@out{ᴇ̌}}
-	\pgfparserdef{scparser}{ini}Ě {\TC@out{Ě}}
+	\pgfparserdef{scparser}{ini}ě {\TC@write{ᴇ̌}}
+	\pgfparserdef{scparser}{ini}Ě {\TC@write{Ě}}
 
 
 	% LATIN LETTER SMALL CAPITAL E							(U+1D07)
 	%	with	COMBINING MACRON							(U+0304)
-		\pgfparserdef{scparser}{ini}ē {\TC@out{ᴇ̄}}
-		\pgfparserdef{scparser}{ini}Ē {\TC@out{Ē}}
+		\pgfparserdef{scparser}{ini}ē {\TC@write{ᴇ̄}}
+		\pgfparserdef{scparser}{ini}Ē {\TC@write{Ē}}
 
 	% LATIN LETTER SMALL CAPITAL E							(U+1D07)
 	%	with	COMBINING BREVE								(U+0306)
-		\pgfparserdef{scparser}{ini}ĕ {\TC@out{ᴇ̆}}
-		\pgfparserdef{scparser}{ini}Ĕ {\TC@out{Ĕ}}
+		\pgfparserdef{scparser}{ini}ĕ {\TC@write{ᴇ̆}}
+		\pgfparserdef{scparser}{ini}Ĕ {\TC@write{Ĕ}}
 
 	% LATIN LETTER SMALL CAPITAL E							(U+1D07)
 	%	with	COMBINING DOT ABOVE							(U+0307)
-		\pgfparserdef{scparser}{ini}ė {\TC@out{ᴇ̇}}
-		\pgfparserdef{scparser}{ini}Ė {\TC@out{Ė}}
+		\pgfparserdef{scparser}{ini}ė {\TC@write{ᴇ̇}}
+		\pgfparserdef{scparser}{ini}Ė {\TC@write{Ė}}
 
 	% LATIN LETTER SMALL CAPITAL E							(U+1D07)
 	%	with	COMBINING OGONEK							(U+0328)
-		\pgfparserdef{scparser}{ini}ę {\TC@out{ᴇ̨}}
-		\pgfparserdef{scparser}{ini}Ę {\TC@out{Ę}}
+		\pgfparserdef{scparser}{ini}ę {\TC@write{ᴇ̨}}
+		\pgfparserdef{scparser}{ini}Ę {\TC@write{Ę}}
 
 	% TODO:Ȅ Ȇ Ȩ Ė Ẹ Ẻ Ẽ Ế Ề Ể Ễ Ệ -> https://www.compart.com/en/unicode/U+0045
 
 % LATIN LETTER SMALL CAPITAL F (U+A730)
-\pgfparserdef{scparser}{ini}f {\TC@out{ꜰ}}
-\pgfparserdef{scparser}{ini}F {\TC@out{F}}
+\pgfparserdef{scparser}{ini}f {\TC@write{ꜰ}}
+\pgfparserdef{scparser}{ini}F {\TC@write{F}}
 
 
 	% LATIN LETTER SMALL CAPITAL E							(U+A730)
 	%	with	COMBINING DOT ABOVE							(U+0307)
-		\pgfparserdef{scparser}{ini}ḟ {\TC@out{ꜰ̇}}
-		\pgfparserdef{scparser}{ini}Ḟ {\TC@out{Ḟ}}
+		\pgfparserdef{scparser}{ini}ḟ {\TC@write{ꜰ̇}}
+		\pgfparserdef{scparser}{ini}Ḟ {\TC@write{Ḟ}}
 
 
 % LATIN LETTER SMALL CAPITAL G (U+0262)
-\pgfparserdef{scparser}{ini}g {\TC@out{ɢ}}
-\pgfparserdef{scparser}{ini}G {\TC@out{G}}
+\pgfparserdef{scparser}{ini}g {\TC@write{ɢ}}
+\pgfparserdef{scparser}{ini}G {\TC@write{G}}
 
 	% LATIN LETTER SMALL CAPITAL G (U+0262) + COMBINING BREVE (U+0306)
-	\pgfparserdef{scparser}{ini}ğ {\TC@out{ɢ̆}}
-	\pgfparserdef{scparser}{ini}Ğ {\TC@out{Ğ}}
+	\pgfparserdef{scparser}{ini}ğ {\TC@write{ɢ̆}}
+	\pgfparserdef{scparser}{ini}Ğ {\TC@write{Ğ}}
 
 % LATIN LETTER SMALL CAPITAL G							(U+0262)
 	%	with	COMBINING DOT ABOVE						(U+0307)
-		\pgfparserdef{scparser}{ini}ġ {\TC@out{ɢ̇}}
-		\pgfparserdef{scparser}{ini}Ġ {\TC@out{Ġ}}
+		\pgfparserdef{scparser}{ini}ġ {\TC@write{ɢ̇}}
+		\pgfparserdef{scparser}{ini}Ġ {\TC@write{Ġ}}
 
 	% TODO Ǧ Ģ Ĝ Ǵ Ḡ
 
 % LATIN LETTER SMALL CAPITAL H (U+029C)
-\pgfparserdef{scparser}{ini}h {\TC@out{ʜ}}
-\pgfparserdef{scparser}{ini}H {\TC@out{H}}
+\pgfparserdef{scparser}{ini}h {\TC@write{ʜ}}
+\pgfparserdef{scparser}{ini}H {\TC@write{H}}
 
 % LATIN SMALL LETTER H WITH STROKE
-\pgfparserdef{scparser}{ini}ħ {\TC@out{ʜ̵̶}}
-\pgfparserdef{scparser}{ini}Ħ {\TC@out{Ħ}}
+\pgfparserdef{scparser}{ini}ħ {\TC@write{ʜ̵̶}}
+\pgfparserdef{scparser}{ini}Ħ {\TC@write{Ħ}}
 
 	% LATIN LETTER SMALL CAPITAL H (U+029C) + COMBINING BREVE BELOW (U+032E)
-	\pgfparserdef{scparser}{ini}ḫ {\TC@out{ʜ̮}}
-	\pgfparserdef{scparser}{ini}Ḫ {\TC@out{Ḫ}}
+	\pgfparserdef{scparser}{ini}ḫ {\TC@write{ʜ̮}}
+	\pgfparserdef{scparser}{ini}Ḫ {\TC@write{Ḫ}}
 
 	% TODO Ĥ Ȟ Ḣ Ḥ Ḧ Ḩ 
 
 % LATIN LETTER SMALL CAPITAL I 		(U+026A)
-\pgfparserdef{scparser}{ini}i {\TC@out{ɪ}}
-\pgfparserdef{scparser}{ini}I {\TC@out{I}}
+\pgfparserdef{scparser}{ini}i {\TC@write{ɪ}}
+\pgfparserdef{scparser}{ini}I {\TC@write{I}}
 
 	% LATIN LETTER SMALL CAPITAL I 	(U+026A)
 		%+ COMBINING DIAERESIS 		(U+0308)
-	\pgfparserdef{scparser}{ini}ï {\TC@out{ɪ̈}}
-	\pgfparserdef{scparser}{ini}Ï {\TC@out{Ï}}
+	\pgfparserdef{scparser}{ini}ï {\TC@write{ɪ̈}}
+	\pgfparserdef{scparser}{ini}Ï {\TC@write{Ï}}
 
 	% LATIN LETTER SMALL CAPITAL I 	(U+026A)
 		% + COMBINING GRAVE ACCENT 	(U+0300)
-	\pgfparserdef{scparser}{ini}ì {\TC@out{ɪ̀}}
-	\pgfparserdef{scparser}{ini}Ì {\TC@out{Ì}}
+	\pgfparserdef{scparser}{ini}ì {\TC@write{ɪ̀}}
+	\pgfparserdef{scparser}{ini}Ì {\TC@write{Ì}}
 
 	% LATIN LETTER SMALL CAPITAL I 	(U+026A)
 		% + COMBINING ACUTE ACCENT 	(U+0301)
-	\pgfparserdef{scparser}{ini}í {\TC@out{ɪ́}}
-	\pgfparserdef{scparser}{ini}Í {\TC@out{Í}}
+	\pgfparserdef{scparser}{ini}í {\TC@write{ɪ́}}
+	\pgfparserdef{scparser}{ini}Í {\TC@write{Í}}
 
 	% LATIN LETTER SMALL CAPITAL I 	(U+026A)
 		% + COMBINING ACUTE ACCENT 	(U+0302)
-	\pgfparserdef{scparser}{ini}î {\TC@out{ɪ̂}}
-	\pgfparserdef{scparser}{ini}Î {\TC@out{Î}}
+	\pgfparserdef{scparser}{ini}î {\TC@write{ɪ̂}}
+	\pgfparserdef{scparser}{ini}Î {\TC@write{Î}}
 
 	% TODO: İ Į
 
 % LATIN LETTER SMALL CAPITAL J (U+1D0A)
-\pgfparserdef{scparser}{ini}j {\TC@out{ᴊ}}
-\pgfparserdef{scparser}{ini}J {\TC@out{J}}
+\pgfparserdef{scparser}{ini}j {\TC@write{ᴊ}}
+\pgfparserdef{scparser}{ini}J {\TC@write{J}}
 
 	% LATIN LETTER SMALL CAPITAL J (U+1D0A)
 		% + COMBINING CIRCUMFLEX ACCENT (U+0302)
-	\pgfparserdef{scparser}{ini}ĵ {\TC@out{ᴊ̂}}
-	\pgfparserdef{scparser}{ini}Ĵ {\TC@out{Ĵ}}
+	\pgfparserdef{scparser}{ini}ĵ {\TC@write{ᴊ̂}}
+	\pgfparserdef{scparser}{ini}Ĵ {\TC@write{Ĵ}}
 
 % LATIN LETTER SMALL CAPITAL K (U+1D0B)
-\pgfparserdef{scparser}{ini}k {\TC@out{ᴋ}}
-\pgfparserdef{scparser}{ini}K {\TC@out{K}}
+\pgfparserdef{scparser}{ini}k {\TC@write{ᴋ}}
+\pgfparserdef{scparser}{ini}K {\TC@write{K}}
 
 	% TODO Ķ Ǩ Ḱ Ḳ Ḵ
 
 % LATIN LETTER SMALL CAPITAL L (U+029F)
-\pgfparserdef{scparser}{ini}l {\TC@out{ʟ}}
-\pgfparserdef{scparser}{ini}L {\TC@out{L}}
+\pgfparserdef{scparser}{ini}l {\TC@write{ʟ}}
+\pgfparserdef{scparser}{ini}L {\TC@write{L}}
 
-	\pgfparserdef{scparser}{ini}ŀ {\TC@out{ʟ·}}
-	\pgfparserdef{scparser}{ini}Ŀ {\TC@out{L·}}
+	\pgfparserdef{scparser}{ini}ŀ {\TC@write{ʟ·}}
+	\pgfparserdef{scparser}{ini}Ŀ {\TC@write{L·}}
 
 	% TODO Ĺ Ļ Ľ Ḷ Ḻ Ḽ
 
 % LATIN LETTER SMALL CAPITAL M (U+1D0D)
-\pgfparserdef{scparser}{ini}m {\TC@out{ᴍ}}
-\pgfparserdef{scparser}{ini}M {\TC@out{M}}
+\pgfparserdef{scparser}{ini}m {\TC@write{ᴍ}}
+\pgfparserdef{scparser}{ini}M {\TC@write{M}}
 
 	% TODO Ḿ Ṁ Ṃ
 
 % LATIN LETTER SMALL CAPITAL N (U+0274)
-\pgfparserdef{scparser}{ini}n {\TC@out{ɴ}}
-\pgfparserdef{scparser}{ini}N {\TC@out{N}}
+\pgfparserdef{scparser}{ini}n {\TC@write{ɴ}}
+\pgfparserdef{scparser}{ini}N {\TC@write{N}}
 
 	% LATIN LETTER SMALL CAPITAL N (U+0274) + COMBINING CARON (U+030C)
-	\pgfparserdef{scparser}{ini}ň {\TC@out{ɴ̌}}
-	\pgfparserdef{scparser}{ini}Ň {\TC@out{Ň}}
+	\pgfparserdef{scparser}{ini}ň {\TC@write{ɴ̌}}
+	\pgfparserdef{scparser}{ini}Ň {\TC@write{Ň}}
 
 	% LATIN LETTER SMALL CAPITAL N (U+0274) + COMBINING TILDE (U+0303)
-	\pgfparserdef{scparser}{ini}ñ {\TC@out{ɴ̃}}
-	\pgfparserdef{scparser}{ini}Ñ {\TC@out{Ñ}}
+	\pgfparserdef{scparser}{ini}ñ {\TC@write{ɴ̃}}
+	\pgfparserdef{scparser}{ini}Ñ {\TC@write{Ñ}}
 
 	% TODO Ń Ņ Ǹ Ṅ Ṇ Ṉ Ṋ
 
 % LATIN LETTER SMALL CAPITAL O (U+1D0F)
-\pgfparserdef{scparser}{ini}o {\TC@out{ᴏ}}
-\pgfparserdef{scparser}{ini}O {\TC@out{O}}
+\pgfparserdef{scparser}{ini}o {\TC@write{ᴏ}}
+\pgfparserdef{scparser}{ini}O {\TC@write{O}}
 
 	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING DIAERESIS (U+0308)
-	\pgfparserdef{scparser}{ini}ö {\TC@out{ᴏ̈}}
-	\pgfparserdef{scparser}{ini}Ö {\TC@out{Ö}}
+	\pgfparserdef{scparser}{ini}ö {\TC@write{ᴏ̈}}
+	\pgfparserdef{scparser}{ini}Ö {\TC@write{Ö}}
 
 	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING GRAVE ACCENT (U+0300)
-	\pgfparserdef{scparser}{ini}ó {\TC@out{ᴏ̀}}
-	\pgfparserdef{scparser}{ini}Ò {\TC@out{Ò}}
+	\pgfparserdef{scparser}{ini}ó {\TC@write{ᴏ̀}}
+	\pgfparserdef{scparser}{ini}Ò {\TC@write{Ò}}
 
 	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING ACUTE ACCENT (U+0301)
-	\pgfparserdef{scparser}{ini}ó {\TC@out{ᴏ́}}
-	\pgfparserdef{scparser}{ini}Ó {\TC@out{Ó}}
+	\pgfparserdef{scparser}{ini}ó {\TC@write{ᴏ́}}
+	\pgfparserdef{scparser}{ini}Ó {\TC@write{Ó}}
 
 	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING ACUTE ACCENT (U+0302)
-	\pgfparserdef{scparser}{ini}ô {\TC@out{ᴏ̂}}
-	\pgfparserdef{scparser}{ini}Ô {\TC@out{Ô}}
+	\pgfparserdef{scparser}{ini}ô {\TC@write{ᴏ̂}}
+	\pgfparserdef{scparser}{ini}Ô {\TC@write{Ô}}
 
 	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING DOUBLE GRAVE ACCENT (U+030F)
-	\pgfparserdef{scparser}{ini}ȍ {\TC@out{ᴏ̏}}
-	\pgfparserdef{scparser}{ini}Ȍ {\TC@out{Ȍ}}
+	\pgfparserdef{scparser}{ini}ȍ {\TC@write{ᴏ̏}}
+	\pgfparserdef{scparser}{ini}Ȍ {\TC@write{Ȍ}}
 
 	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING DOUBLE ACUTE ACCENT (U+030B)
-	\pgfparserdef{scparser}{ini}ő {\TC@out{ᴏ̋}}
-	\pgfparserdef{scparser}{ini}Ő {\TC@out{Ő}}
+	\pgfparserdef{scparser}{ini}ő {\TC@write{ᴏ̋}}
+	\pgfparserdef{scparser}{ini}Ő {\TC@write{Ő}}
 
 	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING TILDE (U+0303)
-	\pgfparserdef{scparser}{ini}õ {\TC@out{ᴏ̃}}
-	\pgfparserdef{scparser}{ini}Õ {\TC@out{Õ}}
+	\pgfparserdef{scparser}{ini}õ {\TC@write{ᴏ̃}}
+	\pgfparserdef{scparser}{ini}Õ {\TC@write{Õ}}
 
 	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING SHORT SOLIDUS OVERLAY (U+0337)
-	\pgfparserdef{scparser}{ini}ø {\TC@out{ᴏ̷}}
-	\pgfparserdef{scparser}{ini}Ø {\TC@out{Ø}}
+	\pgfparserdef{scparser}{ini}ø {\TC@write{ᴏ̷}}
+	\pgfparserdef{scparser}{ini}Ø {\TC@write{Ø}}
 
 % LATIN CAPITAL LETTER THORN (U+00DE) 
 % There is no support for THORN. The best we can do is issue a 
 % warning (see line #110) and try to make do with the regular 
 % uppercase character.
-\pgfparserdef{scparser}{ini}þ {\TC@out{Þ}}
-\pgfparserdef{scparser}{ini}Þ {\TC@out{Þ}
+\pgfparserdef{scparser}{ini}þ {\TC@write{Þ}}
+\pgfparserdef{scparser}{ini}Þ {\TC@write{Þ}
 %\PackageWarning{\truecapsname}{\thornwarning}% 	see line #110	FIXME AFTER DEBUGGING
 } % end of Þ
 
 % LATIN LETTER SMALL CAPITAL OE (U+0276)
-\pgfparserdef{scparser}{ini}œ {\TC@out{ɶ}}
-\pgfparserdef{scparser}{ini}Œ {\TC@out{Œ}}
+\pgfparserdef{scparser}{ini}œ {\TC@write{ɶ}}
+\pgfparserdef{scparser}{ini}Œ {\TC@write{Œ}}
 
 % LATIN LETTER SMALL CAPITAL P (U+1D18)
-\pgfparserdef{scparser}{ini}p {\TC@out{ᴘ}}
-\pgfparserdef{scparser}{ini}P {\TC@out{P}}
+\pgfparserdef{scparser}{ini}p {\TC@write{ᴘ}}
+\pgfparserdef{scparser}{ini}P {\TC@write{P}}
 
 %% LATIN LETTER SMALL CAPITAL Q (U+A7AF)
-\pgfparserdef{scparser}{ini}q {\TC@out{ꞯ}}
-\pgfparserdef{scparser}{ini}Q {\TC@out{Q}}
+\pgfparserdef{scparser}{ini}q {\TC@write{ꞯ}}
+\pgfparserdef{scparser}{ini}Q {\TC@write{Q}}
 
 % LATIN LETTER SMALL CAPITAL R (U+0280)
-\pgfparserdef{scparser}{ini}r {\TC@out{ʀ}}
-\pgfparserdef{scparser}{ini}R {\TC@out{R}}
+\pgfparserdef{scparser}{ini}r {\TC@write{ʀ}}
+\pgfparserdef{scparser}{ini}R {\TC@write{R}}
 
 	% LATIN LETTER SMALL CAPITAL R (U+0280)	+ COMBINING CARON (U+030C)
-	\pgfparserdef{scparser}{ini}ř {\TC@out{ʀ̌}}
-	\pgfparserdef{scparser}{ini}Ř {\TC@out{Ř}}
+	\pgfparserdef{scparser}{ini}ř {\TC@write{ʀ̌}}
+	\pgfparserdef{scparser}{ini}Ř {\TC@write{Ř}}
 
 	% TODO ==> https://www.compart.com/en/unicode/U+0052
 
 % LATIN LETTER SMALL CAPITAL S (U+A731)
-\pgfparserdef{scparser}{ini}s {\TC@out{ꜱ}}
-\pgfparserdef{scparser}{ini}S {\TC@out{S}}
+\pgfparserdef{scparser}{ini}s {\TC@write{ꜱ}}
+\pgfparserdef{scparser}{ini}S {\TC@write{S}}
 
 	% There is no German word that starts with ẞ
 	% => No need for LATIN CAPITAL LETTER SHARP S (U+1E9E)
-	\pgfparserdef{scparser}{ini}ß {\TC@out{ꜱꜱ}}
+	\pgfparserdef{scparser}{ini}ß {\TC@write{ꜱꜱ}}
 
 	% LATIN LETTER SMALL CAPITAL S (U+A731) COMBINING CARON	(U+030C)
-	\pgfparserdef{scparser}{ini}š {\TC@out{ꜱ̌}}
-	\pgfparserdef{scparser}{ini}Š {\TC@out{Š}}
+	\pgfparserdef{scparser}{ini}š {\TC@write{ꜱ̌}}
+	\pgfparserdef{scparser}{ini}Š {\TC@write{Š}}
 
 	% TODO Ś Ŝ Ş Ș Ṡ Ṣ
 
 % LATIN LETTER SMALL CAPITAL T (U+1D1B)
-\pgfparserdef{scparser}{ini}t {\TC@out{ᴛ}}
-\pgfparserdef{scparser}{ini}T {\TC@out{T}}
+\pgfparserdef{scparser}{ini}t {\TC@write{ᴛ}}
+\pgfparserdef{scparser}{ini}T {\TC@write{T}}
 
 	% LATIN LETTER SMALL CAPITAL T (U+1D1B) + COMBINING CARON (U+030C)
-	\pgfparserdef{scparser}{ini}ť {\TC@out{ᴛ̌}}
-	\pgfparserdef{scparser}{ini}Ť {\TC@out{Ť}}
+	\pgfparserdef{scparser}{ini}ť {\TC@write{ᴛ̌}}
+	\pgfparserdef{scparser}{ini}Ť {\TC@write{Ť}}
 
 	% TODO Ţ Ț Ṫ Ṭ Ṯ Ṱ
 
 % LATIN LETTER SMALL CAPITAL U (U+1D1C)
-\pgfparserdef{scparser}{ini}u {\TC@out{ᴜ}}
-\pgfparserdef{scparser}{ini}U {\TC@out{U}}
+\pgfparserdef{scparser}{ini}u {\TC@write{ᴜ}}
+\pgfparserdef{scparser}{ini}U {\TC@write{U}}
 
 	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING RING ABOVE (U+030A)
-	\pgfparserdef{scparser}{ini}ů {\TC@out{ᴜ̊}}
-	\pgfparserdef{scparser}{ini}Ů {\TC@out{Ů}}
+	\pgfparserdef{scparser}{ini}ů {\TC@write{ᴜ̊}}
+	\pgfparserdef{scparser}{ini}Ů {\TC@write{Ů}}
 
 	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING GRAVE ACCENT (U+0300)
-	\pgfparserdef{scparser}{ini}ù {\TC@out{ᴜ̀}}
-	\pgfparserdef{scparser}{ini}Ù {\TC@out{Ù}}
+	\pgfparserdef{scparser}{ini}ù {\TC@write{ᴜ̀}}
+	\pgfparserdef{scparser}{ini}Ù {\TC@write{Ù}}
 
 	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING ACUTE ACCENT (U+0301)
-	\pgfparserdef{scparser}{ini}ú {\TC@out{ᴜ́}}
-	\pgfparserdef{scparser}{ini}Ú {\TC@out{Ú}}
+	\pgfparserdef{scparser}{ini}ú {\TC@write{ᴜ́}}
+	\pgfparserdef{scparser}{ini}Ú {\TC@write{Ú}}
 
 	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING DIAERESIS (U+0308)	
-	\pgfparserdef{scparser}{ini}ü {\TC@out{ᴜ̈}}
-	\pgfparserdef{scparser}{ini}Ü {\TC@out{Ü}}
+	\pgfparserdef{scparser}{ini}ü {\TC@write{ᴜ̈}}
+	\pgfparserdef{scparser}{ini}Ü {\TC@write{Ü}}
 
 	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING CIRCUMFLEX ACCENT (U+0302)
-	\pgfparserdef{scparser}{ini}û {\TC@out{ᴜ̂}}
-	\pgfparserdef{scparser}{ini}Û {\TC@out{Û}}
+	\pgfparserdef{scparser}{ini}û {\TC@write{ᴜ̂}}
+	\pgfparserdef{scparser}{ini}Û {\TC@write{Û}}
 
 	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING DOUBLE GRAVE ACCENT (U+030F)
-	\pgfparserdef{scparser}{ini}ȕ {\TC@out{ᴜ̏}}
-	\pgfparserdef{scparser}{ini}Ȕ {\TC@out{Ȕ}}
+	\pgfparserdef{scparser}{ini}ȕ {\TC@write{ᴜ̏}}
+	\pgfparserdef{scparser}{ini}Ȕ {\TC@write{Ȕ}}
 
 	% LATIN LETTER SMALL CAPITAL U (U+1D1C) + COMBINING DOUBLE ACUTE ACCENT (U+030B)
-	\pgfparserdef{scparser}{ini}ű {\TC@out{ᴜ̋}}
-	\pgfparserdef{scparser}{ini}Ű {\TC@out{Ű}}
+	\pgfparserdef{scparser}{ini}ű {\TC@write{ᴜ̋}}
+	\pgfparserdef{scparser}{ini}Ű {\TC@write{Ű}}
 
 	% TODO Ú Ǔ Ų 
 
 % LATIN LETTER SMALL CAPITAL V (U+1D20)
-\pgfparserdef{scparser}{ini}v {\TC@out{ᴠ}}
-\pgfparserdef{scparser}{ini}V {\TC@out{V}}
+\pgfparserdef{scparser}{ini}v {\TC@write{ᴠ}}
+\pgfparserdef{scparser}{ini}V {\TC@write{V}}
 
 % LATIN LETTER SMALL CAPITAL W (U+1D21)
-\pgfparserdef{scparser}{ini}w {\TC@out{ᴡ}}
-\pgfparserdef{scparser}{ini}W {\TC@out{W}}
+\pgfparserdef{scparser}{ini}w {\TC@write{ᴡ}}
+\pgfparserdef{scparser}{ini}W {\TC@write{W}}
 
 	%TODO Ŵ Ẃ Ẁ 
 
@@ -692,47 +682,47 @@ inserted as is%
 % a matching LATIN LETTER SMALL CAPITAL * 
 % The best we can do is issue a warning (see line #115) 
 % and use regular LATIN SMALL LETTER X (U+0078):
-\pgfparserdef{scparser}{ini}x{\TC@out{x}%
+\pgfparserdef{scparser}{ini}x{\TC@write{x}%
 %\PackageWarning{\truecapsname}{\xwarning} %FIXME AFTER DEBUGGING
 }
 
 % LATIN CAPITAL LETTER X (U+0058) is not an issue:
-\pgfparserdef{scparser}{ini}X {\TC@out{X}}
+\pgfparserdef{scparser}{ini}X {\TC@write{X}}
 
 % LATIN LETTER SMALL CAPITAL Y
-\pgfparserdef{scparser}{ini}y {\TC@out{ʏ}}
-\pgfparserdef{scparser}{ini}Y {\TC@out{Y}}
+\pgfparserdef{scparser}{ini}y {\TC@write{ʏ}}
+\pgfparserdef{scparser}{ini}Y {\TC@write{Y}}
 
 	% LATIN LETTER SMALL CAPITAL Y (U+028F) + COMBINING DIAERESIS (U+0308)
-	\pgfparserdef{scparser}{ini}ÿ {\TC@out{ʏ̈}}
-	\pgfparserdef{scparser}{ini}Ÿ {\TC@out{Ÿ}}
+	\pgfparserdef{scparser}{ini}ÿ {\TC@write{ʏ̈}}
+	\pgfparserdef{scparser}{ini}Ÿ {\TC@write{Ÿ}}
 
 	% LATIN LETTER SMALL CAPITAL Y (U+028F) + COMBINING ACUTE ACCENT (U+0301)
-	\pgfparserdef{scparser}{ini}ý {\TC@out{ʏ́}}
-	\pgfparserdef{scparser}{ini}Ý {\TC@out{Ý}}
+	\pgfparserdef{scparser}{ini}ý {\TC@write{ʏ́}}
+	\pgfparserdef{scparser}{ini}Ý {\TC@write{Ý}}
 
 	% TODO Ỳ Ŷ
 
 % LATIN LETTER SMALL CAPITAL Z (U+1D22)
-\pgfparserdef{scparser}{ini}z {\TC@out{ᴢ}}
-\pgfparserdef{scparser}{ini}Z {\TC@out{Z}}
+\pgfparserdef{scparser}{ini}z {\TC@write{ᴢ}}
+\pgfparserdef{scparser}{ini}Z {\TC@write{Z}}
 
 	% LATIN LETTER SMALL CAPITAL Z (U+1D22) + COMBINING CARON (U+030C)
-	\pgfparserdef{scparser}{ini}ž {\TC@out{ᴢ̌}}
-	\pgfparserdef{scparser}{ini}Ž {\TC@out{Ž}}
+	\pgfparserdef{scparser}{ini}ž {\TC@write{ᴢ̌}}
+	\pgfparserdef{scparser}{ini}Ž {\TC@write{Ž}}
 
 % LATIN LETTER SMALL CAPITAL G							(U+1D22)
 	%	with	COMBINING DOT ABOVE						(U+0307)
-		\pgfparserdef{scparser}{ini}ż {\TC@out{ᴢ̇}}
-		\pgfparserdef{scparser}{ini}Ż {\TC@out{Ż}}
+		\pgfparserdef{scparser}{ini}ż {\TC@write{ᴢ̇}}
+		\pgfparserdef{scparser}{ini}Ż {\TC@write{Ż}}
 
 	% TODO Ź Ž Ẑ 
 
 % BLANK SPACE
 \pgfparserdef{scparser}{ini}{blank space}%
-  {\TC@out{ }}
+  {\TC@write{ }}
 
-	\pgfparserdef{scparser}{ini}+ {\TC@out{+}}
+	\pgfparserdef{scparser}{ini}+ {\TC@write{+}}
 
 	% TODO: Punctuation, Parentheses, common typographical symbols. What about "ǃ" ?
 	% Small form variants? ﹐ ﹑ ﹒ ﹔ ﹕ ﹖ ﹗ ﹘ ﹙ ﹚ ﹛ ﹜ ﹝ ﹞ ﹟ ﹠ ﹡ ﹢ ﹣ ﹤ ﹥ ﹦ ﹨ ﹩ ﹪ ﹫
