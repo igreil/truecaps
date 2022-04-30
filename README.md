@@ -1,4 +1,4 @@
-# truecaps (v0.5)
+# truecaps (v0.6)
 Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX.
 
 ## Purpose
@@ -57,6 +57,7 @@ like Vietnamese, Yoruba and some other African (Native American?) writing system
 
 ## History
 
+* v0.6 Internal code cleanup. Added support for Finnish, Slovenian, Icelandic (partial).
 * v0.5 Reversed the command structure: `textsc{…}` works as always, `texttc{…}` becomes a new option.
 * v0.4 Dropped XeLaTeX compatibility. Added support for Italian, Swedish, Danish, Icelandic, Serbian, Croatian.
 * v0.3 Full support for Czech, Slovenian, Hungarian, Spanish and Catalan.
