@@ -45,12 +45,14 @@
 	\RequirePackage	{luacode}
 	\RequirePackage	{kvoptions,atveryend}
 \else
-	\PackageError	{Package must be run under LuaTeX: Aborting.}
-					{What more can I say? Please try running again under LuaLaTeX.}
+	\PackageError
+		{Package must be run under LuaTeX: Aborting.}
+		{What more can I say? Please try running again under LuaLaTeX.}
 \fi
 
 %FIXME & DEBUG:
 %https://mirror.clientvps.com/CTAN/macros/luatex/latex/lua-typo/lua-typo-2021-04-18.sty
+%https://mirror.kumi.systems/ctan/macros/luatex/latex/lua-typo/doc/lua-typo.pdf
 
 \NewCommandCopy\texttc	\textsc
 \NewCommandCopy\tcshape	\scshape
