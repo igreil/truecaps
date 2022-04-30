@@ -250,6 +250,7 @@ TSWLatexianTemp*
 
 # LyX
 *.lyx~
+*.*~
 
 # Kile
 *.backup
