@@ -46,7 +46,8 @@
 	\RequirePackage	{ifluatex}
 	\RequirePackage	{luatexbase}
 	\RequirePackage	{luacode}
-	\RequirePackage	{kvoptions,atveryend}
+	\RequirePackage	{kvoptions}
+	\RequirePackage	{atveryend}
 \else
 	\PackageError
 					{Package must be run under LuaTeX: Aborting.}{}
@@ -508,7 +509,11 @@ Unsupported character LATIN SMALL LETTER KRA (U+0138): inserted as is%
 	\pgfparserdef{tcparser}{ini}ḫ {\TC@write{ʜ̮}}
 	\pgfparserdef{tcparser}{ini}Ḫ {\TC@write{Ḫ}}
 
-	% TODO Ĥ Ȟ Ḣ Ḥ Ḧ Ḩ 
+	% LATIN LETTER SMALL CAPITAL H (U+029C) + COMBINING CIRCUMFLEX 302 
+	\pgfparserdef{tcparser}{ini}ĥ {\TC@write{ʜ̂}}
+	\pgfparserdef{tcparser}{ini}Ĥ {\TC@write{Ĥ}}
+
+	% TODO Ȟ Ḣ Ḥ Ḧ Ḩ 
 
 % LATIN LETTER SMALL CAPITAL I 		(U+026A)
 \pgfparserdef{tcparser}{ini}i {\TC@write{ɪ}}
@@ -535,6 +540,10 @@ Unsupported character LATIN SMALL LETTER KRA (U+0138): inserted as is%
 	\pgfparserdef{tcparser}{ini}Î {\TC@write{Î}}
 
 	% TODO: İ Į
+
+% LATIN SMALL LIGATURE IJ					(U+0133)
+		\pgfparserdef{tcparser}{ini}ĳ {\TC@write{ɪᴊ}}
+		\pgfparserdef{tcparser}{ini}Ĳ {\TC@write{Ĳ}}
 
 % LATIN LETTER SMALL CAPITAL J (U+1D0A)
 \pgfparserdef{tcparser}{ini}j {\TC@write{ᴊ}}
