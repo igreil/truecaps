@@ -11,7 +11,7 @@
 %
 % License:		GPLv3 and GFDLv1.3+
 %
-%----------------------------------- -----------------------------------------
+%-----------------------------------------------------------------------------
 %
 % LaTeX Package truecaps v0.6 (2022-04-30)
 % Copyright © 2022 निरंजन [Niranjan] and Ingmar Greil
@@ -29,7 +29,7 @@
 % You should have received a copy of the GNU General Public License along 
 % with this program. If not, see <https://www.gnu.org/licenses/>.
 %
-%----------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
 
 \def\truecapsname			{truecaps}
 \def\truecapsdescription	{Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX}
@@ -51,18 +51,6 @@
 	\PackageError
 					{Package must be run under LuaTeX: Aborting.}{}
 \fi
-
-%https://mirror.clientvps.com/CTAN/macros/luatex/latex/lua-typo/lua-typo-2021-04-18.sty
-%https://mirror.kumi.systems/ctan/macros/luatex/latex/lua-typo/doc/lua-typo.pdf
-%https://ctan.org/pkg/typoaid
-%https://ctan.org/pkg/showhyphens
-%https://ctan.org/pkg/luavlna vs. impnattypo
-%https://ctan.org/pkg/lua-visual-debug
-%https://ctan.org/pkg/lua-typo
-%https://ctan.org/pkg/lua-widow-control
-%https://ctan.org/pkg/uninormalize
-%https://ctan.org/pkg/showhyphens
-%https://ctan.org/pkg/lutabulartools
 
 \NewCommandCopy\texttc	\textsc
 \NewCommandCopy\tcshape	\scshape
@@ -133,14 +121,17 @@
 	}%
 }
 
-\newcommand\thornwarning{			% see ca. line #369 FIXME
-Unsupported character LATIN SMALL LETTER THORN (U+00FE): 
+\newcommand\thornwarning{%			% see ca. line #369 FIXME
+Unsupported character LATIN SMALL LETTER THORN (U+00FE):
 substituted with LATIN CAPITAL LETTER THORN (U+00DE)%
 }
 
-\newcommand\xwarning{				% see ca. line #469	FIXME
-Unsupported character LATIN SMALL LETTER X (U+0078): 
-inserted as is%
+\newcommand\xwarning{%				% see ca. line #469	FIXME
+Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
+}
+
+\newcommand\krawarning{%				% see ca. line FIXME
+Unsupported character LATIN SMALL LETTER KRA (U+0138): inserted as is%
 }
 
 %----------- SUPPORTED LETTERS BELOW -----------------------------------------
@@ -152,7 +143,7 @@ inserted as is%
 % LATIN LETTER SMALL CAPITAL D								(U+1D05)	ᴅ
 % LATIN LETTER SMALL CAPITAL ETH							(U+1D06)	ᴆ
 % LATIN LETTER SMALL CAPITAL E								(U+1D07)	ᴇ
-% LATIN LETTER SMALL CAPITAL TURNED E (SCHWA???)			(U+2C7B)	ⱻ
+% LATIN LETTER SMALL CAPITAL TURNED E (Use for SCHWA?)		(U+2C7B)	ⱻ
 % LATIN LETTER SMALL CAPITAL F								(U+A730)	ꜰ
 % LATIN LETTER SMALL CAPITAL G								(U+0262)	ɢ
 % LATIN LETTER SMALL CAPITAL H								(U+029C)	ʜ
@@ -238,9 +229,17 @@ inserted as is%
 		\pgfparserdef{tcparser}{ini}ȧ {\TC@write{ᴀ̇}}
 		\pgfparserdef{tcparser}{ini}Ȧ {\TC@write{Ȧ}}
 
+		%	and		COMBINING MACRON						(U+0304)
+			\pgfparserdef{tcparser}{ini}ǡ {\TC@write{ᴀ̇̄}}
+			\pgfparserdef{tcparser}{ini}Ǡ {\TC@write{Ǡ}}
+
 	%	with	COMBINING DIAERESIS							(U+0308)
 		\pgfparserdef{tcparser}{ini}ä {\TC@write{ᴀ̈}}
 		\pgfparserdef{tcparser}{ini}Ä {\TC@write{Ä}}
+
+		%	and		COMBINING MACRON						(U+0304)
+			\pgfparserdef{tcparser}{ini}ǟ {\TC@write{ᴀ̈̄}}
+			\pgfparserdef{tcparser}{ini}Ǟ {\TC@write{Ǟ}}
 
 	%	with	COMBINING HOOK ABOVE 						(U+0309)
 		\pgfparserdef{tcparser}{ini}ả {\TC@write{ᴀ̉}}
@@ -254,7 +253,6 @@ inserted as is%
 		\pgfparserdef{tcparser}{ini}å {\TC@write{ᴀ̊}}
 		\pgfparserdef{tcparser}{ini}Å {\TC@write{Å}}
 
-		%	with	COMBINING RING ABOVE					(U+030A)
 		%	and		COMBINING ACUTE ACCENT					(U+030A)
 			\pgfparserdef{tcparser}{ini}ǻ {\TC@write{ᴀ̊́}}
 			\pgfparserdef{tcparser}{ini}Ǻ {\TC@write{Ǻ}}
@@ -279,7 +277,7 @@ inserted as is%
 		\pgfparserdef{tcparser}{ini}ą {\TC@write{ᴀ̨}}
 		\pgfparserdef{tcparser}{ini}Ą {\TC@write{Ą}}
 
-	%TODO: Ǟ Ǡ Ấ Ầ Ẩ Ẫ Ậ Ắ Ằ Ẳ Ẵ Ặ ẚ
+	%TODO: Ấ Ầ Ẩ Ẫ Ậ Ắ Ằ Ẳ Ẵ Ặ ẚ
 
 %-----------------------------------------------------------------------------
 
@@ -457,21 +455,46 @@ inserted as is%
 		\pgfparserdef{tcparser}{ini}ḟ {\TC@write{ꜰ̇}}
 		\pgfparserdef{tcparser}{ini}Ḟ {\TC@write{Ḟ}}
 
+%-----------------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL G (U+0262)
 \pgfparserdef{tcparser}{ini}g {\TC@write{ɢ}}
 \pgfparserdef{tcparser}{ini}G {\TC@write{G}}
 
-	% LATIN LETTER SMALL CAPITAL G (U+0262) + COMBINING BREVE (U+0306)
-	\pgfparserdef{tcparser}{ini}ğ {\TC@write{ɢ̆}}
-	\pgfparserdef{tcparser}{ini}Ğ {\TC@write{Ğ}}
+	%	with	COMBINING ACUTE							(U+0301)
+		\pgfparserdef{tcparser}{ini}ǵ {\TC@write{ɢ́}}
+		\pgfparserdef{tcparser}{ini}Ǵ {\TC@write{Ǵ}}
 
-% LATIN LETTER SMALL CAPITAL G							(U+0262)
+	%	with	COMBINING CIRCUMFLEX ACCENT				(U+0302)
+		\pgfparserdef{tcparser}{ini}ĝ {\TC@write{ɢ̂}}
+		\pgfparserdef{tcparser}{ini}Ĝ {\TC@write{Ĝ}}
+
+	%	with	COMBINING MACRON						(U+0304)
+		\pgfparserdef{tcparser}{ini}ḡ {\TC@write{ɢ̄}}
+		\pgfparserdef{tcparser}{ini}Ḡ {\TC@write{Ḡ}}
+
+	%	with	COMBINING BREVE							(U+0306)
+		\pgfparserdef{tcparser}{ini}ğ {\TC@write{ɢ̆}}
+		\pgfparserdef{tcparser}{ini}Ğ {\TC@write{Ğ}}
+
 	%	with	COMBINING DOT ABOVE						(U+0307)
 		\pgfparserdef{tcparser}{ini}ġ {\TC@write{ɢ̇}}
 		\pgfparserdef{tcparser}{ini}Ġ {\TC@write{Ġ}}
 
-	% TODO Ǧ Ģ Ĝ Ǵ Ḡ
+	%	with	COMBINING CARON							(U+030C)
+		\pgfparserdef{tcparser}{ini}ǧ {\TC@write{ɢ̌}}
+		\pgfparserdef{tcparser}{ini}Ǧ {\TC@write{Ǧ}}
+
+	%	with	COMBINING CEDILLA						(U+0327)
+		\pgfparserdef{tcparser}{ini}ģ {\TC@write{ɢ̧}}
+		\pgfparserdef{tcparser}{ini}Ģ {\TC@write{Ģ}}
+
+	%	with	COMBINING LONG STROKE OVERLAY			(U+0336)
+		\pgfparserdef{tcparser}{ini}ǥ {\TC@write{ɢ̶}}
+		\pgfparserdef{tcparser}{ini}Ǥ {\TC@write{Ǥ}}
+
+
+%-----------------------------------------------------------------------------
 
 % LATIN LETTER SMALL CAPITAL H (U+029C)
 \pgfparserdef{tcparser}{ini}h {\TC@write{ʜ}}
@@ -507,7 +530,7 @@ inserted as is%
 	\pgfparserdef{tcparser}{ini}Í {\TC@write{Í}}
 
 	% LATIN LETTER SMALL CAPITAL I 	(U+026A)
-		% + COMBINING ACUTE ACCENT 	(U+0302)
+		% + COMBINING CIRCUMFLEX ACCENT 	(U+0302)
 	\pgfparserdef{tcparser}{ini}î {\TC@write{ɪ̂}}
 	\pgfparserdef{tcparser}{ini}Î {\TC@write{Î}}
 
@@ -522,11 +545,25 @@ inserted as is%
 	\pgfparserdef{tcparser}{ini}ĵ {\TC@write{ᴊ̂}}
 	\pgfparserdef{tcparser}{ini}Ĵ {\TC@write{Ĵ}}
 
+	% LATIN LETTER SMALL CAPITAL J (U+1D0A)
+		% + COMBINING CARON (U+030C)
+	\pgfparserdef{tcparser}{ini}ǰ {\TC@write{ᴊ̌}}
+	%FIXME ONYL WORKS WITH PRECOMPOSED GLYPHS: ǰ exists, but J̌ does not!
+%\pgfparserdef{tcparser}{ini}J̌ {\TC@write{J̌}} %
+
 % LATIN LETTER SMALL CAPITAL K (U+1D0B)
 \pgfparserdef{tcparser}{ini}k {\TC@write{ᴋ}}
 \pgfparserdef{tcparser}{ini}K {\TC@write{K}}
 
-	% TODO Ķ Ǩ Ḱ Ḳ Ḵ
+	%	with	COMBINING CARON 							(U+030C)
+		\pgfparserdef{tcparser}{ini}ǩ {\TC@write{ᴋ̌}}
+		\pgfparserdef{tcparser}{ini}Ǩ {\TC@write{Ǩ}}
+
+% LATIN LETTER SMALL CAPITAL KRA (U+0138)
+\pgfparserdef{tcparser}{ini}ĸ {\TC@write{ĸ}%
+\PackageWarning{\truecapsname}{\krawarning}}
+
+	% TODO Ķ Ḱ Ḳ Ḵ
 
 % LATIN LETTER SMALL CAPITAL L (U+029F)
 \pgfparserdef{tcparser}{ini}l {\TC@write{ʟ}}

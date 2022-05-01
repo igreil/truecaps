@@ -49,6 +49,7 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 * Modularization with `\input`
 * Look into support for more exotic (Latin-based) languages, 
 like Vietnamese, Yoruba and some other African (Native American?) writing systems
+* Normalize input (= use only precomposed glyphs)
 * Sanity checks for missing glyphs?
 * Silent option to disable warnings (Letters X and Þ will remain unsupported for the foreseeable future)
 * Simplify and optimize code, remove redundancies
