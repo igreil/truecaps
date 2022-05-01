@@ -195,6 +195,7 @@ Unsupported character LATIN SMALL LETTER KRA (U+0138): inserted as is%
 % COMBINING MACRON BELOW									(U+0331)	 ̱
 % COMBINING SHORT SOLIDUS OVERLAY							(U+0337)	 ̷
 % COMBINING LONG SOLIDUS OVERLAY							(U+0338)	 ̸
+% COMBINING RIGHT HALF RING ABOVE							(U+0357)	 ͗
 
 %-----------------------------------------------------------------------------
 
@@ -202,83 +203,124 @@ Unsupported character LATIN SMALL LETTER KRA (U+0138): inserted as is%
 \pgfparserdef{tcparser}{ini}a {\TC@write{ᴀ}}
 \pgfparserdef{tcparser}{ini}A {\TC@write{A}}
 
-	%	with	COMBINING GRAVE ACCENT						(U+0300)
+	%	with	COMBINING GRAVE ACCENT							(U+0300)
 		\pgfparserdef{tcparser}{ini}à	{\TC@write{ᴀ̀}}
 		\pgfparserdef{tcparser}{ini}À	{\TC@write{À}}
 
-	%	with	COMBINING ACUTE ACCENT						(U+0301)
+	%	with	COMBINING ACUTE ACCENT							(U+0301)
 		\pgfparserdef{tcparser}{ini}á {\TC@write{ᴀ́}}
 		\pgfparserdef{tcparser}{ini}Á {\TC@write{Á}}
 
-	%	with	COMBINING CIRCUMFLEX ACCENT					(U+0302)
+	%	with	COMBINING CIRCUMFLEX ACCENT						(U+0302)
 		\pgfparserdef{tcparser}{ini}â {\TC@write{ᴀ̂}}
 		\pgfparserdef{tcparser}{ini}Â {\TC@write{Â}}
 
-	%	with	COMBINING TILDE								(U+0303)
+		%	and		COMBINING GRAVE									(U+0300)
+			\pgfparserdef{tcparser}{ini}ầ {\TC@write{ᴀ̂̀}}
+			\pgfparserdef{tcparser}{ini}Ầ {\TC@write{Ầ}}
+
+		%	and		COMBINING ACUTE									(U+0301)
+			\pgfparserdef{tcparser}{ini}ấ {\TC@write{ᴀ̂́}}
+			\pgfparserdef{tcparser}{ini}Ấ {\TC@write{Ấ}}
+
+		%	and		% COMBINING TILDE								(U+0303)
+			\pgfparserdef{tcparser}{ini}ẫ {\TC@write{ᴀ̂̃}}
+			\pgfparserdef{tcparser}{ini}Ẫ {\TC@write{Ẫ}}
+
+		%	and		% COMBINING HOOK ABOVE							(U+0309)
+			\pgfparserdef{tcparser}{ini}ẩ {\TC@write{ᴀ̂̉}}
+			\pgfparserdef{tcparser}{ini}Ẩ {\TC@write{Ẩ}}
+
+		%	and		% COMBINING DOT BELOW							(U+0323)
+			\pgfparserdef{tcparser}{ini}ậ {\TC@write{ᴀ̣̂}}
+			\pgfparserdef{tcparser}{ini}Ậ {\TC@write{Ậ}}
+
+	%	with	COMBINING TILDE									(U+0303)
 		\pgfparserdef{tcparser}{ini}ã {\TC@write{ᴀ̃}}
 		\pgfparserdef{tcparser}{ini}Ã {\TC@write{Ã}}
 
-	%	with	COMBINING MACRON							(U+0304)
+	%	with	COMBINING MACRON								(U+0304)
 		\pgfparserdef{tcparser}{ini}ā {\TC@write{ᴀ̄}}
 		\pgfparserdef{tcparser}{ini}Ā {\TC@write{Ā}}
 
-	%	with	COMBINING BREVE								(U+0306)
+	%	with	COMBINING BREVE									(U+0306)
 		\pgfparserdef{tcparser}{ini}ă {\TC@write{ᴀ̆}}
 		\pgfparserdef{tcparser}{ini}Ă {\TC@write{Ă}}
 
-	%	with	COMBINING DOT ABOVE							(U+0307)
+		%	and		COMBINING GRAVE ACCENT							(U+0300)
+			\pgfparserdef{tcparser}{ini}ằ {\TC@write{ᴀ̆̀}}
+			\pgfparserdef{tcparser}{ini}Ằ {\TC@write{Ằ}}
+
+		%	and		COMBINING ACUTE ACCENT							(U+0301)
+			\pgfparserdef{tcparser}{ini}ắ {\TC@write{ᴀ̆́}}
+			\pgfparserdef{tcparser}{ini}Ắ {\TC@write{Ắ}}
+
+		%	and		COMBINING TILDE									(U+0303)
+			\pgfparserdef{tcparser}{ini}ẵ {\TC@write{ᴀ̂̃}}
+			\pgfparserdef{tcparser}{ini}Ẵ {\TC@write{Ẵ}}
+
+		%	and		COMBINING HOOK ABOVE							(U+0309)
+			\pgfparserdef{tcparser}{ini}ẳ {\TC@write{ᴀ̆̉}}
+			\pgfparserdef{tcparser}{ini}Ẳ {\TC@write{Ẳ}}
+
+		%	and	COMBINING DOT BELOW									(U+0323)
+			\pgfparserdef{tcparser}{ini}ặ {\TC@write{ᴀ̣̆}}
+			\pgfparserdef{tcparser}{ini}Ặ {\TC@write{Ặ}}
+
+	%	with	COMBINING DOT ABOVE								(U+0307)
 		\pgfparserdef{tcparser}{ini}ȧ {\TC@write{ᴀ̇}}
 		\pgfparserdef{tcparser}{ini}Ȧ {\TC@write{Ȧ}}
 
-		%	and		COMBINING MACRON						(U+0304)
+		%	and		COMBINING MACRON								(U+0304)
 			\pgfparserdef{tcparser}{ini}ǡ {\TC@write{ᴀ̇̄}}
 			\pgfparserdef{tcparser}{ini}Ǡ {\TC@write{Ǡ}}
 
-	%	with	COMBINING DIAERESIS							(U+0308)
+	%	with	COMBINING DIAERESIS								(U+0308)
 		\pgfparserdef{tcparser}{ini}ä {\TC@write{ᴀ̈}}
 		\pgfparserdef{tcparser}{ini}Ä {\TC@write{Ä}}
 
-		%	and		COMBINING MACRON						(U+0304)
+		%	and		COMBINING MACRON								(U+0304)
 			\pgfparserdef{tcparser}{ini}ǟ {\TC@write{ᴀ̈̄}}
 			\pgfparserdef{tcparser}{ini}Ǟ {\TC@write{Ǟ}}
 
-	%	with	COMBINING HOOK ABOVE 						(U+0309)
+	%	with	COMBINING HOOK ABOVE 							(U+0309)
 		\pgfparserdef{tcparser}{ini}ả {\TC@write{ᴀ̉}}
 		\pgfparserdef{tcparser}{ini}Ả {\TC@write{Ả}}
 
-	%	with	COMBINING INVERTED BREVE					(U+0311)
+	%	with	COMBINING INVERTED BREVE						(U+0311)
 		\pgfparserdef{tcparser}{ini}ȃ {\TC@write{ᴀ̑}}
 		\pgfparserdef{tcparser}{ini}Ȃ {\TC@write{Ȃ}}
 
-	%	with	COMBINING RING ABOVE						(U+030A)
+	%	with	COMBINING RING ABOVE							(U+030A)
 		\pgfparserdef{tcparser}{ini}å {\TC@write{ᴀ̊}}
 		\pgfparserdef{tcparser}{ini}Å {\TC@write{Å}}
 
-		%	and		COMBINING ACUTE ACCENT					(U+030A)
+		%	and		COMBINING ACUTE ACCENT							(U+030A)
 			\pgfparserdef{tcparser}{ini}ǻ {\TC@write{ᴀ̊́}}
 			\pgfparserdef{tcparser}{ini}Ǻ {\TC@write{Ǻ}}
 
-	%	with	COMBINING CARON 							(U+030C)
+	%	with	COMBINING CARON 								(U+030C)
 		\pgfparserdef{tcparser}{ini}ǎ {\TC@write{ᴀ̌}}
 		\pgfparserdef{tcparser}{ini}Ǎ {\TC@write{Ǎ}}
 
-	%	with	COMBINING DOUBLE GRAVE ACCENT				(U+030F)
+	%	with	COMBINING DOUBLE GRAVE ACCENT					(U+030F)
 		\pgfparserdef{tcparser}{ini}ȁ {\TC@write{ᴀ̏}}
 		\pgfparserdef{tcparser}{ini}Ȁ {\TC@write{Ȁ}}
 
-	%	with	COMBINING DOT BELOW							(U+0323)
+	%	with	COMBINING DOT BELOW								(U+0323)
 		\pgfparserdef{tcparser}{ini}ạ {\TC@write{ᴀ̣}}
 		\pgfparserdef{tcparser}{ini}Ạ {\TC@write{Ạ}}
 
-	%	with	COMBINING RING BELOW						(U+0325)
+	%	with	COMBINING RING BELOW							(U+0325)
 		\pgfparserdef{tcparser}{ini}ḁ {\TC@write{ᴀ̥}}
 		\pgfparserdef{tcparser}{ini}Ḁ {\TC@write{Ḁ}}
 
-	%	with	COMBINING OGONEK							(U+0328)
+	%	with	COMBINING OGONEK								(U+0328)
 		\pgfparserdef{tcparser}{ini}ą {\TC@write{ᴀ̨}}
 		\pgfparserdef{tcparser}{ini}Ą {\TC@write{Ą}}
 
-	%TODO: Ấ Ầ Ẩ Ẫ Ậ Ắ Ằ Ẳ Ẵ Ặ ẚ
+	%	with	RIGHT HALF RING									(U+0328)
+		\pgfparserdef{tcparser}{ini}ẚ {\TC@write{ᴀ͗}}
 
 %-----------------------------------------------------------------------------
 
