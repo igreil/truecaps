@@ -1,4 +1,4 @@
-# truecaps (v0.6)
+# truecaps (v0.6.2)
 Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX.
 
 ## Purpose
@@ -36,16 +36,15 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 ## Todo
 
-* Add modifiers, accents, umlauts etc. for all letters. (75% done)
+* Add modifiers, accents, umlauts etc. for all letters. (A-D done fully, 75% all in all)
 * Take care of punctuation and numbers
-* Special cases like ß/ẞ etc. =>
 * Testsuite for common Latin (European) languages (80% done)
 * Full Support for 
-	- `Basic Latin` (U+0000 .. U+007F), 
-	- `Latin-1 Supplement` (U+0080 .. U+00FF), 
-	- `Latin Extended-A` (U+0100 .. U+017F) and 
-	- `Latin Extended-B` (U+0180 .. U+024F partial support)
-	- possibly `Latin Extended Additional` (U+1E00 ..U+1EFF partial support)
+	- `Basic Latin` (U+0000 .. U+007F), done
+	- `Latin-1 Supplement` (U+0080 .. U+00FF), WIP
+	- `Latin Extended-A` (U+0100 .. U+017F), WIP
+	- `Latin Extended-B` (U+0180 .. U+024F partial support), WIP
+	- `Latin Extended Additional` (U+1E00 ..U+1EFF partial support), WIP
 * Modularization with `\input`
 * Look into support for more exotic (Latin-based) languages, 
 like Vietnamese, Yoruba and some other African (Native American?) writing systems
