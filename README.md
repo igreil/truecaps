@@ -38,7 +38,7 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 * Add modifiers, accents, umlauts etc. for all letters. (75% done)
 * Take care of punctuation and numbers
-* Special cases like Ł, ß/ẞ etc. =>
+* Special cases like ß/ẞ etc. =>
 * Testsuite for common Latin (European) languages (80% done)
 * Full Support for 
 	- `Basic Latin` (U+0000 .. U+007F), 
@@ -57,7 +57,7 @@ like Vietnamese, Yoruba and some other African (Native American?) writing system
 
 ## History
 
-* v0.6 Internal code cleanup. Added support for Finnish, Slovenian, Icelandic (partial).
+* v0.6 Internal code cleanup. Added support for Finnish, Slovenian, Icelandic (partial), Polish.
 * v0.5 Reversed the command structure: `textsc{…}` works as always, `texttc{…}` becomes a new option.
 * v0.4 Dropped XeLaTeX compatibility. Added support for Italian, Swedish, Danish, Icelandic, Serbian, Croatian.
 * v0.3 Full support for Czech, Slovenian, Hungarian, Spanish and Catalan.

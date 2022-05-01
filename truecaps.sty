@@ -152,6 +152,7 @@ inserted as is%
 % LATIN LETTER SMALL CAPITAL D								(U+1D05)	ᴅ
 % LATIN LETTER SMALL CAPITAL ETH							(U+1D06)	ᴆ
 % LATIN LETTER SMALL CAPITAL E								(U+1D07)	ᴇ
+% LATIN LETTER SMALL CAPITAL TURNED E (SCHWA???)			(U+2C7B)	ⱻ
 % LATIN LETTER SMALL CAPITAL F								(U+A730)	ꜰ
 % LATIN LETTER SMALL CAPITAL G								(U+0262)	ɢ
 % LATIN LETTER SMALL CAPITAL H								(U+029C)	ʜ
@@ -159,6 +160,7 @@ inserted as is%
 % LATIN LETTER SMALL CAPITAL J								(U+1D0A)	ᴊ
 % LATIN LETTER SMALL CAPITAL K								(U+1D0B)	ᴋ
 % LATIN LETTER SMALL CAPITAL L								(U+029F)	ʟ
+% LATIN LETTER SMALL CAPITAL L WITH STROKE					(U+1D0C)	ᴌ
 % LATIN LETTER SMALL CAPITAL M								(U+1D0D)	ᴍ
 % LATIN LETTER SMALL CAPITAL N								(U+0274)	ɴ
 % LATIN LETTER SMALL CAPITAL O								(U+1D0F)	ᴏ
@@ -535,6 +537,10 @@ inserted as is%
 
 	% TODO Ĺ Ļ Ľ Ḷ Ḻ Ḽ
 
+% LATIN LETTER SMALL CAPITAL L WITH STROKE (U+1D0C)
+\pgfparserdef{tcparser}{ini}ł {\TC@write{ᴌ}}
+\pgfparserdef{tcparser}{ini}Ł {\TC@write{Ł}}
+
 % LATIN LETTER SMALL CAPITAL M (U+1D0D)
 \pgfparserdef{tcparser}{ini}m {\TC@write{ᴍ}}
 \pgfparserdef{tcparser}{ini}M {\TC@write{M}}
@@ -553,7 +559,11 @@ inserted as is%
 	\pgfparserdef{tcparser}{ini}ñ {\TC@write{ɴ̃}}
 	\pgfparserdef{tcparser}{ini}Ñ {\TC@write{Ñ}}
 
-	% TODO Ń Ņ Ǹ Ṅ Ṇ Ṉ Ṋ
+	% LATIN LETTER SMALL CAPITAL N (U+0274) + COMBINING ACUTE ACCENT (U+0301)
+	\pgfparserdef{tcparser}{ini}ń {\TC@write{ɴ́}}
+	\pgfparserdef{tcparser}{ini}Ń {\TC@write{Ń}}
+
+	% TODO Ņ Ǹ Ṅ Ṇ Ṉ Ṋ
 
 % LATIN LETTER SMALL CAPITAL O (U+1D0F)
 \pgfparserdef{tcparser}{ini}o {\TC@write{ᴏ}}
@@ -634,7 +644,11 @@ inserted as is%
 	\pgfparserdef{tcparser}{ini}š {\TC@write{ꜱ̌}}
 	\pgfparserdef{tcparser}{ini}Š {\TC@write{Š}}
 
-	% TODO Ś Ŝ Ş Ș Ṡ Ṣ
+	% LATIN LETTER SMALL CAPITAL S (U+A731) + COMBINING ACUTE ACCENT (U+0301)
+	\pgfparserdef{tcparser}{ini}ś {\TC@write{ꜱ́}}
+	\pgfparserdef{tcparser}{ini}Ś {\TC@write{Ś}}
+
+	% TODO Ŝ Ş Ș Ṡ Ṣ
 
 % LATIN LETTER SMALL CAPITAL T (U+1D1B)
 \pgfparserdef{tcparser}{ini}t {\TC@write{ᴛ}}
@@ -723,7 +737,12 @@ inserted as is%
 	\pgfparserdef{tcparser}{ini}ž {\TC@write{ᴢ̌}}
 	\pgfparserdef{tcparser}{ini}Ž {\TC@write{Ž}}
 
-% LATIN LETTER SMALL CAPITAL G							(U+1D22)
+% LATIN LETTER SMALL CAPITAL Z							(U+1D22)
+	%	with	COMBINING ACUTE ACCENT 					(U+0301)
+		\pgfparserdef{tcparser}{ini}ź {\TC@write{ᴢ́}}
+		\pgfparserdef{tcparser}{ini}Ź {\TC@write{Ź}}
+
+% LATIN LETTER SMALL CAPITAL Z							(U+1D22)
 	%	with	COMBINING DOT ABOVE						(U+0307)
 		\pgfparserdef{tcparser}{ini}ż {\TC@write{ᴢ̇}}
 		\pgfparserdef{tcparser}{ini}Ż {\TC@write{Ż}}
