@@ -1,4 +1,4 @@
-# truecaps (v0.6.3)
+# truecaps (v0.6.5)
 Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX.
 
 ## Purpose
@@ -58,7 +58,7 @@ like Vietnamese, Yoruba and some other African (Native American?) writing system
 
 ## History
 
-* v0.6.3 Number of supported glyphs: 248 and counting. (A-L fully, including Vietnamese letters.)
+* v0.6.5 Number of supported glyphs: 293 and counting. (A-M fully, including Vietnamese letters.)
 * v0.6 Internal code cleanup continues. Added support for Finnish, Slovenian, Icelandic (partial), Polish.
 * v0.5 Reversed the command structure: `textsc{…}` continues to work as expected, `texttc{…}` becomes a new command.
 * v0.4 Dropped XeLaTeX compatibility. Added support for Italian, Swedish, Danish, Icelandic, Serbian, Croatian.

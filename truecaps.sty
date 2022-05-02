@@ -1,5 +1,5 @@
 %----------------------------------- -----------------------------------------
-% This is file "truecaps.sty" v0.6.3 (2022-05-03)
+% This is file "truecaps.sty" v0.6.5 (2022-05-02)
 % It was forked from निरंजन's "unisc.sty" v0.1 (2022-04-21)
 %
 % This file and possibly later versions can be found on
@@ -13,7 +13,7 @@
 %
 %-----------------------------------------------------------------------------
 %
-% LaTeX Package truecaps v0.6.3 (2022-05-03)
+% LaTeX Package truecaps v0.6.5 (2022-05-02)
 % Copyright © 2022 निरंजन [Niranjan] and Ingmar Greil
 %
 % This program is free software: you can redistribute it and/or modify it
@@ -34,7 +34,7 @@
 \def\truecapsname			{truecaps}
 \def\truecapsdescription	{Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX}
 
-\def\truecapsversion		{0.6.3}
+\def\truecapsversion		{0.6.5}
 \def\truecapsdate			{2022-05-02}
 
 %----------------------------------------------------------------------------
@@ -275,15 +275,11 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	\pgfparserdef{tcparser}{ini}ǈ {\TC@write{Lᴊ}}
 
 %	LATIN SMALL LETTER LJ									(U+01C9)
-	\pgfparserdef{tcparser}{ini}ǉ {\TC@write{ʟᴊ}}%						(1×3)		FIXME Σ 285
+	\pgfparserdef{tcparser}{ini}ǉ {\TC@write{ʟᴊ}}%						(1×3)
+
+\input{includes/M.tex}	% m ḿ ṁ ṃ 				| M Ḿ Ṁ Ṃ				(2×4)		FIXME Σ 293
 
 % XYZZY
-
-% LATIN LETTER SMALL CAPITAL M (U+1D0D)
-\pgfparserdef{tcparser}{ini}m {\TC@write{ᴍ}}
-\pgfparserdef{tcparser}{ini}M {\TC@write{M}}
-
-	% TODO Ḿ Ṁ Ṃ
 
 % LATIN LETTER SMALL CAPITAL N (U+0274)
 \pgfparserdef{tcparser}{ini}n {\TC@write{ɴ}}
