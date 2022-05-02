@@ -212,6 +212,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 
 %-----------------------------------------------------------------------------
 %	There are three types of what lookes like "SMALL LETTER D" with something
+%	The corresponding capital letter looks very similar in all cases.
 
 %	LATIN LETTER SMALL LETTER ETH							(U+00F0)
 	\pgfparserdef{tcparser}{ini}ð {\TC@write{ᴆ}}
@@ -222,13 +223,13 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	\pgfparserdef{tcparser}{ini}Đ {\TC@write{Đ}}
 
 %	LATIN SMALL LETTER D WITH TAIL							(U+0256)
+	%	aka "African D"
 	\pgfparserdef{tcparser}{ini}ɖ {\TC@write{ᴆ}}
-	\pgfparserdef{tcparser}{ini}Ɖ {\TC@write{Ɖ}}
-
-%	The corresponding capital letter looks very similar in all cases.	(2×3)
+	\pgfparserdef{tcparser}{ini}Ɖ {\TC@write{Ɖ}}%						(2×3)
 
 %-----------------------------------------------------------------------------
 %	This covers the "DZ" digraph in all variants: DŽ/Dž/dž and DZ/Dz/dz
+%	To work with truecaps it needs to be broken up into two letters
 
 %	LATIN CAPITAL LETTER DZ WITH CARON						(U+01C4)
 	\pgfparserdef{tcparser}{ini}Ǆ {\TC@write{DŽ}}
@@ -285,9 +286,9 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 \pgfparserdef{tcparser}{ini}l {\TC@write{ʟ}}
 \pgfparserdef{tcparser}{ini}L {\TC@write{L}}
 
+	% optimize kerning, maybe? FIXME
 	\pgfparserdef{tcparser}{ini}ŀ {\TC@write{ʟ·}}
 	\pgfparserdef{tcparser}{ini}Ŀ {\TC@write{L·}}
-
 	% TODO Ĺ Ļ Ľ Ḷ Ḻ Ḽ
 
 % LATIN LETTER SMALL CAPITAL L WITH STROKE (U+1D0C)
@@ -406,6 +407,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	% There is no German word that starts with ẞ
 	% Technically, there should be no need for 
 	% LATIN CAPITAL LETTER SHARP S (U+1E9E)
+	% but we'll rather err on the side of caution.
 	\pgfparserdef{tcparser}{ini}ß {\TC@write{ꜱᴢ}} % FIXME option ß = ss oder ß = sz
 	\pgfparserdef{tcparser}{ini}ẞ {\TC@write{SS}}
 
@@ -506,7 +508,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	\pgfparserdef{tcparser}{ini}ý {\TC@write{ʏ́}}
 	\pgfparserdef{tcparser}{ini}Ý {\TC@write{Ý}}
 
-	% TODO Ỳ Ŷ
+	% TODO Ỳ Ŷ Y̊
 
 % LATIN LETTER SMALL CAPITAL Z (U+1D22)
 \pgfparserdef{tcparser}{ini}z {\TC@write{ᴢ}}
@@ -526,7 +528,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 		\pgfparserdef{tcparser}{ini}ż {\TC@write{ᴢ̇}}
 		\pgfparserdef{tcparser}{ini}Ż {\TC@write{Ż}}
 
-	% TODO Ź Ž Ẑ 
+	% TODO Ź Ž Ẑ
 
 % BLANK SPACE
 \pgfparserdef{tcparser}{ini}{blank space}%
@@ -543,7 +545,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 \AddToHook{begindocument/end}{%
   \RenewDocumentCommand\scshape{  }{%
     \ifdefined\TC@ini
-      \PackageError{truecaps}{Nested use not allowed}{%
+      \PackageError{truecaps}{Nested use not allowed!}{%
         You somehow made \string\nirshape\space expand inside
         the parser. This isn't supported.%
       }%
