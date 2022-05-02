@@ -188,6 +188,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 % COMBINING DOUBLE ACUTE ACCENT								(U+030B)	 ̋
 % COMBINING CARON											(U+030C)	 ̌
 % COMBINING DOUBLE GRAVE ACCENT								(U+030F)	 ̏
+% COMBINING HORN											(U+031B)	 ̛
 % COMBINING DOT BELOW										(U+0323)	 ̣
 % COMBINING RING BELOW										(U+0325)	 ̥
 % COMBINING COMMA BELOW										(U+0326)	 ̦
@@ -200,7 +201,6 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 % COMBINING SHORT SOLIDUS OVERLAY							(U+0337)	 ̷
 % COMBINING LONG SOLIDUS OVERLAY							(U+0338)	 ̸
 % COMBINING RIGHT HALF RING ABOVE							(U+0357)	 ͗
-
 %-----------------------------------------------------------------------------
 
 %	a à á â ầ ấ ẫ ẩ ậ ã ā ă ằ ắ ẵ ẳ ặ ȧ ǡ ä ǟ ả ȃ å ǻ ǎ ȁ ạ ḁ ą ẚ æ ǽ ǣ	(34)
@@ -277,72 +277,23 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 %	LATIN SMALL LETTER LJ									(U+01C9)
 	\pgfparserdef{tcparser}{ini}ǉ {\TC@write{ʟᴊ}}%						(1×3)
 
-\input{includes/M.tex}	% m ḿ ṁ ṃ 				| M Ḿ Ṁ Ṃ				(2×4)		FIXME Σ 293
+\input{includes/M.tex}	% m ḿ ṁ ṃ 				| M Ḿ Ṁ Ṃ				(2×4)
+\input{includes/N.tex}	% n ǹ ń ň ñ ņ ṅ ṇ ṉ ṋ ŋ | N Ǹ Ń Ň Ñ Ņ Ṅ Ṇ Ṉ Ṋ Ŋ	(2×11)
+						% ŉ												(1)
+
+%	LATIN CAPITAL LETTER NJ									(U+01CA)
+	\pgfparserdef{tcparser}{ini}Ǌ {\TC@write{NJ}}
+
+%	LATIN CAPITAL LETTER N WITH SMALL LETTER J				(U+01CB)
+	\pgfparserdef{tcparser}{ini}ǋ {\TC@write{Nᴊ}}
+
+%	LATIN SMALL LETTER NJ									(U+01CC)
+	\pgfparserdef{tcparser}{ini}ǌ {\TC@write{ɴᴊ}}%						(1×3)			FIXME Σ 319
+
+\input{includes/O.tex}
 
 % XYZZY
 
-% LATIN LETTER SMALL CAPITAL N (U+0274)
-\pgfparserdef{tcparser}{ini}n {\TC@write{ɴ}}
-\pgfparserdef{tcparser}{ini}N {\TC@write{N}}
-
-	% LATIN LETTER SMALL CAPITAL N (U+0274) + COMBINING CARON (U+030C)
-	\pgfparserdef{tcparser}{ini}ň {\TC@write{ɴ̌}}
-	\pgfparserdef{tcparser}{ini}Ň {\TC@write{Ň}}
-
-	% LATIN LETTER SMALL CAPITAL N (U+0274) + COMBINING TILDE (U+0303)
-	\pgfparserdef{tcparser}{ini}ñ {\TC@write{ɴ̃}}
-	\pgfparserdef{tcparser}{ini}Ñ {\TC@write{Ñ}}
-
-	% LATIN LETTER SMALL CAPITAL N (U+0274) + COMBINING ACUTE ACCENT (U+0301)
-	\pgfparserdef{tcparser}{ini}ń {\TC@write{ɴ́}}
-	\pgfparserdef{tcparser}{ini}Ń {\TC@write{Ń}}
-
-	% LATIN SMALL LETTER N PRECEEDED BY APOSTROPHE 		(U+0149)
-	\pgfparserdef{tcparser}{ini}ŉ {\TC@write{ʼ\kern -.025em ɴ}}
-	% NO CORRESPONDING CAPITAL LETTER
-
-	% LATIN SMALL LETTER ENG							(U+014B)
-	\pgfparserdef{tcparser}{ini}ŋ {\TC@write{ŋ}%
-		\PackageWarning{\truecapsname}{\engwarning}}
-	\pgfparserdef{tcparser}{ini}Ŋ {\TC@write{Ŋ}}
-
-	% TODO Ņ Ǹ Ṅ Ṇ Ṉ Ṋ
-
-% LATIN LETTER SMALL CAPITAL O (U+1D0F)
-\pgfparserdef{tcparser}{ini}o {\TC@write{ᴏ}}
-\pgfparserdef{tcparser}{ini}O {\TC@write{O}}
-
-	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING DIAERESIS (U+0308)
-	\pgfparserdef{tcparser}{ini}ö {\TC@write{ᴏ̈}}
-	\pgfparserdef{tcparser}{ini}Ö {\TC@write{Ö}}
-
-	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING GRAVE ACCENT (U+0300)
-	\pgfparserdef{tcparser}{ini}ó {\TC@write{ᴏ̀}}
-	\pgfparserdef{tcparser}{ini}Ò {\TC@write{Ò}}
-
-	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING ACUTE ACCENT (U+0301)
-	\pgfparserdef{tcparser}{ini}ó {\TC@write{ᴏ́}}
-	\pgfparserdef{tcparser}{ini}Ó {\TC@write{Ó}}
-
-	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING ACUTE ACCENT (U+0302)
-	\pgfparserdef{tcparser}{ini}ô {\TC@write{ᴏ̂}}
-	\pgfparserdef{tcparser}{ini}Ô {\TC@write{Ô}}
-
-	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING DOUBLE GRAVE ACCENT (U+030F)
-	\pgfparserdef{tcparser}{ini}ȍ {\TC@write{ᴏ̏}}
-	\pgfparserdef{tcparser}{ini}Ȍ {\TC@write{Ȍ}}
-
-	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING DOUBLE ACUTE ACCENT (U+030B)
-	\pgfparserdef{tcparser}{ini}ő {\TC@write{ᴏ̋}}
-	\pgfparserdef{tcparser}{ini}Ő {\TC@write{Ő}}
-
-	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING TILDE (U+0303)
-	\pgfparserdef{tcparser}{ini}õ {\TC@write{ᴏ̃}}
-	\pgfparserdef{tcparser}{ini}Õ {\TC@write{Õ}}
-
-	% LATIN LETTER SMALL CAPITAL O (U+1D0F) + COMBINING SHORT SOLIDUS OVERLAY (U+0337)
-	\pgfparserdef{tcparser}{ini}ø {\TC@write{ᴏ̷}}
-	\pgfparserdef{tcparser}{ini}Ø {\TC@write{Ø}}
 
 % LATIN CAPITAL LETTER THORN (U+00DE) 
 % There is no support for THORN. The best we can do is issue a 
@@ -352,10 +303,6 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 \pgfparserdef{tcparser}{ini}Þ {\TC@write{Þ}
 %\PackageWarning{\truecapsname}{\thornwarning}% 	see line #110	FIXME AFTER DEBUGGING
 } % end of Þ
-
-% LATIN LETTER SMALL CAPITAL OE (U+0276)
-\pgfparserdef{tcparser}{ini}œ {\TC@write{ɶ}}
-\pgfparserdef{tcparser}{ini}Œ {\TC@write{Œ}}
 
 % LATIN LETTER SMALL CAPITAL P (U+1D18)
 \pgfparserdef{tcparser}{ini}p {\TC@write{ᴘ}}
@@ -372,6 +319,8 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	% LATIN LETTER SMALL CAPITAL R (U+0280)	+ COMBINING CARON (U+030C)
 	\pgfparserdef{tcparser}{ini}ř {\TC@write{ʀ̌}}
 	\pgfparserdef{tcparser}{ini}Ř {\TC@write{Ř}}
+
+% TODO ȓ ŕ ŗ
 
 	%	LATIN LETTER SMALL CAPITAL R						(U+0280)
 	%	with	COMBINING DOUBLE GRAVE ACCENT				(U+030F)
@@ -419,7 +368,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	\pgfparserdef{tcparser}{ini}ț {\TC@write{ᴛ̦}}
 	\pgfparserdef{tcparser}{ini}Ț {\TC@write{Ț}}
 
-	% TODO Ţ Ṫ Ṭ Ṯ Ṱ
+	% TODO Ţ Ṫ Ṭ Ṯ Ṱ Ŧ
 
 % LATIN LETTER SMALL CAPITAL U (U+1D1C)
 \pgfparserdef{tcparser}{ini}u {\TC@write{ᴜ}}
@@ -453,7 +402,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	\pgfparserdef{tcparser}{ini}ű {\TC@write{ᴜ̋}}
 	\pgfparserdef{tcparser}{ini}Ű {\TC@write{Ű}}
 
-	% TODO Ú Ǔ Ų 
+	% TODO Ú Ǔ Ų Ȗ Ũ Ū Ŭ Ų Ǖ Ǘ Ǚ Ǜ Ǔ Ụ Ủ Ứ Ừ Ử Ữ Ự 
 
 % LATIN LETTER SMALL CAPITAL V (U+1D20)
 \pgfparserdef{tcparser}{ini}v {\TC@write{ᴠ}}
@@ -488,7 +437,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	\pgfparserdef{tcparser}{ini}ý {\TC@write{ʏ́}}
 	\pgfparserdef{tcparser}{ini}Ý {\TC@write{Ý}}
 
-	% TODO Ỳ Ŷ Y̊
+	% TODO Ỳ Ŷ Y̊ Ỳ Ỵ Ỷ Ỹ Ȳ
 
 % LATIN LETTER SMALL CAPITAL Z (U+1D22)
 \pgfparserdef{tcparser}{ini}z {\TC@write{ᴢ}}

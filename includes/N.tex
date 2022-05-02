@@ -1,0 +1,66 @@
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL N							(U+0274)
+	\pgfparserdef{tcparser}{ini}n {\TC@write{ɴ}}
+	\pgfparserdef{tcparser}{ini}N {\TC@write{N}}
+
+	%	LATIN LETTER SMALL CAPITAL N						(U+0274)
+	%	with	COMBINING GRAVE ACCENT						(U+0300)
+		\pgfparserdef{tcparser}{ini}ǹ {\TC@write{ɴ̀}}
+		\pgfparserdef{tcparser}{ini}Ǹ {\TC@write{Ǹ}}
+
+	%	LATIN LETTER SMALL CAPITAL N						(U+0274)
+	%	with	COMBINING ACUTE ACCENT						(U+0301)
+		\pgfparserdef{tcparser}{ini}ń {\TC@write{ɴ́}}
+		\pgfparserdef{tcparser}{ini}Ń {\TC@write{Ń}}
+
+	%	LATIN LETTER SMALL CAPITAL N						(U+0274)
+	%	with	COMBINING TILDE								(U+0303)
+		\pgfparserdef{tcparser}{ini}ñ {\TC@write{ɴ̃}}
+		\pgfparserdef{tcparser}{ini}Ñ {\TC@write{Ñ}}
+
+	%	LATIN LETTER SMALL CAPITAL N						(U+0274)
+	%	with	COMBINING DOT ABOVE							(U+0307)
+		\pgfparserdef{tcparser}{ini}ṅ {\TC@write{ɴ̇}}
+		\pgfparserdef{tcparser}{ini}Ṅ {\TC@write{Ṅ}}
+
+	%	LATIN LETTER SMALL CAPITAL N						(U+0274)
+	%	with	COMBINING CARON								(U+030C)
+		\pgfparserdef{tcparser}{ini}ň {\TC@write{ɴ̌}}
+		\pgfparserdef{tcparser}{ini}Ň {\TC@write{Ň}}
+
+	%	LATIN LETTER SMALL CAPITAL N						(U+0274)
+	%	with	COMBINING DOT BELOW							(U+0323)
+		\pgfparserdef{tcparser}{ini}ṇ {\TC@write{ɴ̣}}
+		\pgfparserdef{tcparser}{ini}Ṇ {\TC@write{Ṇ}}
+
+	%	LATIN LETTER SMALL CAPITAL N						(U+0274)
+	%	with	COMBINING CEDILLA							(U+0327)
+		\pgfparserdef{tcparser}{ini}ņ {\TC@write{ɴ̧}}
+		\pgfparserdef{tcparser}{ini}Ņ {\TC@write{Ņ}}
+
+	%	LATIN LETTER SMALL CAPITAL N						(U+0274)
+	%	with	COMBINING CIRCUMFLEX ACCENT BELOW			(U+032D)
+		\pgfparserdef{tcparser}{ini}ṋ {\TC@write{ɴ̭}}
+		\pgfparserdef{tcparser}{ini}Ṋ {\TC@write{Ṋ}}
+
+	%	LATIN LETTER SMALL CAPITAL N						(U+0274)
+	%	with	COMBINING MACRON BELOW						(U+0331)
+		\pgfparserdef{tcparser}{ini}ṉ {\TC@write{ɴ̱}}
+		\pgfparserdef{tcparser}{ini}Ṉ {\TC@write{Ṉ}}
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN SMALL LETTER ENG									(U+014B)
+	\pgfparserdef{tcparser}{ini}ŋ {\TC@write{ŋ}%
+	\PackageWarning{\truecapsname}{\engwarning}}
+	\pgfparserdef{tcparser}{ini}Ŋ {\TC@write{Ŋ}}
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN SMALL LETTER N PRECEEDED BY APOSTROPHE			(U+0149)
+	\pgfparserdef{tcparser}{ini}ŉ {\TC@write{ʼ\kern -.025em ɴ}}
+	% no corrseponding uppercase character!
+
+%-----------------------------------------------------------------------------
