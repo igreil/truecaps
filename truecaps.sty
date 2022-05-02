@@ -286,9 +286,8 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 \pgfparserdef{tcparser}{ini}l {\TC@write{ʟ}}
 \pgfparserdef{tcparser}{ini}L {\TC@write{L}}
 
-	% optimize kerning, maybe? FIXME
-	\pgfparserdef{tcparser}{ini}ŀ {\TC@write{ʟ·}}
-	\pgfparserdef{tcparser}{ini}Ŀ {\TC@write{L·}}
+	\pgfparserdef{tcparser}{ini}ŀ {\TC@write{ʟ\kern -.075em ·}}
+	\pgfparserdef{tcparser}{ini}Ŀ {\TC@write{L\kern -.075em ·}}
 	% TODO Ĺ Ļ Ľ Ḷ Ḻ Ḽ
 
 % LATIN LETTER SMALL CAPITAL L WITH STROKE (U+1D0C)
