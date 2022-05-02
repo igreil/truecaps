@@ -259,27 +259,13 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 						% i ı ì í î ï ĩ ī ĭ į ǐ ȉ ȋ ḭ ḯ ỉ ị				(17)
 \input{includes/I.tex}	% I İ Ì Í Î Ï Ĩ Ī Ĭ Į Ǐ Ȉ Ȋ Ḭ Ḯ Ỉ Ị				(17)
 
-% LATIN SMALL LIGATURE IJ					(U+0133)
-		\pgfparserdef{tcparser}{ini}ĳ {\TC@write{ɪᴊ}}
-		\pgfparserdef{tcparser}{ini}Ĳ {\TC@write{Ĳ}}
+%	LATIN SMALL LIGATURE IJ									(U+0133)
+	\pgfparserdef{tcparser}{ini}ĳ {\TC@write{ɪᴊ}}
+	\pgfparserdef{tcparser}{ini}Ĳ {\TC@write{Ĳ}}%						(2×1)
 
-% LATIN LETTER SMALL CAPITAL J (U+1D0A)
-\pgfparserdef{tcparser}{ini}j {\TC@write{ᴊ}}
-\pgfparserdef{tcparser}{ini}J {\TC@write{J}}
+\input{includes/J.tex}	%j ȷ ĵ ǰ 				| J Ĵ					(4+2)
 
-	% LATIN LETTER SMALL CAPITAL J (U+1D0A)
-		% + COMBINING CIRCUMFLEX ACCENT (U+0302)
-	\pgfparserdef{tcparser}{ini}ĵ {\TC@write{ᴊ̂}}
-	\pgfparserdef{tcparser}{ini}Ĵ {\TC@write{Ĵ}}
-
-	% LATIN LETTER SMALL CAPITAL J (U+1D0A)
-		% + COMBINING CARON (U+030C)
-	\pgfparserdef{tcparser}{ini}ǰ {\TC@write{ᴊ̌}}
-	%FIXME ONYL WORKS WITH PRECOMPOSED GLYPHS: ǰ exists, but J̌ does not!
-%\pgfparserdef{tcparser}{ini}J̌ {\TC@write{J̌}} %
-
-	% LATIN SMALL LETTER DOTLESS J (U+0237)
-	\pgfparserdef{tcparser}{ini}ȷ {\TC@write{ᴊ}}
+% XYZZY
 
 % LATIN LETTER SMALL CAPITAL K (U+1D0B)
 \pgfparserdef{tcparser}{ini}k {\TC@write{ᴋ}}

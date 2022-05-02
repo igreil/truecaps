@@ -1,0 +1,24 @@
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL J							(U+1D0A)
+	\pgfparserdef{tcparser}{ini}j {\TC@write{ᴊ}}
+	\pgfparserdef{tcparser}{ini}J {\TC@write{J}}
+
+	%	LATIN LETTER SMALL CAPITAL J						(U+1D0A)
+	%	with	COMBINING CIRCUMFLEX ACCENT					(U+0302)
+		\pgfparserdef{tcparser}{ini}ĵ {\TC@write{ᴊ̂}}
+		\pgfparserdef{tcparser}{ini}Ĵ {\TC@write{Ĵ}}
+
+	% LATIN LETTER SMALL CAPITAL J							(U+1D0A)
+	%	with	COMBINING CIRCUMFLEX ACCENT					(U+0302)
+		\pgfparserdef{tcparser}{ini}ǰ {\TC@write{ᴊ̌}}
+		% no corrseponding uppercase character!
+
+%-----------------------------------------------------------------------------
+
+%	LATIN SMALL LETTER DOTLESS J							(U+0237)
+	\pgfparserdef{tcparser}{ini}ȷ {\TC@write{ᴊ}}
+	% no corrseponding uppercase character!
+
+%-----------------------------------------------------------------------------
