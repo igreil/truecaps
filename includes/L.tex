@@ -1,0 +1,63 @@
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL L							(U+029F)
+	\pgfparserdef{tcparser}{ini}l {\TC@write{ʟ}}
+	\pgfparserdef{tcparser}{ini}L {\TC@write{L}}
+
+	%	LATIN LETTER SMALL CAPITAL L						(U+029F)
+	%	with	COMBINING ACUTE ACCENT						(U+0301)
+		\pgfparserdef{tcparser}{ini}ĺ {\TC@write{ʟ́}}
+		\pgfparserdef{tcparser}{ini}Ĺ {\TC@write{Ĺ}}
+
+	%	LATIN LETTER SMALL CAPITAL L						(U+029F)
+	%	with	COMBINING CARON								(U+030C)
+		\pgfparserdef{tcparser}{ini}ľ {\TC@write{ʟ̌}}
+		\pgfparserdef{tcparser}{ini}Ľ {\TC@write{Ľ}}
+
+	%	LATIN LETTER SMALL CAPITAL L						(U+029F)
+	%	with	COMBINING DOT BELOW							(U+0323)
+		\pgfparserdef{tcparser}{ini}ḷ {\TC@write{ʟ̣}}
+		\pgfparserdef{tcparser}{ini}Ḷ {\TC@write{Ḷ}}
+
+		%	LATIN LETTER SMALL CAPITAL L					(U+029F)
+		%	with	COMBINING DOT BELOW						(U+0323)
+		%	and		COMBINING MACRON						(U+0304)
+			\pgfparserdef{tcparser}{ini}ḹ {\TC@write{ʟ̣̄}}
+			\pgfparserdef{tcparser}{ini}Ḹ {\TC@write{Ḹ}}
+
+	%	LATIN LETTER SMALL CAPITAL L						(U+029F)
+	%	with	COMBINING CEDILLA							(U+0327)
+		\pgfparserdef{tcparser}{ini}ļ {\TC@write{ʟ̧}}
+		\pgfparserdef{tcparser}{ini}Ļ {\TC@write{Ļ}}
+
+	%	LATIN LETTER SMALL CAPITAL L						(U+029F)
+	%	with	COMBINING MACRON BELOW						(U+0331)
+		\pgfparserdef{tcparser}{ini}ḻ {\TC@write{ʟ̱}}
+		\pgfparserdef{tcparser}{ini}Ḻ {\TC@write{Ḻ}}
+
+	%	LATIN LETTER SMALL CAPITAL L						(U+029F)
+	%	with	COMBINING CIRCUMFLEX ACCENT BELOW			(U+032D)
+		\pgfparserdef{tcparser}{ini}ḽ {\TC@write{ʟ̭}}
+		\pgfparserdef{tcparser}{ini}Ḽ {\TC@write{Ḽ}}
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN SMALL LETTER L WITH MIDDLE DOT					(U+1D0C)
+	\pgfparserdef{tcparser}{ini}ŀ {\TC@write{ʟ\kern -.075em ·}}
+	\pgfparserdef{tcparser}{ini}Ŀ {\TC@write{L\kern -.075em ·}}
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL L WITH STROKE				(U+1D0C)
+	\pgfparserdef{tcparser}{ini}ł {\TC@write{ᴌ}}
+	\pgfparserdef{tcparser}{ini}Ł {\TC@write{Ł}}
+
+%-----------------------------------------------------------------------------
+
+%
+%	LATIN SMALL LETTER MIDDLE-WELSH LL						(U+1EFB)
+	\pgfparserdef{tcparser}{ini}ỻ {\TC@write{ʟʟ}}
+	\pgfparserdef{tcparser}{ini}Ỻ {\TC@write{LL}}
+
+%-----------------------------------------------------------------------------

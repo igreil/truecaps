@@ -265,21 +265,19 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	\pgfparserdef{tcparser}{ini}Ĳ {\TC@write{Ĳ}}%						(2×1)
 
 \input{includes/J.tex}	% j ȷ ĵ ǰ 				| J Ĵ					(4+2)
-\input{includes/K.tex}	% k ḱ ǩ ḳ ķ ḵ ĸ			| K Ḱ Ǩ Ḳ Ķ Ḵ			(7+6)		FIXME Σ 261
+\input{includes/K.tex}	% k ḱ ǩ ḳ ķ ḵ ĸ			| K Ḱ Ǩ Ḳ Ķ Ḵ			(7+6)
+\input{includes/L.tex}	% l ĺ ļ ľ ŀ ł ḷ ḻ ḽ ḹ ỻ	| L Ĺ Ļ Ľ Ŀ Ł Ḷ Ḻ Ḽ Ḹ Ỻ	(2×11)
+
+%	LATIN CAPITAL LETTER LJ									(U+01C7)
+	\pgfparserdef{tcparser}{ini}Ǉ {\TC@write{LJ}}
+
+%	LATIN CAPITAL LETTER L WITH SMALL LETTER J				(U+01C8)
+	\pgfparserdef{tcparser}{ini}ǈ {\TC@write{Lᴊ}}
+
+%	LATIN SMALL LETTER LJ									(U+01C9)
+	\pgfparserdef{tcparser}{ini}ǉ {\TC@write{ʟᴊ}}%						(1×3)		FIXME Σ 285
 
 % XYZZY
-
-% LATIN LETTER SMALL CAPITAL L (U+029F)
-\pgfparserdef{tcparser}{ini}l {\TC@write{ʟ}}
-\pgfparserdef{tcparser}{ini}L {\TC@write{L}}
-
-	\pgfparserdef{tcparser}{ini}ŀ {\TC@write{ʟ\kern -.075em ·}}
-	\pgfparserdef{tcparser}{ini}Ŀ {\TC@write{L\kern -.075em ·}}
-	% TODO Ĺ Ļ Ľ Ḷ Ḻ Ḽ
-
-% LATIN LETTER SMALL CAPITAL L WITH STROKE (U+1D0C)
-\pgfparserdef{tcparser}{ini}ł {\TC@write{ᴌ}}
-\pgfparserdef{tcparser}{ini}Ł {\TC@write{Ł}}
 
 % LATIN LETTER SMALL CAPITAL M (U+1D0D)
 \pgfparserdef{tcparser}{ini}m {\TC@write{ᴍ}}
