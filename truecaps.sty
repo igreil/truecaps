@@ -1,5 +1,5 @@
 %----------------------------------- -----------------------------------------
-% This is file "truecaps.sty" v0.6.5 (2022-05-02)
+% This is file "truecaps.sty" v0.6.6 (2022-05-02)
 % It was forked from निरंजन's "unisc.sty" v0.1 (2022-04-21)
 %
 % This file and possibly later versions can be found on
@@ -13,7 +13,7 @@
 %
 %-----------------------------------------------------------------------------
 %
-% LaTeX Package truecaps v0.6.5 (2022-05-02)
+% LaTeX Package truecaps v0.6.6 (2022-05-02)
 % Copyright © 2022 निरंजन [Niranjan] and Ingmar Greil
 %
 % This program is free software: you can redistribute it and/or modify it
@@ -34,7 +34,7 @@
 \def\truecapsname			{truecaps}
 \def\truecapsdescription	{Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX}
 
-\def\truecapsversion		{0.6.5}
+\def\truecapsversion		{0.6.6}
 \def\truecapsdate			{2022-05-02}
 
 %----------------------------------------------------------------------------
@@ -143,6 +143,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 % LATIN LETTER SMALL CAPITAL A								(U+1D00)	ᴀ
 % LATIN LETTER SMALL CAPITAL AE								(U+1D01)	ᴁ
 % LATIN LETTER SMALL CAPITAL B								(U+0299)	ʙ
+% LATIN LETTER SMALL CAPITAL BARRED B						(U+1D03)	ᴃ
 % LATIN LETTER SMALL CAPITAL C								(U+1D04)	ᴄ
 % LATIN LETTER SMALL CAPITAL D								(U+1D05)	ᴅ
 % LATIN LETTER SMALL CAPITAL ETH							(U+1D06)	ᴆ
@@ -206,7 +207,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 %	a à á â ầ ấ ẫ ẩ ậ ã ā ă ằ ắ ẵ ẳ ặ ȧ ǡ ä ǟ ả ȃ å ǻ ǎ ȁ ạ ḁ ą ẚ æ ǽ ǣ	(34)
 %	A À Á Â Ầ Ấ Ẫ Ẩ Ậ Ã Ā Ă Ằ Ắ Ẵ Ẳ Ặ Ȧ Ǡ Ä Ǟ Ả Ȃ Å Ǻ Ǎ Ȁ Ạ Ḁ Ą   Æ Ǽ Ǣ	(33)
 \input{includes/A.tex}
-\input{includes/B.tex}	% b ḃ ḅ ḇ				| B Ḃ Ḅ Ḇ				(2×4)
+\input{includes/B.tex}	% b ḃ ḅ ḇ ƀ				| B Ḃ Ḅ Ḇ Ƀ				(2×5)
 \input{includes/C.tex}	% c ć ĉ ċ č ç			| C Ć Ĉ Ċ Č Ç			(2×6)
 \input{includes/D.tex}	% d ď ḋ ḍ ḏ ḑ ḓ			| D Ď Ḋ Ḍ Ḏ Ḑ Ḓ			(2×7)
 
@@ -288,12 +289,13 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	\pgfparserdef{tcparser}{ini}ǋ {\TC@write{Nᴊ}}
 
 %	LATIN SMALL LETTER NJ									(U+01CC)
-	\pgfparserdef{tcparser}{ini}ǌ {\TC@write{ɴᴊ}}%						(1×3)			FIXME Σ 319
+	\pgfparserdef{tcparser}{ini}ǌ {\TC@write{ɴᴊ}}%						(1×3)
 
-\input{includes/O.tex}
+%	o ò ó ô õ ö ȫ ō ṑ ṓ ŏ ȏ ȍ ő ơ ǫ ǭ ỏ ȯ ȱ ȭ ṍ ṏ ọ ồ ố ổ ỗ ộ ờ ớ ở ỡ ợ (34)
+%	O Ò Ó Ô Õ Ö Ȫ Ō Ṑ Ṓ Ŏ Ȏ Ȍ Ő Ơ Ǫ Ǭ Ỏ Ȯ Ȱ Ȭ Ṍ Ṏ Ọ Ồ Ố Ổ Ỗ Ộ Ờ Ớ Ở Ỡ Ợ (34)
+\input{includes/O.tex}	% œ ø ǿ					| Œ Ø Ǿ					(2×3)			FIXME Σ 395
 
 % XYZZY
-
 
 % LATIN CAPITAL LETTER THORN (U+00DE) 
 % There is no support for THORN. The best we can do is issue a 
@@ -492,3 +494,4 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 \endinput
 
 % EOF "truecaps.sty"
+% https://de.wikipedia.org/wiki/Afrika-Alphabet

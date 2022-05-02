@@ -1,4 +1,4 @@
-# truecaps (v0.6.5)
+# truecaps (v0.6.6)
 Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX.
 
 ## Purpose
@@ -36,7 +36,7 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 ## Todo
 
-* Add modifiers, accents, umlauts etc. for all letters. (A-M done fully, >80% all in all)
+* Add modifiers, accents, umlauts etc. for all letters. (A-O done fully, >80% all in all)
 * Take care of punctuation and numbers (OTF features?
 * Test suite for common Latin (European) languages (>80% done)
 * Full Support for 
@@ -58,7 +58,7 @@ like Vietnamese, Yoruba and some other African (Native American?) writing system
 
 ## History
 
-* v0.6.5 Number of supported glyphs: 293 and counting. (A-M fully, including Vietnamese letters with double diacritics.)
+* v0.6.6 Number of supported glyphs: ~400 and counting. (A-O fully, including Vietnamese letters with double diacritics.)
 * v0.6 Internal code cleanup continues. Added support for Finnish, Slovenian, Icelandic (partial), Polish.
 * v0.5 Reversed the command structure: `textsc{…}` continues to work as expected, `texttc{…}` becomes a new command.
 * v0.4 Dropped XeLaTeX compatibility. Added support for Italian, Swedish, Danish, Icelandic, Serbian, Croatian.
