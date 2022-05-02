@@ -1,0 +1,40 @@
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL K 							(U+1D0B)
+	\pgfparserdef{tcparser}{ini}k {\TC@write{ᴋ}}
+	\pgfparserdef{tcparser}{ini}K {\TC@write{K}}
+
+	%	LATIN LETTER SMALL CAPITAL K 						(U+1D0B)
+	%	with	COMBINING ACUTE ACCENT 						(U+0301)
+		\pgfparserdef{tcparser}{ini}ḱ {\TC@write{ᴋ́}}
+		\pgfparserdef{tcparser}{ini}Ḱ {\TC@write{Ḱ}}
+
+	%	LATIN LETTER SMALL CAPITAL K 						(U+1D0B)
+	%	with	COMBINING CARON 							(U+030C)
+		\pgfparserdef{tcparser}{ini}ǩ {\TC@write{ᴋ̌}}
+		\pgfparserdef{tcparser}{ini}Ǩ {\TC@write{Ǩ}}
+
+	%	LATIN LETTER SMALL CAPITAL K 						(U+1D0B)
+	%	with	COMBINING DOT BELOW							(U+0323)
+		\pgfparserdef{tcparser}{ini}ḳ {\TC@write{ᴋ̣}}
+		\pgfparserdef{tcparser}{ini}Ḳ {\TC@write{Ḳ}}
+
+	%	LATIN LETTER SMALL CAPITAL K 						(U+1D0B)
+	%	with	COMBINING CEDILLA							(U+0327)
+		\pgfparserdef{tcparser}{ini}ķ {\TC@write{ᴋ̧}}
+		\pgfparserdef{tcparser}{ini}Ķ {\TC@write{Ķ}}
+
+	%	LATIN LETTER SMALL CAPITAL K 						(U+1D0B)
+	%	with	% COMBINING MACRON BELOW					(U+0331)
+		\pgfparserdef{tcparser}{ini}ḵ {\TC@write{ᴋ̱}}
+		\pgfparserdef{tcparser}{ini}Ḵ {\TC@write{Ḵ}}
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL KRA							(U+0138)
+	\pgfparserdef{tcparser}{ini}ĸ {\TC@write{ĸ}%
+	% no corrseponding uppercase character!
+	\PackageWarning{\truecapsname}{\krawarning}}
+
+%-----------------------------------------------------------------------------

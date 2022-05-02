@@ -264,23 +264,10 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	\pgfparserdef{tcparser}{ini}ĳ {\TC@write{ɪᴊ}}
 	\pgfparserdef{tcparser}{ini}Ĳ {\TC@write{Ĳ}}%						(2×1)
 
-\input{includes/J.tex}	%j ȷ ĵ ǰ 				| J Ĵ					(4+2)
+\input{includes/J.tex}	% j ȷ ĵ ǰ 				| J Ĵ					(4+2)
+\input{includes/K.tex}	% k ḱ ǩ ḳ ķ ḵ ĸ			| K Ḱ Ǩ Ḳ Ķ Ḵ			(7+6)		FIXME Σ 261
 
 % XYZZY
-
-% LATIN LETTER SMALL CAPITAL K (U+1D0B)
-\pgfparserdef{tcparser}{ini}k {\TC@write{ᴋ}}
-\pgfparserdef{tcparser}{ini}K {\TC@write{K}}
-
-	%	with	COMBINING CARON 							(U+030C)
-		\pgfparserdef{tcparser}{ini}ǩ {\TC@write{ᴋ̌}}
-		\pgfparserdef{tcparser}{ini}Ǩ {\TC@write{Ǩ}}
-
-% LATIN LETTER SMALL CAPITAL KRA (U+0138)
-\pgfparserdef{tcparser}{ini}ĸ {\TC@write{ĸ}%
-\PackageWarning{\truecapsname}{\krawarning}}
-
-	% TODO Ķ Ḱ Ḳ Ḵ
 
 % LATIN LETTER SMALL CAPITAL L (U+029F)
 \pgfparserdef{tcparser}{ini}l {\TC@write{ʟ}}
