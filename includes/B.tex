@@ -1,0 +1,22 @@
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL B							(U+0299)
+	\pgfparserdef{tcparser}{ini}b {\TC@write{ʙ}}
+	\pgfparserdef{tcparser}{ini}B {\TC@write{B}}
+
+	%	LATIN LETTER SMALL CAPITAL B						(U+0299)
+	%	with	COMBINING DOT ABOVE							(U+0307)
+		\pgfparserdef{tcparser}{ini}ḃ {\TC@write{ʙ̇}}
+		\pgfparserdef{tcparser}{ini}Ḃ {\TC@write{Ḃ}}
+
+	%	LATIN LETTER SMALL CAPITAL B						(U+0299)
+	%	with	COMBINING DOT BELOW							(U+0323)
+		\pgfparserdef{tcparser}{ini}ḅ {\TC@write{ʙ̣}}
+		\pgfparserdef{tcparser}{ini}Ḅ {\TC@write{Ḅ}}
+
+	%	LATIN LETTER SMALL CAPITAL B						(U+0299)
+	%	with	COMBINING MACRON BELOW						(U+0331)
+		\pgfparserdef{tcparser}{ini}ḇ {\TC@write{ʙ̱}}
+		\pgfparserdef{tcparser}{ini}Ḇ {\TC@write{Ḇ}}
+
+%-----------------------------------------------------------------------------

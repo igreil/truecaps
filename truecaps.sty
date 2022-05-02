@@ -204,309 +204,54 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 
 %-----------------------------------------------------------------------------
 
-% LATIN LETTER SMALL CAPITAL A								(U+1D00)
-\pgfparserdef{tcparser}{ini}a {\TC@write{ᴀ}}
-\pgfparserdef{tcparser}{ini}A {\TC@write{A}}
+% a à á â ầ ấ ẫ ẩ ậ ã ā ă ằ ắ ẵ ẳ ặ ȧ ǡ ä ǟ ả ȃ å ǻ ǎ ȁ ạ ḁ ą ẚ æ ǽ ǣ |
+% A À Á Â Ầ Ấ Ẫ Ẩ Ậ Ã Ā Ă Ằ Ắ Ẵ Ẳ Ặ Ȧ Ǡ Ä Ǟ Ả Ȃ Å Ǻ Ǎ Ȁ Ạ Ḁ Ą ẚ Æ Ǽ Ǣ
+\input{includes/A.tex}
 
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING GRAVE ACCENT						(U+0300)
-		\pgfparserdef{tcparser}{ini}à	{\TC@write{ᴀ̀}}
-		\pgfparserdef{tcparser}{ini}À	{\TC@write{À}}
+% b ḃ ḅ ḇ | B Ḃ Ḅ Ḇ
+\input{includes/B.tex}
 
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING ACUTE ACCENT						(U+0301)
-		\pgfparserdef{tcparser}{ini}á {\TC@write{ᴀ́}}
-		\pgfparserdef{tcparser}{ini}Á {\TC@write{Á}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING CIRCUMFLEX ACCENT					(U+0302)
-		\pgfparserdef{tcparser}{ini}â {\TC@write{ᴀ̂}}
-		\pgfparserdef{tcparser}{ini}Â {\TC@write{Â}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING CIRCUMFLEX ACCENT				(U+0302)
-		%	and		COMBINING GRAVE							(U+0300)
-			\pgfparserdef{tcparser}{ini}ầ {\TC@write{ᴀ̂̀}}
-			\pgfparserdef{tcparser}{ini}Ầ {\TC@write{Ầ}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING CIRCUMFLEX ACCENT				(U+0302)
-		%	and		COMBINING ACUTE							(U+0301)
-			\pgfparserdef{tcparser}{ini}ấ {\TC@write{ᴀ̂́}}
-			\pgfparserdef{tcparser}{ini}Ấ {\TC@write{Ấ}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING CIRCUMFLEX ACCENT				(U+0302)
-		%	and		COMBINING TILDE							(U+0303)
-			\pgfparserdef{tcparser}{ini}ẫ {\TC@write{ᴀ̂̃}}
-			\pgfparserdef{tcparser}{ini}Ẫ {\TC@write{Ẫ}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING CIRCUMFLEX ACCENT				(U+0302)
-		%	and		COMBINING HOOK ABOVE					(U+0309)
-			\pgfparserdef{tcparser}{ini}ẩ {\TC@write{ᴀ̂̉}}
-			\pgfparserdef{tcparser}{ini}Ẩ {\TC@write{Ẩ}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING CIRCUMFLEX ACCENT				(U+0302)
-		%	and		COMBINING DOT BELOW						(U+0323)
-			\pgfparserdef{tcparser}{ini}ậ {\TC@write{ᴀ̣̂}}
-			\pgfparserdef{tcparser}{ini}Ậ {\TC@write{Ậ}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING TILDE								(U+0303)
-		\pgfparserdef{tcparser}{ini}ã {\TC@write{ᴀ̃}}
-		\pgfparserdef{tcparser}{ini}Ã {\TC@write{Ã}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING MACRON							(U+0304)
-		\pgfparserdef{tcparser}{ini}ā {\TC@write{ᴀ̄}}
-		\pgfparserdef{tcparser}{ini}Ā {\TC@write{Ā}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING BREVE								(U+0306)
-		\pgfparserdef{tcparser}{ini}ă {\TC@write{ᴀ̆}}
-		\pgfparserdef{tcparser}{ini}Ă {\TC@write{Ă}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING BREVE							(U+0306)
-		%	and		COMBINING GRAVE ACCENT					(U+0300)
-			\pgfparserdef{tcparser}{ini}ằ {\TC@write{ᴀ̆̀}}
-			\pgfparserdef{tcparser}{ini}Ằ {\TC@write{Ằ}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING BREVE							(U+0306)
-		%	and		COMBINING ACUTE ACCENT					(U+0301)
-			\pgfparserdef{tcparser}{ini}ắ {\TC@write{ᴀ̆́}}
-			\pgfparserdef{tcparser}{ini}Ắ {\TC@write{Ắ}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING BREVE							(U+0306)
-		%	and		COMBINING TILDE							(U+0303)
-			\pgfparserdef{tcparser}{ini}ẵ {\TC@write{ᴀ̂̃}}
-			\pgfparserdef{tcparser}{ini}Ẵ {\TC@write{Ẵ}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING BREVE							(U+0306)
-		%	and		COMBINING HOOK ABOVE					(U+0309)
-			\pgfparserdef{tcparser}{ini}ẳ {\TC@write{ᴀ̆̉}}
-			\pgfparserdef{tcparser}{ini}Ẳ {\TC@write{Ẳ}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING BREVE							(U+0306)
-		%	and		COMBINING DOT BELOW						(U+0323)
-			\pgfparserdef{tcparser}{ini}ặ {\TC@write{ᴀ̣̆}}
-			\pgfparserdef{tcparser}{ini}Ặ {\TC@write{Ặ}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING DOT ABOVE							(U+0307)
-		\pgfparserdef{tcparser}{ini}ȧ {\TC@write{ᴀ̇}}
-		\pgfparserdef{tcparser}{ini}Ȧ {\TC@write{Ȧ}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING DOT ABOVE						(U+0307)
-		%	and		COMBINING MACRON						(U+0304)
-			\pgfparserdef{tcparser}{ini}ǡ {\TC@write{ᴀ̇̄}}
-			\pgfparserdef{tcparser}{ini}Ǡ {\TC@write{Ǡ}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING DIAERESIS							(U+0308)
-		\pgfparserdef{tcparser}{ini}ä {\TC@write{ᴀ̈}}
-		\pgfparserdef{tcparser}{ini}Ä {\TC@write{Ä}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING DIAERESIS						(U+0308)
-		%	and		COMBINING MACRON						(U+0304)
-			\pgfparserdef{tcparser}{ini}ǟ {\TC@write{ᴀ̈̄}}
-			\pgfparserdef{tcparser}{ini}Ǟ {\TC@write{Ǟ}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING HOOK ABOVE 						(U+0309)
-		\pgfparserdef{tcparser}{ini}ả {\TC@write{ᴀ̉}}
-		\pgfparserdef{tcparser}{ini}Ả {\TC@write{Ả}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING INVERTED BREVE					(U+0311)
-		\pgfparserdef{tcparser}{ini}ȃ {\TC@write{ᴀ̑}}
-		\pgfparserdef{tcparser}{ini}Ȃ {\TC@write{Ȃ}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING RING ABOVE						(U+030A)
-		\pgfparserdef{tcparser}{ini}å {\TC@write{ᴀ̊}}
-		\pgfparserdef{tcparser}{ini}Å {\TC@write{Å}}
-
-		% LATIN LETTER SMALL CAPITAL A						(U+1D00)
-		%	with	COMBINING RING ABOVE					(U+030A)
-		%	and		COMBINING ACUTE ACCENT					(U+0301)
-			\pgfparserdef{tcparser}{ini}ǻ {\TC@write{ᴀ̊́}}
-			\pgfparserdef{tcparser}{ini}Ǻ {\TC@write{Ǻ}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING CARON 							(U+030C)
-		\pgfparserdef{tcparser}{ini}ǎ {\TC@write{ᴀ̌}}
-		\pgfparserdef{tcparser}{ini}Ǎ {\TC@write{Ǎ}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING DOUBLE GRAVE ACCENT				(U+030F)
-		\pgfparserdef{tcparser}{ini}ȁ {\TC@write{ᴀ̏}}
-		\pgfparserdef{tcparser}{ini}Ȁ {\TC@write{Ȁ}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING DOT BELOW							(U+0323)
-		\pgfparserdef{tcparser}{ini}ạ {\TC@write{ᴀ̣}}
-		\pgfparserdef{tcparser}{ini}Ạ {\TC@write{Ạ}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING RING BELOW						(U+0325)
-		\pgfparserdef{tcparser}{ini}ḁ {\TC@write{ᴀ̥}}
-		\pgfparserdef{tcparser}{ini}Ḁ {\TC@write{Ḁ}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	COMBINING OGONEK							(U+0328)
-		\pgfparserdef{tcparser}{ini}ą {\TC@write{ᴀ̨}}
-		\pgfparserdef{tcparser}{ini}Ą {\TC@write{Ą}}
-
-	% LATIN LETTER SMALL CAPITAL A							(U+1D00)
-	%	with	RIGHT HALF RING								(U+0357)
-		\pgfparserdef{tcparser}{ini}ẚ {\TC@write{ᴀ͗}}
+% c ć ĉ ċ č ç | C Ć Ĉ Ċ Č Ç 
+\input{includes/C.tex}
 
 %-----------------------------------------------------------------------------
 
-% LATIN LETTER SMALL CAPITAL AE								(U+1D01)
-\pgfparserdef{tcparser}{ini}æ {\TC@write{ᴁ}}
-\pgfparserdef{tcparser}{ini}Æ {\TC@write{Æ}}
+%	LATIN LETTER SMALL LETTER ETH							(U+00F0)
+	\pgfparserdef{tcparser}{ini}ð {\TC@write{ᴆ}}
+	\pgfparserdef{tcparser}{ini}Ð {\TC@write{Ð}}
 
-	% LATIN LETTER SMALL CAPITAL AE							(U+1D01)
-	%	with	COMBINING ACUTE ACCENT						(U+0301)
-		\pgfparserdef{tcparser}{ini}ǽ {\TC@write{ᴁ́}}
-		\pgfparserdef{tcparser}{ini}Ǽ {\TC@write{Ǽ}}
+%	LATIN SMALL LETTER D WITH STROKE						(U+0111)
+	\pgfparserdef{tcparser}{ini}đ {\TC@write{ᴆ}}
+	\pgfparserdef{tcparser}{ini}Đ {\TC@write{Đ}}
 
-	% LATIN LETTER SMALL CAPITAL AE							(U+1D01)
-	%	with	COMBINING MACRON							(U+0304)
-		\pgfparserdef{tcparser}{ini}ǣ {\TC@write{ᴁ̄}}
-		\pgfparserdef{tcparser}{ini}Ǣ {\TC@write{Ǣ}}
+%	LATIN SMALL LETTER D WITH TAIL							(U+0256)
+	\pgfparserdef{tcparser}{ini}ɖ {\TC@write{ᴆ}}
+	\pgfparserdef{tcparser}{ini}Ɖ {\TC@write{Ɖ}}
 
 %-----------------------------------------------------------------------------
 
-% LATIN LETTER SMALL CAPITAL B 								(U+0299)
-\pgfparserdef{tcparser}{ini}b {\TC@write{ʙ}}
-\pgfparserdef{tcparser}{ini}B {\TC@write{B}}
+%	LATIN CAPITAL LETTER DZ WITH CARON						(U+01C4)
+	\pgfparserdef{tcparser}{ini}Ǆ {\TC@write{DŽ}}
 
-	% LATIN LETTER SMALL CAPITAL B 							(U+0299)
-	%	with	COMBINING DOT ABOVE							(U+0307)
-		\pgfparserdef{tcparser}{ini}ḃ {\TC@write{ʙ̇}}
-		\pgfparserdef{tcparser}{ini}Ḃ {\TC@write{Ḃ}}
+%	LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON	(U+01C5)
+	\pgfparserdef{tcparser}{ini}ǅ {\TC@write{Dᴢ̌}}
 
-	% LATIN LETTER SMALL CAPITAL B 							(U+0299)
-	%	with	COMBINING DOT BELOW							(U+0323)
-		\pgfparserdef{tcparser}{ini}ḅ {\TC@write{ʙ̣}}
-		\pgfparserdef{tcparser}{ini}Ḅ {\TC@write{Ḅ}}
+%	LATIN SMALL LETTER DZ WITH CARON						(U+01C6)
+	\pgfparserdef{tcparser}{ini}ǆ {\TC@write{ᴅᴢ̌}}
 
-	% LATIN LETTER SMALL CAPITAL B 							(U+0299)
-	%	with	COMBINING MACRON BELOW						(U+0331)
-		\pgfparserdef{tcparser}{ini}ḇ {\TC@write{ʙ̱}}
-		\pgfparserdef{tcparser}{ini}Ḇ {\TC@write{Ḇ}}
+%	LATIN CAPITAL LETTER DZ									(U+01F1)
+	\pgfparserdef{tcparser}{ini}Ǳ {\TC@write{DZ}}
 
-%-----------------------------------------------------------------------------
+%	LATIN CAPITAL LETTER D WITH SMALL LETTER Z				(U+01F2)
+	\pgfparserdef{tcparser}{ini}ǲ {\TC@write{Dᴢ}}
 
-% LATIN LETTER SMALL CAPITAL C								(U+1D04)
-\pgfparserdef{tcparser}{ini}c {\TC@write{ᴄ}}
-\pgfparserdef{tcparser}{ini}C {\TC@write{C}}
-
-	% LATIN LETTER SMALL CAPITAL C							(U+1D04)
-	%	with	COMBINING ACUTE ACCENT						(U+0301)
-		\pgfparserdef{tcparser}{ini}ć {\TC@write{ᴄ́}}
-		\pgfparserdef{tcparser}{ini}Ć {\TC@write{Ć}}
-
-	% LATIN LETTER SMALL CAPITAL C							(U+1D04)
-	%	with	COMBINING CIRCUMFLEX ACCENT					(U+0302)
-		\pgfparserdef{tcparser}{ini}ĉ {\TC@write{ᴄ̂}}
-		\pgfparserdef{tcparser}{ini}Ĉ {\TC@write{Ĉ}}
-
-	% LATIN LETTER SMALL CAPITAL C							(U+1D04)
-	%	with	COMBINING DOT ABOVE							(U+0307)
-		\pgfparserdef{tcparser}{ini}ċ {\TC@write{ᴄ̇}}
-		\pgfparserdef{tcparser}{ini}Ċ {\TC@write{Ċ}}
-
-	% LATIN LETTER SMALL CAPITAL C							(U+1D04)
-	%	with	COMBINING CARON								(U+030C)
-		\pgfparserdef{tcparser}{ini}č {\TC@write{ᴄ̌}}
-		\pgfparserdef{tcparser}{ini}Č {\TC@write{Č}}
-
-	% LATIN LETTER SMALL CAPITAL C							(U+1D04)
-	%	with	COMBINING CEDILLA							(U+0327)
-		\pgfparserdef{tcparser}{ini}ç {\TC@write{ᴄ̧}}
-		\pgfparserdef{tcparser}{ini}Ç {\TC@write{Ç}}
+%	LATIN SMALL LETTER DZ									(U+01F3)
+	\pgfparserdef{tcparser}{ini}ǳ {\TC@write{ᴅᴢ}}
 
 %-----------------------------------------------------------------------------
 
-	% LATIN LETTER SMALL LETTER ETH							(U+00F0)
-		\pgfparserdef{tcparser}{ini}ð {\TC@write{ᴆ}}
-		\pgfparserdef{tcparser}{ini}Ð {\TC@write{Ð}}
-
-	% LATIN SMALL LETTER D WITH STROKE						(U+0111)
-		\pgfparserdef{tcparser}{ini}đ {\TC@write{ᴆ}}
-		\pgfparserdef{tcparser}{ini}Đ {\TC@write{Đ}}
-
-	% LATIN SMALL LETTER D WITH TAIL						(U+0256)
-		\pgfparserdef{tcparser}{ini}ɖ {\TC@write{ᴆ}}
-		\pgfparserdef{tcparser}{ini}Ɖ {\TC@write{Ɖ}}
-
-
-	% LATIN CAPITAL LETTER DZ WITH CARON					(U+01C4)
-		\pgfparserdef{tcparser}{ini}Ǆ {\TC@write{DŽ}}
-
-	% LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON	(U+01C5)
-		\pgfparserdef{tcparser}{ini}ǅ {\TC@write{Dᴢ̌}}
-
-	% LATIN SMALL LETTER DZ WITH CARON						(U+01C6)
-		\pgfparserdef{tcparser}{ini}ǆ {\TC@write{ᴅᴢ̌}}
-
-
-	% LATIN CAPITAL LETTER DZ								(U+01F1)
-		\pgfparserdef{tcparser}{ini}Ǳ {\TC@write{DZ}}
-
-	% LATIN CAPITAL LETTER D WITH SMALL LETTER Z			(U+01F2)
-		\pgfparserdef{tcparser}{ini}ǲ {\TC@write{Dᴢ}}
-
-	% LATIN SMALL LETTER DZ									(U+01F3)
-		\pgfparserdef{tcparser}{ini}ǳ {\TC@write{ᴅᴢ}}
-
-%-----------------------------------------------------------------------------
-
-% LATIN LETTER SMALL CAPITAL D								(U+1D05)
-\pgfparserdef{tcparser}{ini}d {\TC@write{ᴅ}}
-\pgfparserdef{tcparser}{ini}D {\TC@write{D}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING DOT ABOVE							(U+0307)
-		\pgfparserdef{tcparser}{ini}ḋ {\TC@write{ᴅ̇}}
-		\pgfparserdef{tcparser}{ini}Ḋ {\TC@write{Ḋ}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING CARON								(U+030C)
-		\pgfparserdef{tcparser}{ini}ď {\TC@write{ᴅ̌}}
-		\pgfparserdef{tcparser}{ini}Ď {\TC@write{Ď}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING DOT BELOW							(U+0323)
-		\pgfparserdef{tcparser}{ini}ḍ {\TC@write{ᴅ̣}}
-		\pgfparserdef{tcparser}{ini}Ḍ {\TC@write{Ḍ}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING CEDILLA							(U+0327)
-		\pgfparserdef{tcparser}{ini}ḑ {\TC@write{ᴅ̧}}
-		\pgfparserdef{tcparser}{ini}Ḑ {\TC@write{Ḑ}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING MACRON BELOW						(U+0331)
-		\pgfparserdef{tcparser}{ini}ḏ {\TC@write{ᴅ̱}}
-		\pgfparserdef{tcparser}{ini}Ḏ {\TC@write{Ḏ}}
-
-	% LATIN LETTER SMALL CAPITAL D							(U+1D05)
-	%	with	COMBINING CIRCUMFLEX ACCENT BELOW			(U+032D)
-		\pgfparserdef{tcparser}{ini}ḓ {\TC@write{ᴅ̭}}
-		\pgfparserdef{tcparser}{ini}Ḓ {\TC@write{Ḓ}}
+% d ď ḋ ḍ ḏ ḑ ḓ | D Ď Ḋ Ḍ Ḏ Ḑ Ḓ 
+\input{includes/D.tex}
 
 %-----------------------------------------------------------------------------
 
