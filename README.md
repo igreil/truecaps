@@ -38,17 +38,17 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 * Add modifiers, accents, umlauts etc. for all letters. (A-J done fully, 80% all in all)
 * Take care of punctuation and numbers
-* Testsuite for common Latin (European) languages (80% done)
+* Test suite for common Latin (European) languages (80% done)
 * Full Support for 
 	- `Basic Latin` (U+0000 .. U+007F), done
 	- `Latin-1 Supplement` (U+0080 .. U+00FF), WIP
 	- `Latin Extended-A` (U+0100 .. U+017F), WIP
 	- `Latin Extended-B` (U+0180 .. U+024F partial support), WIP
 	- `Latin Extended Additional` (U+1E00 ..U+1EFF partial support), WIP
-* Modularization with `\input`
+* Modularization with `\input` (40% done)
 * Look into support for more exotic (Latin-based) languages, 
 like Vietnamese, Yoruba and some other African (Native American?) writing systems
-* Normalize input (= use only precomposed glyphs)
+* Normalize input (= use only pre-composed glyphs)
 * Sanity checks for missing glyphs?
 * Silent option to disable warnings (Letters X and Þ will remain unsupported for the foreseeable future)
 * Option to have ß written as SZ instead of SS (oldstylesharps)
@@ -58,9 +58,9 @@ like Vietnamese, Yoruba and some other African (Native American?) writing system
 
 ## History
 
-* v0.6.3 Number of supported glyphs: 248 and counting. (A-J fully, including Vietnamese.)
+* v0.6.3 Number of supported glyphs: 248 and counting. (A-J fully, including Vietnamese letters.)
 * v0.6 Internal code cleanup continues. Added support for Finnish, Slovenian, Icelandic (partial), Polish.
-* v0.5 Reversed the command structure: `textsc{…}` works as always, `texttc{…}` becomes a new option.
+* v0.5 Reversed the command structure: `textsc{…}` continues to work as expected, `texttc{…}` becomes a new command.
 * v0.4 Dropped XeLaTeX compatibility. Added support for Italian, Swedish, Danish, Icelandic, Serbian, Croatian.
 * v0.3 Full support for Czech, Slovenian, Hungarian, Spanish and Catalan.
 * v0.2 Full support for English, German and French.
