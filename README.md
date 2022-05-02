@@ -36,29 +36,29 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 ## Todo
 
-* Add modifiers, accents, umlauts etc. for all letters. (A-L done fully, >80% all in all)
-* Take care of punctuation and numbers
-* Test suite for common Latin (European) languages (80% done)
+* Add modifiers, accents, umlauts etc. for all letters. (A-M done fully, >80% all in all)
+* Take care of punctuation and numbers (OTF features?
+* Test suite for common Latin (European) languages (>80% done)
 * Full Support for 
 	- `Basic Latin` (U+0000 .. U+007F), done
 	- `Latin-1 Supplement` (U+0080 .. U+00FF), WIP
 	- `Latin Extended-A` (U+0100 .. U+017F), WIP
 	- `Latin Extended-B` (U+0180 .. U+024F partial support), WIP
 	- `Latin Extended Additional` (U+1E00 ..U+1EFF partial support), WIP
-* Modularization with `\input` (40% done)
+* Modularization with `\input` (>50% done)
 * Look into support for more exotic (Latin-based) languages, 
 like Vietnamese, Yoruba and some other African (Native American?) writing systems
 * Normalize input (= use only pre-composed glyphs)
 * Sanity checks for missing glyphs?
-* Silent option to disable warnings (Letters X and Þ will remain unsupported for the foreseeable future)
-* Option to have ß written as SZ instead of SS (oldstylesharps)
+* Option "silent" to disable warnings (Letters X and Þ and others will remain unsupported for the foreseeable future)
+* Option "oldstylesharps" to have ß written as SZ instead of SS 
 * Simplify and optimize code, remove redundancies
-* Some more documentation
+* Some more documentation and examples
 * Submit v1.0 to CTAN
 
 ## History
 
-* v0.6.5 Number of supported glyphs: 293 and counting. (A-M fully, including Vietnamese letters.)
+* v0.6.5 Number of supported glyphs: 293 and counting. (A-M fully, including Vietnamese letters with double diacritics.)
 * v0.6 Internal code cleanup continues. Added support for Finnish, Slovenian, Icelandic (partial), Polish.
 * v0.5 Reversed the command structure: `textsc{…}` continues to work as expected, `texttc{…}` becomes a new command.
 * v0.4 Dropped XeLaTeX compatibility. Added support for Italian, Swedish, Danish, Icelandic, Serbian, Croatian.
