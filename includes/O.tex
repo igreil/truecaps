@@ -72,7 +72,7 @@
 
 		%	LATIN LETTER SMALL CAPITAL O					(U+1D0F)
 		%	with	COMBINING DOT ABOVE						(U+0307)
-		%	and	COMBINING MACRON							(U+0304)
+		%	and		COMBINING MACRON						(U+0304)
 			\pgfparserdef{tcparser}{ini}ȱ {\TC@write{✓ᴏ̇̄}}
 			\pgfparserdef{tcparser}{ini}Ȱ {\TC@write{✓Ȱ}}
 
@@ -134,11 +134,40 @@
 			\pgfparserdef{tcparser}{ini}ǿ {\TC@write{✓ᴏ̷́}}
 			\pgfparserdef{tcparser}{ini}Ǿ {\TC@write{✓Ǿ}}
 
+	%	LATIN LETTER SMALL CAPITAL O						(U+1D0F)
+	%	with	COMBINING HORN								(U+031B)
+		\pgfparserdef{tcparser}{ini}ơ {\TC@write{✓ᴏ̛}}
+		\pgfparserdef{tcparser}{ini}Ơ {\TC@write{✓Ơ}}
 
+		%	LATIN LETTER SMALL CAPITAL O					(U+1D0F)
+		%	with	COMBINING HORN							(U+031B)
+		%	and		GRAVE ACCENT							(U+0300)
+		\pgfparserdef{tcparser}{ini}ờ {\TC@write{✓ᴏ̛̀}}
+		\pgfparserdef{tcparser}{ini}Ờ {\TC@write{✓Ờ}}
 
+		%	LATIN LETTER SMALL CAPITAL O					(U+1D0F)
+		%	with	COMBINING HORN							(U+031B)
+		%	and		ACUTE ACCENT							(U+0301)
+		\pgfparserdef{tcparser}{ini}ớ {\TC@write{✓ᴏ̛́}}
+		\pgfparserdef{tcparser}{ini}Ớ {\TC@write{✓Ớ}}
 
+		%	LATIN LETTER SMALL CAPITAL O					(U+1D0F)
+		%	with	COMBINING HORN							(U+031B)
+		%	and		COMBINING HOOK ABOVE					(U+0309)
+		\pgfparserdef{tcparser}{ini}ở {\TC@write{✓ᴏ̛̉}}
+		\pgfparserdef{tcparser}{ini}Ở {\TC@write{✓Ở}}
 
+		%	LATIN LETTER SMALL CAPITAL O					(U+1D0F)
+		%	with	COMBINING HORN							(U+031B)
+		%	and 	COMBINING TILDE							(U+0303)
+		\pgfparserdef{tcparser}{ini}ỡ {\TC@write{✓ᴏ̛̃}}
+		\pgfparserdef{tcparser}{ini}Ỡ {\TC@write{✓Ỡ}}
 
+		%	LATIN LETTER SMALL CAPITAL O					(U+1D0F)
+		%	with	COMBINING HORN							(U+031B)
+		%	and		COMBINING DOT BELOW						(U+0323)
+		\pgfparserdef{tcparser}{ini}ợ {\TC@write{✓ᴏ̛̣}}
+		\pgfparserdef{tcparser}{ini}Ợ {\TC@write{✓Ợ}}
 
 %-----------------------------------------------------------------------------
 %
@@ -147,8 +176,4 @@
 	\pgfparserdef{tcparser}{ini}Œ {\TC@write{✓Œ}}
 
 %-----------------------------------------------------------------------------
-% TODO  ŏ ǫ ǭ ȯ ȱ ǿ ȏ ǒ ṏ ỏ 
-%ớ ờ ở ỡ ợ
-%ố ồ ổ ỗ ộ
-% COMBINING HOOK ABOVE										(U+0309)
-% COMBINING HORN											(U+031B)
+% TODO 	ố ồ ổ ỗ ộ
