@@ -51,6 +51,7 @@ like Vietnamese, Yoruba and some other African (Native American?) writing system
 * Normalize input (= use only precomposed glyphs)
 * Sanity checks for missing glyphs?
 * Silent option to disable warnings (Letters X and Þ will remain unsupported for the foreseeable future)
+* Option to have ß written as SZ instead of SS
 * Simplify and optimize code, remove redundancies
 * Some more documentation
 * Submit v1.0 to CTAN
