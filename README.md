@@ -56,6 +56,13 @@ like Vietnamese, Yoruba and some other African (Native American?) writing system
 * Some more documentation and examples
 * Submit v1.0 to CTAN
 
+## Known Issues
+
+The glyphs produced by `truecaps` are from Unicode's “Phonetic Extensions” 
+block.They were never meant to be used as small caps the way we use them here.
+CEDILLAS and OGONEKS can look ugly (ᴀ̨ ʜ̧ ᴋ̧ ᴊ̂ ᴊ̌ ɴ̧  ɪ̨)
+This is especially true if you stack them (Looking at you, HORN!) (ᴏ̛̀ ᴏ̛́ ᴏ̛̉ ᴏ̛̃) 
+
 ## History
 
 * v0.6.6 Number of supported glyphs: ~400 and counting. (A-O fully, including Vietnamese letters with double diacritics.)
