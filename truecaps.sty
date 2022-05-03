@@ -199,6 +199,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 % COMBINING BREVE BELOW										(U+032E)	 ̮
 % COMBINING TILDE BELOW										(U+0330)	 ̰
 % COMBINING MACRON BELOW									(U+0331)	 ̱
+% COMBINING SHORT STROKE OVERLAY							(U+0335)	 ̵
 % COMBINING SHORT SOLIDUS OVERLAY							(U+0337)	 ̷
 % COMBINING LONG SOLIDUS OVERLAY							(U+0338)	 ̸
 % COMBINING RIGHT HALF RING ABOVE							(U+0357)	 ͗
@@ -315,24 +316,10 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	\pgfparserdef{tcparser}{ini}Q {\TC@write{Q}}
 
 \input{includes/R.tex}	% r ŕ ŗ ř ȑ ȓ ṙ ṛ ṝ ṟ	| R Ŕ Ŗ Ř Ȑ Ȓ Ṙ Ṛ Ṝ Ṟ	(2×10)
-\input{includes/S.tex}	% s ś ŝ ṡ š ṣ ș ş ß		| S Ś Ŝ Ṡ Š Ṣ Ș Ş ẞ		(2×9)			FIXME Σ 444
+\input{includes/S.tex}	% s ś ŝ ṡ š ṣ ș ş ß		| S Ś Ŝ Ṡ Š Ṣ Ș Ş ẞ		(2×9)
+\input{includes/T.tex}	% t ṫ ť ṭ ț ţ ṱ ṯ ŧ 	| T Ṫ Ť Ṭ Ț Ţ Ṱ Ṯ Ŧ		(2×9)			FIXME Σ 462
 
 % XYZZY
-
-% LATIN LETTER SMALL CAPITAL T (U+1D1B)
-\pgfparserdef{tcparser}{ini}t {\TC@write{ᴛ}}
-\pgfparserdef{tcparser}{ini}T {\TC@write{T}}
-
-	% LATIN LETTER SMALL CAPITAL T (U+1D1B) + COMBINING CARON (U+030C)
-	\pgfparserdef{tcparser}{ini}ť {\TC@write{ᴛ̌}}
-	\pgfparserdef{tcparser}{ini}Ť {\TC@write{Ť}}
-
-	% LATIN LETTER SMALL CAPITAL T (U+1D1B)
-	% COMBINING COMMA BELOW										(U+0326)
-	\pgfparserdef{tcparser}{ini}ț {\TC@write{ᴛ̦}}
-	\pgfparserdef{tcparser}{ini}Ț {\TC@write{Ț}}
-
-	% TODO Ţ Ṫ Ṭ Ṯ Ṱ Ŧ
 
 % LATIN LETTER SMALL CAPITAL U (U+1D1C)
 \pgfparserdef{tcparser}{ini}u {\TC@write{ᴜ}}
