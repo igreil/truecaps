@@ -297,7 +297,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 %
 %	o ò ó ô õ ö ȫ ō ṑ ṓ ŏ ȏ ȍ ő ơ ǫ ǭ ỏ ȯ ȱ ȭ ṍ ṏ ọ ồ ố ổ ỗ ộ ờ ớ ở ỡ ợ (34)
 %	O Ò Ó Ô Õ Ö Ȫ Ō Ṑ Ṓ Ŏ Ȏ Ȍ Ő Ơ Ǫ Ǭ Ỏ Ȯ Ȱ Ȭ Ṍ Ṏ Ọ Ồ Ố Ổ Ỗ Ộ Ờ Ớ Ở Ỡ Ợ (34)
-\input{includes/O.tex}	% œ ø ǿ					| Œ Ø Ǿ					(2×3)			FIXME Σ 395
+\input{includes/O.tex}	% œ ø ǿ					| Œ Ø Ǿ					(2×3)
 
 %	LATIN CAPITAL LETTER THORN								(U+00DE)
 %	There is no support for THORN. The best we can do is issue a warning 
@@ -308,41 +308,16 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 		%\PackageWarning{\truecapsname}{\thornwarning}%		see line 124	FIXME
 	}%
 
-\input{includes/P.tex}
+\input{includes/P.tex}	% p ṕ ṗ					| P Ṕ Ṗ					(2×3)
 
 %	LATIN LETTER SMALL CAPITAL Q							(U+A7AF)
 	\pgfparserdef{tcparser}{ini}q {\TC@write{ꞯ}}
 	\pgfparserdef{tcparser}{ini}Q {\TC@write{Q}}
 
-\input{includes/R.tex}
+\input{includes/R.tex}	% r ŕ ŗ ř ȑ ȓ ṙ ṛ ṝ ṟ	| R Ŕ Ŗ Ř Ȑ Ȓ Ṙ Ṛ Ṝ Ṟ	(2×10)
+\input{includes/S.tex}	% s ś ŝ ṡ š ṣ ș ş ß		| S Ś Ŝ Ṡ Š Ṣ Ș Ş ẞ		(2×9)			FIXME Σ 444
 
 % XYZZY
-
-% LATIN LETTER SMALL CAPITAL S (U+A731)
-\pgfparserdef{tcparser}{ini}s {\TC@write{ꜱ}}
-\pgfparserdef{tcparser}{ini}S {\TC@write{S}}
-
-	% There is no German word that starts with ẞ
-	% Technically, there should be no need for 
-	% LATIN CAPITAL LETTER SHARP S (U+1E9E)
-	% but we'll rather err on the side of caution.
-	\pgfparserdef{tcparser}{ini}ß {\TC@write{ꜱᴢ}} % FIXME option ß = ss oder ß = sz
-	\pgfparserdef{tcparser}{ini}ẞ {\TC@write{SS}}
-
-	% LATIN LETTER SMALL CAPITAL S (U+A731) COMBINING CARON	(U+030C)
-	\pgfparserdef{tcparser}{ini}š {\TC@write{ꜱ̌}}
-	\pgfparserdef{tcparser}{ini}Š {\TC@write{Š}}
-
-	% LATIN LETTER SMALL CAPITAL S (U+A731) + COMBINING ACUTE ACCENT (U+0301)
-	\pgfparserdef{tcparser}{ini}ś {\TC@write{ꜱ́}}
-	\pgfparserdef{tcparser}{ini}Ś {\TC@write{Ś}}
-
-	% LATIN LETTER SMALL CAPITAL S (U+A731) 
-	% COMBINING COMMA BELOW										(U+0326)
-	\pgfparserdef{tcparser}{ini}ș {\TC@write{ꜱ̦}}
-	\pgfparserdef{tcparser}{ini}Ș {\TC@write{Ș}}
-
-	% TODO Ŝ Ş Ṡ Ṣ
 
 % LATIN LETTER SMALL CAPITAL T (U+1D1B)
 \pgfparserdef{tcparser}{ini}t {\TC@write{ᴛ}}

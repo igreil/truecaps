@@ -1,0 +1,57 @@
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL S							(U+A731)
+	\pgfparserdef{tcparser}{ini}s {\TC@write{ꜱ}}
+	\pgfparserdef{tcparser}{ini}S {\TC@write{S}}
+
+	%	LATIN LETTER SMALL CAPITAL S						(U+A731)
+	%	with	COMBINING ACUTE ACCENT						(U+0301)
+		\pgfparserdef{tcparser}{ini}ś {\TC@write{ꜱ́}}
+		\pgfparserdef{tcparser}{ini}Ś {\TC@write{Ś}}
+
+	%	LATIN LETTER SMALL CAPITAL S						(U+A731)
+	%	with 	COMBINING CIRCUMFLEX ACCENT					(U+0302)
+		\pgfparserdef{tcparser}{ini}ŝ {\TC@write{ꜱ̂}}
+		\pgfparserdef{tcparser}{ini}Ŝ {\TC@write{Ŝ}}
+
+	%	LATIN LETTER SMALL CAPITAL S						(U+A731)
+	%	with 	COMBINING DOT ABOVE							(U+0307)
+		\pgfparserdef{tcparser}{ini}ṡ {\TC@write{ꜱ̇}}
+		\pgfparserdef{tcparser}{ini}Ṡ {\TC@write{Ṡ}}
+
+	%	LATIN LETTER SMALL CAPITAL S						(U+A731)
+	%	with	COMBINING CARON								(U+030C)
+		\pgfparserdef{tcparser}{ini}š {\TC@write{ꜱ̌}}
+		\pgfparserdef{tcparser}{ini}Š {\TC@write{Š}}
+
+	%	LATIN LETTER SMALL CAPITAL S						(U+A731)
+	%	with 	COMBINING DOT BELOW							(U+0323)
+		\pgfparserdef{tcparser}{ini}ṣ {\TC@write{ꜱ̣}}
+		\pgfparserdef{tcparser}{ini}Ṣ {\TC@write{Ṣ}}
+
+	%	LATIN LETTER SMALL CAPITAL S						(U+A731)
+	%	with	COMBINING COMMA BELOW						(U+0326)
+		\pgfparserdef{tcparser}{ini}ș {\TC@write{ꜱ̦}}
+		\pgfparserdef{tcparser}{ini}Ș {\TC@write{Ș}}
+
+	%	LATIN LETTER SMALL CAPITAL S						(U+A731)
+	%	with 	COMBINING CEDILLA							(U+0327)
+		\pgfparserdef{tcparser}{ini}ş {\TC@write{ꜱ̧}}
+		\pgfparserdef{tcparser}{ini}Ş {\TC@write{Ş}}
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN SMALL LETTER SHARP S								(U+00DF)
+
+	\pgfparserdef{tcparser}{ini}ß {\TC@write{ꜱᴢ}}
+
+	% Technically, there should be no need for ẞ
+	% LATIN CAPITAL LETTER SHARP S (U+1E9E) as no German word starts 
+	% with sharp s. We'll still rather err on the side of caution:
+
+	\pgfparserdef{tcparser}{ini}ẞ {\TC@write{SS}}
+
+%-----------------------------------------------------------------------------
+
+% FIXME option ß = ss oder ß = sz
