@@ -1,0 +1,18 @@
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL V							(U+1D20)
+	\pgfparserdef{tcparser}{ini}v {\TC@write{ᴠ}}%
+	\pgfparserdef{tcparser}{ini}V {\TC@write{V}}%
+
+	%	LATIN LETTER SMALL CAPITAL V						(U+1D20)
+	%	with	COMBINING TILDE								(U+0303)
+		\pgfparserdef{tcparser}{ini}ṽ {\TC@write{ᴠ̃}}
+		\pgfparserdef{tcparser}{ini}Ṽ {\TC@write{Ṽ}}
+
+	%	LATIN LETTER SMALL CAPITAL V						(U+1D20)
+	%	with	COMBINING DOT BELOW							(U+0323)
+		\pgfparserdef{tcparser}{ini}ṿ {\TC@write{ᴠ̣}}
+		\pgfparserdef{tcparser}{ini}Ṿ {\TC@write{Ṿ}}
+
+%-----------------------------------------------------------------------------

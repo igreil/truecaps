@@ -1,0 +1,13 @@
+% LATIN LETTER SMALL CAPITAL Y
+\pgfparserdef{tcparser}{ini}y {\TC@write{ʏ}}
+\pgfparserdef{tcparser}{ini}Y {\TC@write{Y}}
+
+	% LATIN LETTER SMALL CAPITAL Y (U+028F) + COMBINING DIAERESIS (U+0308)
+	\pgfparserdef{tcparser}{ini}ÿ {\TC@write{ʏ̈}}
+	\pgfparserdef{tcparser}{ini}Ÿ {\TC@write{Ÿ}}
+
+	% LATIN LETTER SMALL CAPITAL Y (U+028F) + COMBINING ACUTE ACCENT (U+0301)
+	\pgfparserdef{tcparser}{ini}ý {\TC@write{ʏ́}}
+	\pgfparserdef{tcparser}{ini}Ý {\TC@write{Ý}}
+
+	% TODO Ỳ Ŷ Y̊ Ỳ Ỵ Ỷ Ỹ Ȳ

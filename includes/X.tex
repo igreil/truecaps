@@ -1,0 +1,13 @@
+%	LATIN SMALL LETTER X (U+0078) is the only regular letter without a 
+%	matching LATIN LETTER SMALL CAPITAL *
+
+%	The best we can do is issue a warning (see line #115) and use 
+%	plain LATIN SMALL LETTER X (U+0078):
+
+	\pgfparserdef{tcparser}{ini}x{\TC@write{x}%
+		%\PackageWarning{\truecapsname}{\xwarning} %FIXME AFTER DEBUGGING
+	}%
+%	LATIN CAPITAL LETTER X (U+0058) is not an issue, however:
+	\pgfparserdef{tcparser}{ini}X {\TC@write{X}}
+
+% TODO	Ẋ Ẍ
