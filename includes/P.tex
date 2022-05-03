@@ -1,0 +1,18 @@
+
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL P							(U+1D18)
+	\pgfparserdef{tcparser}{ini}p {\TC@write{ᴘ}}
+	\pgfparserdef{tcparser}{ini}P {\TC@write{P}}
+
+	%	LATIN LETTER SMALL CAPITAL P						(U+1D18)
+	%	with	COMBINING ACUTE ACCENT						(U+0301)
+		\pgfparserdef{tcparser}{ini}ṕ {\TC@write{ᴘ́}}
+		\pgfparserdef{tcparser}{ini}Ṕ {\TC@write{Ṕ}}
+
+	%	LATIN LETTER SMALL CAPITAL P						(U+1D18)
+	%	with	COMBINING DOT ABOVE							(U+0307)
+		\pgfparserdef{tcparser}{ini}ṗ {\TC@write{ᴘ̇}}
+		\pgfparserdef{tcparser}{ini}Ṗ {\TC@write{Ṗ}}
+
+%-----------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 %----------------------------------- -----------------------------------------
-% This is file "truecaps.sty" v0.6.6 (2022-05-02)
+% This is file "truecaps.sty" v0.6.7 (2022-05-03)
 % It was forked from निरंजन's "unisc.sty" v0.1 (2022-04-21)
 %
 % This file and possibly later versions can be found on
@@ -13,7 +13,7 @@
 %
 %-----------------------------------------------------------------------------
 %
-% LaTeX Package truecaps v0.6.6 (2022-05-02)
+% LaTeX Package truecaps v0.6.7 (2022-05-03)
 % Copyright © 2022 निरंजन [Niranjan] and Ingmar Greil
 %
 % This program is free software: you can redistribute it and/or modify it
@@ -34,8 +34,8 @@
 \def\truecapsname			{truecaps}
 \def\truecapsdescription	{Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX}
 
-\def\truecapsversion		{0.6.6}
-\def\truecapsdate			{2022-05-02}
+\def\truecapsversion		{0.6.7}
+\def\truecapsdate			{2022-05-03}
 
 %----------------------------------------------------------------------------
 
@@ -121,7 +121,7 @@
 	}%
 }
 
-\newcommand\thornwarning{%			% see ca. line #369 FIXME
+\newcommand\thornwarning{%			% see ca. line #308 FIXME
 Unsupported character LATIN SMALL LETTER THORN (U+00FE):
 substituted with LATIN CAPITAL LETTER THORN (U+00DE)%
 }
@@ -130,11 +130,11 @@ substituted with LATIN CAPITAL LETTER THORN (U+00DE)%
 Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
 }
 
-\newcommand\krawarning{%				% see ca. line FIXME
+\newcommand\krawarning{%				% see includes/K.tex line 38 FIXME
 Unsupported character LATIN SMALL LETTER KRA (U+0138): inserted as is%
 }
 
-\newcommand\engwarning{%				% see ca. line FIXME
+\newcommand\engwarning{%				% see includes/N.tex line 57 FIXME
 Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 }
 
@@ -251,7 +251,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 	\pgfparserdef{tcparser}{ini}ǳ {\TC@write{ᴅᴢ}}%						(2×3)
 
 %-----------------------------------------------------------------------------
-
+%
 %	e è é ê ë ē ĕ ė ę ě ȅ ȇ ȩ ḕ ḗ ḙ ḛ ḝ ẹ ẻ ẽ ế ề ể ễ ệ					(26)
 %	E È É Ê Ë Ē Ĕ Ė Ę Ě Ȅ Ȇ Ȩ Ḕ Ḗ Ḙ Ḛ Ḝ Ẹ Ẻ Ẽ Ế Ề Ể Ễ Ệ					(26)
 \input{includes/E.tex}
@@ -278,6 +278,8 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 %	LATIN SMALL LETTER LJ									(U+01C9)
 	\pgfparserdef{tcparser}{ini}ǉ {\TC@write{ʟᴊ}}%						(1×3)
 
+%-----------------------------------------------------------------------------
+%
 \input{includes/M.tex}	% m ḿ ṁ ṃ 				| M Ḿ Ṁ Ṃ				(2×4)
 \input{includes/N.tex}	% n ǹ ń ň ñ ņ ṅ ṇ ṉ ṋ ŋ | N Ǹ Ń Ň Ñ Ņ Ṅ Ṇ Ṉ Ṋ Ŋ	(2×11)
 						% ŉ												(1)
@@ -291,45 +293,30 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 %	LATIN SMALL LETTER NJ									(U+01CC)
 	\pgfparserdef{tcparser}{ini}ǌ {\TC@write{ɴᴊ}}%						(1×3)
 
+%-----------------------------------------------------------------------------
+%
 %	o ò ó ô õ ö ȫ ō ṑ ṓ ŏ ȏ ȍ ő ơ ǫ ǭ ỏ ȯ ȱ ȭ ṍ ṏ ọ ồ ố ổ ỗ ộ ờ ớ ở ỡ ợ (34)
 %	O Ò Ó Ô Õ Ö Ȫ Ō Ṑ Ṓ Ŏ Ȏ Ȍ Ő Ơ Ǫ Ǭ Ỏ Ȯ Ȱ Ȭ Ṍ Ṏ Ọ Ồ Ố Ổ Ỗ Ộ Ờ Ớ Ở Ỡ Ợ (34)
 \input{includes/O.tex}	% œ ø ǿ					| Œ Ø Ǿ					(2×3)			FIXME Σ 395
 
+%	LATIN CAPITAL LETTER THORN								(U+00DE)
+%	There is no support for THORN. The best we can do is issue a warning 
+%	(see line 124) and try to make do with the regular uppercase character.	FIXME
+
+	\pgfparserdef{tcparser}{ini}þ {\TC@write{Þ}}
+	\pgfparserdef{tcparser}{ini}Þ {\TC@write{Þ}
+		%\PackageWarning{\truecapsname}{\thornwarning}%		see line 124	FIXME
+	}%
+
+\input{includes/P.tex}
+
+%	LATIN LETTER SMALL CAPITAL Q							(U+A7AF)
+	\pgfparserdef{tcparser}{ini}q {\TC@write{ꞯ}}
+	\pgfparserdef{tcparser}{ini}Q {\TC@write{Q}}
+
+\input{includes/R.tex}
+
 % XYZZY
-
-% LATIN CAPITAL LETTER THORN (U+00DE) 
-% There is no support for THORN. The best we can do is issue a 
-% warning (see line #110) and try to make do with the regular 
-% uppercase character.
-\pgfparserdef{tcparser}{ini}þ {\TC@write{Þ}}
-\pgfparserdef{tcparser}{ini}Þ {\TC@write{Þ}
-%\PackageWarning{\truecapsname}{\thornwarning}% 	see line #110	FIXME AFTER DEBUGGING
-} % end of Þ
-
-% LATIN LETTER SMALL CAPITAL P (U+1D18)
-\pgfparserdef{tcparser}{ini}p {\TC@write{ᴘ}}
-\pgfparserdef{tcparser}{ini}P {\TC@write{P}}
-
-%% LATIN LETTER SMALL CAPITAL Q (U+A7AF)
-\pgfparserdef{tcparser}{ini}q {\TC@write{ꞯ}}
-\pgfparserdef{tcparser}{ini}Q {\TC@write{Q}}
-
-% LATIN LETTER SMALL CAPITAL R (U+0280)
-\pgfparserdef{tcparser}{ini}r {\TC@write{ʀ}}
-\pgfparserdef{tcparser}{ini}R {\TC@write{R}}
-
-	% LATIN LETTER SMALL CAPITAL R (U+0280)	+ COMBINING CARON (U+030C)
-	\pgfparserdef{tcparser}{ini}ř {\TC@write{ʀ̌}}
-	\pgfparserdef{tcparser}{ini}Ř {\TC@write{Ř}}
-
-% TODO ȓ ŕ ŗ
-
-	%	LATIN LETTER SMALL CAPITAL R						(U+0280)
-	%	with	COMBINING DOUBLE GRAVE ACCENT				(U+030F)
-		\pgfparserdef{tcparser}{ini}ȑ {\TC@write{ʀ̏}}
-		\pgfparserdef{tcparser}{ini}Ȑ {\TC@write{Ȑ}}
-
-	% TODO ==> https://www.compart.com/en/unicode/U+0052
 
 % LATIN LETTER SMALL CAPITAL S (U+A731)
 \pgfparserdef{tcparser}{ini}s {\TC@write{ꜱ}}

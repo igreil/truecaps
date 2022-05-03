@@ -1,4 +1,4 @@
-# truecaps (v0.6.6)
+# truecaps (v0.6.7)
 Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX.
 
 ## Purpose
@@ -36,7 +36,7 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 ## Todo
 
-* Add modifiers, accents, umlauts etc. for all letters. (A-O done fully, >80% all in all)
+* Add modifiers, accents, umlauts etc. for all letters. (A-R done fully, 90% all in all)
 * Take care of punctuation and numbers (OTF features?
 * Test suite for common Latin (European) languages (>80% done)
 * Full Support for 
