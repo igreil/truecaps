@@ -1,41 +1,43 @@
 %----------------------------------- -----------------------------------------
-% This is file "truecaps.sty" v0.6.7 (2022-05-03)
-% It was forked from निरंजन's "unisc.sty" v0.1 (2022-04-21)
+%	This is file "truecaps.sty" v0.6.7 (2022-05-03)
+%	It was forked from निरंजन's "unisc.sty" v0.1 (2022-04-21)
 %
-% This file and possibly later versions can be found on
-% <https://https://github.com/igreil/truecaps>
+%	This file and possibly later versions can be found on Github:
 %
-% The original files by निरंजन [Niranjan] can be found 
-% on CTAN <https://ctan.org/pkg/unisc> and at 
-% <https://puszcza.gnu.org.ua/projects/unisc>
+%		<https://https://github.com/igreil/truecaps>
 %
-% License:		GPLv3 and GFDLv1.3+
+%	The original files by निरंजन [Niranjan] can be found here:
+%
+%		<https://ctan.org/pkg/unisc>
+%		<https://puszcza.gnu.org.ua/projects/unisc>
+%
+%	License:		GPLv3 and GFDLv1.3+
 %
 %-----------------------------------------------------------------------------
 %
-% LaTeX Package truecaps v0.6.7 (2022-05-03)
-% Copyright © 2022 निरंजन [Niranjan] and Ingmar Greil
+%	LaTeX Package truecaps v0.6.7 (2022-05-03)
+%	Copyright © 2022 निरंजन [Niranjan] and Ingmar Greil
 %
-% This program is free software: you can redistribute it and/or modify it
-% under the terms of the GNU General Public License as published by the Free
-% Software Foundation, either version 3 of the License, or (at your option)
-% any later version.
+%	This program is free software: you can redistribute it and/or modify it
+%	under the terms of the GNU General Public License as published by the 
+%	Free Software Foundation, either version 3 of the License, or (at your 
+%	option)	any later version.
 %
-% This program is distributed in the hope that it will be useful, but WITHOUT
-% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-% FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
-% more details.
+%	This program is distributed in the hope that it will be useful, but 
+%	WITHOUT ANY WARRANTY; without even the implied warranty of 
+%	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+%	See the GNU General Public License for	more details.
 %
-% You should have received a copy of the GNU General Public License along 
-% with this program. If not, see <https://www.gnu.org/licenses/>.
+%	You should have received a copy of the GNU General Public License along 
+%	with this program. If not, see <https://www.gnu.org/licenses/>.
 %
 %-----------------------------------------------------------------------------
 
-\def\truecapsname			{truecaps}
-\def\truecapsdescription	{Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX}
+		\def\truecapsname			{truecaps}
+		\def\truecapsdescription	{Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX}
 
-\def\truecapsversion		{0.6.7}
-\def\truecapsdate			{2022-05-03}
+		\def\truecapsversion		{0.6.7}
+		\def\truecapsdate			{2022-05-03}
 
 %----------------------------------------------------------------------------
 
@@ -121,22 +123,22 @@
 	}%
 }
 
-\newcommand\thornwarning{%			% see ca. line #308 FIXME
+\newcommand\thornwarning{%
 Unsupported character LATIN SMALL LETTER THORN (U+00FE):
 substituted with LATIN CAPITAL LETTER THORN (U+00DE)%
-}
+}%								=> Line #308	FIXME
 
-\newcommand\xwarning{%				% see ca. line #469	FIXME
+\newcommand\xwarning{%
 Unsupported character LATIN SMALL LETTER X (U+0078): inserted as is%
-}
+}%								=> Line #469	FIXME
 
-\newcommand\krawarning{%				% see includes/K.tex line 38 FIXME
+\newcommand\krawarning{%
 Unsupported character LATIN SMALL LETTER KRA (U+0138): inserted as is%
-}
+}%								=> includes/K.tex Line 38 FIXME
 
-\newcommand\engwarning{%				% see includes/N.tex line 57 FIXME
+\newcommand\engwarning{%
 Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
-}
+}%								=> includes/N.tex Line 57 FIXME
 
 %----------- SUPPORTED LETTERS BELOW -----------------------------------------
 %
@@ -204,7 +206,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 % COMBINING LONG SOLIDUS OVERLAY							(U+0338)	 ̸
 % COMBINING RIGHT HALF RING ABOVE							(U+0357)	 ͗
 %-----------------------------------------------------------------------------
-
+%																(Glyphcount)
 %	a à á â ầ ấ ẫ ẩ ậ ã ā ă ằ ắ ẵ ẳ ặ ȧ ǡ ä ǟ ả ȃ å ǻ ǎ ȁ ạ ḁ ą ẚ æ ǽ ǣ	(34)
 %	A À Á Â Ầ Ấ Ẫ Ẩ Ậ Ã Ā Ă Ằ Ắ Ẵ Ẳ Ặ Ȧ Ǡ Ä Ǟ Ả Ȃ Å Ǻ Ǎ Ȁ Ạ Ḁ Ą   Æ Ǽ Ǣ	(33)
 \input{includes/A.tex}
@@ -304,16 +306,16 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 %	There is no support for THORN. The best we can do is issue a warning 
 %	(see line 124) and try to make do with the regular uppercase character.	FIXME
 
-	\pgfparserdef{tcparser}{ini}þ {\TC@write{Þ}}
-	\pgfparserdef{tcparser}{ini}Þ {\TC@write{Þ}
+	\pgfparserdef{tcparser}{ini}þ {\TC@write{Þ}}%
+	\pgfparserdef{tcparser}{ini}Þ {\TC@write{Þ}%						(2×1)
 		%\PackageWarning{\truecapsname}{\thornwarning}%		see line 124	FIXME
 	}%
 
 \input{includes/P.tex}	% p ṕ ṗ					| P Ṕ Ṗ					(2×3)
 
 %	LATIN LETTER SMALL CAPITAL Q							(U+A7AF)
-	\pgfparserdef{tcparser}{ini}q {\TC@write{ꞯ}}
-	\pgfparserdef{tcparser}{ini}Q {\TC@write{Q}}
+	\pgfparserdef{tcparser}{ini}q {\TC@write{ꞯ}}%
+	\pgfparserdef{tcparser}{ini}Q {\TC@write{Q}}%						(2×1)
 
 \input{includes/R.tex}	% r ŕ ŗ ř ȑ ȓ ṙ ṛ ṝ ṟ	| R Ŕ Ŗ Ř Ȑ Ȓ Ṙ Ṛ Ṝ Ṟ	(2×10)
 \input{includes/S.tex}	% s ś ŝ ṡ š ṣ ș ş ß		| S Ś Ŝ Ṡ Š Ṣ Ș Ş ẞ		(2×9)
@@ -421,24 +423,24 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 % 			LETTER DEFINITIONS ABOVE
 
 \pgfparserdeffinal{tcparser}%
-  {\expanded{\TC@cont}}
+	{\expanded{\TC@cont}}
 \AddToHook{begindocument/end}{%
-  \RenewDocumentCommand\scshape{  }{%
-    \ifdefined\TC@ini
-      \PackageError{truecaps}{Nested use not allowed!}{%
-        You somehow made \string\nirshape\space expand inside
-        the parser. This isn't supported.%
-      }%
-      \expandafter\@gobbletwo
-    \else
-      \global\let\TC@cont\@empty
-    \fi
-    \pgfparserparse{tcparser}%
-  }
+	\RenewDocumentCommand\scshape{  }{%
+		\ifdefined\TC@ini
+			\PackageError{truecaps}{Nested use not allowed!}{%
+				You somehow made \string\nirshape\space expand inside
+				the parser. This isn't supported.%
+			}%
+			\expandafter\@gobbletwo
+		\else
+			\global\let\TC@cont\@empty
+		\fi
+		\pgfparserparse{tcparser}%
+	}
 
-  \RenewDocumentCommand\texttc{ m }{%
-    \begingroup\scshape #1\endgroup
-  }%
+	\RenewDocumentCommand\texttc{ m }{%
+		\begingroup\scshape #1\endgroup
+	}%
 }
 \endinput
 
