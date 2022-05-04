@@ -1,13 +1,54 @@
-% LATIN LETTER SMALL CAPITAL Y
-\pgfparserdef{tcparser}{ini}y {\TC@write{ʏ}}
-\pgfparserdef{tcparser}{ini}Y {\TC@write{Y}}
 
-	% LATIN LETTER SMALL CAPITAL Y (U+028F) + COMBINING DIAERESIS (U+0308)
-	\pgfparserdef{tcparser}{ini}ÿ {\TC@write{ʏ̈}}
-	\pgfparserdef{tcparser}{ini}Ÿ {\TC@write{Ÿ}}
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL Y 							(U+028F)
+	\pgfparserdef{tcparser}{ini}y {\TC@write{ʏ}}
+	\pgfparserdef{tcparser}{ini}Y {\TC@write{Y}}
 
-	% LATIN LETTER SMALL CAPITAL Y (U+028F) + COMBINING ACUTE ACCENT (U+0301)
-	\pgfparserdef{tcparser}{ini}ý {\TC@write{ʏ́}}
-	\pgfparserdef{tcparser}{ini}Ý {\TC@write{Ý}}
+	%	LATIN SMALL LETTER Y								(U+028F)
+	%	with	COMBINING GRAVE ACCENT						(U+0300)
+		\pgfparserdef{tcparser}{ini}ỳ {\TC@write{ʏ̀}}
+		\pgfparserdef{tcparser}{ini}Ỳ {\TC@write{Ỳ}}
 
-	% TODO Ỳ Ŷ Y̊ Ỳ Ỵ Ỷ Ỹ Ȳ
+	%	LATIN SMALL LETTER Y								(U+028F)
+	%	with	COMBINING ACUTE ACCENT						(U+0301)
+		\pgfparserdef{tcparser}{ini}ý {\TC@write{ʏ́}}
+		\pgfparserdef{tcparser}{ini}Ý {\TC@write{Ý}}
+
+	%	LATIN SMALL LETTER Y								(U+028F)
+	%	with	COMBINING CIRCUMFLEX ACCENT					(U+0302)
+		\pgfparserdef{tcparser}{ini}ŷ {\TC@write{ʏ̂}}
+		\pgfparserdef{tcparser}{ini}Ŷ {\TC@write{Ŷ}}
+
+	%	LATIN SMALL LETTER Y								(U+028F)
+	%	with	COMBINING TILDE								(U+0303)
+		\pgfparserdef{tcparser}{ini}ỹ {\TC@write{ʏ̃}}
+		\pgfparserdef{tcparser}{ini}Ỹ {\TC@write{Ỹ}}
+
+	%	LATIN SMALL LETTER Y								(U+028F)
+	%	with	COMBINING MACRON							(U+0304)
+		\pgfparserdef{tcparser}{ini}ȳ {\TC@write{ʏ̄}}
+		\pgfparserdef{tcparser}{ini}Ȳ {\TC@write{Ȳ}}
+
+	%	LATIN SMALL LETTER Y								(U+028F)
+	%	with	COMBINING DIAERESIS							(U+0308)
+		\pgfparserdef{tcparser}{ini}ÿ {\TC@write{ʏ̈}}
+		\pgfparserdef{tcparser}{ini}Ÿ {\TC@write{Ÿ}}
+
+	%	LATIN SMALL LETTER Y								(U+028F)
+	%	with	COMBINING HOOK ABOVE						(U+0309)
+		\pgfparserdef{tcparser}{ini}ỷ {\TC@write{ʏ̉}}
+		\pgfparserdef{tcparser}{ini}Ỷ {\TC@write{Ỷ}}
+
+	%	LATIN SMALL LETTER Y								(U+028F)
+	%	with	COMBINING RING ABOVE						(U+030A)
+		\pgfparserdef{tcparser}{ini}ẙ {\TC@write{ʏ̊}}
+		% no corrseponding uppercase character!
+		%\pgfparserdef{tcparser}{ini}{Y̊} {\TC@write{Y̊}}
+
+	%	LATIN SMALL LETTER Y								(U+028F)
+	%	with	COMBINING DOT BELOW							(U+0323)
+		\pgfparserdef{tcparser}{ini}ỵ {\TC@write{ʏ̣}}
+		\pgfparserdef{tcparser}{ini}Ỵ {\TC@write{Ỵ}}
+
+%-----------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-# truecaps (v0.6.7)
+# truecaps (v0.7)
 Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX.
 
 ## Purpose
@@ -36,18 +36,10 @@ real Unicode Small Caps, using the Phonetic Extensions Unicode block.}
 
 ## Todo
 
-* Add modifiers, accents, umlauts etc. for all letters. (A-W done fully, 99% all in all)
 * Take care of punctuation and numbers (OTF features?)
 * Test suite for common Latin (European) languages (>80% done)
-* Full Support for 
-	- `Basic Latin` (U+0000 .. U+007F), done
-	- `Latin-1 Supplement` (U+0080 .. U+00FF), WIP
-	- `Latin Extended-A` (U+0100 .. U+017F), WIP
-	- `Latin Extended-B` (U+0180 .. U+024F partial support), WIP
-	- `Latin Extended Additional` (U+1E00 ..U+1EFF partial support), WIP
-* Modularization with `\input` (>50% done)
 * Look into support for more exotic (Latin-based) languages, 
-like Vietnamese, Yoruba and some other African (Native American?) writing systems
+like Vietnamese ✓, Yoruba and some other African (Native American?) writing systems
 * Normalize input (= use only pre-composed glyphs)
 * Sanity checks for missing glyphs?
 * Option "silent" to disable warnings (Letters X and Þ and others will remain unsupported for the foreseeable future)
@@ -59,13 +51,12 @@ like Vietnamese, Yoruba and some other African (Native American?) writing system
 ## Known Issues
 
 The glyphs produced by `truecaps` are from Unicode's “Phonetic Extensions” 
-block.They were never meant to be used as small caps the way we use them here.
+block. They were never meant to be used as small caps the way we use them here.
 CEDILLAS and OGONEKS can look ugly (ᴀ̨ ʜ̧ ᴋ̧ ᴊ̂ ᴊ̌ ɴ̧  ɪ̨)
 This is especially true if you stack them (Looking at you, HORN!) (ᴏ̛̀ ᴏ̛́ ᴏ̛̉ ᴏ̛̃) 
 
 ## History
-
-* v0.6.7 Number of supported glyphs: ~515 and counting. (A-W fully, including Vietnamese letters with double diacritics.)
+* v0.7 All usable characters (Latin-1 Supplement; Latin Extended-A, B; Latin Extended Additional) fully supported.
 * v0.6 Internal code cleanup continues. Added support for Finnish, Slovenian, Icelandic (partial), Polish.
 * v0.5 Reversed the command structure: `textsc{…}` continues to work as expected, `texttc{…}` becomes a new command.
 * v0.4 Dropped XeLaTeX compatibility. Added support for Italian, Swedish, Danish, Icelandic, Serbian, Croatian.
@@ -73,4 +64,3 @@ This is especially true if you stack them (Looking at you, HORN!) (ᴏ̛̀ ᴏ̛
 * v0.2 Full support for English, German and French.
 * v0.1 Initial fork from निरंजन's "unisc.sty" v0.1 (2022-04-21).
 https://puszcza.gnu.org.ua/projects/unisc
-

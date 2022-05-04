@@ -1,5 +1,5 @@
 %----------------------------------- -----------------------------------------
-%	This is file "truecaps.sty" v0.6.7 (2022-05-03)
+%	This is file "truecaps.sty" v0.7 (2022-05-04)
 %	It was forked from निरंजन's "unisc.sty" v0.1 (2022-04-21)
 %
 %	This file and possibly later versions can be found on Github:
@@ -15,7 +15,7 @@
 %
 %-----------------------------------------------------------------------------
 %
-%	LaTeX Package truecaps v0.6.7 (2022-05-03)
+%	LaTeX Package truecaps v0.7 (2022-05-04)
 %	Copyright © 2022 निरंजन [Niranjan] and Ingmar Greil
 %
 %	This program is free software: you can redistribute it and/or modify it
@@ -36,8 +36,8 @@
 		\def\truecapsname			{truecaps}
 		\def\truecapsdescription	{Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX}
 
-		\def\truecapsversion		{0.6.7}
-		\def\truecapsdate			{2022-05-03}
+		\def\truecapsversion		{0.7}
+		\def\truecapsdate			{2022-05-04}
 
 %----------------------------------------------------------------------------
 
@@ -261,6 +261,7 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 \input{includes/F.tex}	% f ḟ					| F Ḟ					(2×2)
 \input{includes/G.tex}	% g ĝ ğ ġ ģ ǥ ǧ ǵ ḡ		| G Ĝ Ğ Ġ Ģ Ǥ Ǧ Ǵ ḡ		(2×9)
 \input{includes/H.tex}	% h ĥ ħ ȟ ḣ ḥ ḧ ḩ ḫ ẖ	| H Ĥ Ħ Ȟ Ḣ Ḥ Ḧ Ḩ Ḫ		(10+9)
+%-----------------------------------------------------------------------------
 						% i ı ì í î ï ĩ ī ĭ į ǐ ȉ ȋ ḭ ḯ ỉ ị				(17)
 \input{includes/I.tex}	% I İ Ì Í Î Ï Ĩ Ī Ĭ Į Ǐ Ȉ Ȋ Ḭ Ḯ Ỉ Ị				(17)
 
@@ -280,7 +281,6 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 
 %	LATIN SMALL LETTER LJ									(U+01C9)
 	\pgfparserdef{tcparser}{ini}ǉ {\TC@write{ʟᴊ}}%						(1×3)
-
 %-----------------------------------------------------------------------------
 %
 \input{includes/M.tex}	% m ḿ ṁ ṃ 				| M Ḿ Ṁ Ṃ				(2×4)
@@ -321,15 +321,16 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 \input{includes/S.tex}	% s ś ŝ ṡ š ṣ ș ş ß		| S Ś Ŝ Ṡ Š Ṣ Ș Ş ẞ		(2×9)
 \input{includes/T.tex}	% t ṫ ť ṭ ț ţ ṱ ṯ ŧ 	| T Ṫ Ť Ṭ Ț Ţ Ṱ Ṯ Ŧ		(2×9)
 
+%-----------------------------------------------------------------------------
+%
 %	u ù ú û ũ ū ŭ ü ǜ ǘ ǖ ǚ ủ ů ű ǔ ȕ ȗ ư ừ ứ ữ ử ự ụ ų					(26)
 %	U Ù Ú Û Ũ Ū Ŭ Ü Ǜ Ǘ Ǖ Ǚ Ủ Ů Ű Ǔ Ȕ Ȗ Ư Ừ Ứ Ữ Ử Ự Ụ Ų					(26)
 \input{includes/U.tex}
 \input{includes/V.tex}	% v ṽ ṿ					| V Ṽ Ṿ					(2×3)
 \input{includes/W.tex}	% w ẁ ẃ ŵ ẇ ẅ ẉ 		| W Ẁ Ẃ Ŵ Ẇ Ẅ Ẉ			(2×7)
-
-\input{includes/X.tex}
-\input{includes/Y.tex}
-\input{includes/Z.tex}
+\input{includes/X.tex}	% x ẋ ẍ					| X Ẋ Ẍ					(2×3)
+\input{includes/Y.tex}	% y ỳ ý ŷ ỹ ȳ ÿ ỷ ẙ ỵ	| Y Ỳ Ý Ŷ Ỹ Ȳ Ÿ Ỷ Y̊ Ỵ	(2×10)
+\input{includes/Z.tex}	% z ź ẑ ž				| Z Ź Ẑ Ž				(2×4)
 
 % BLANK SPACE
 \pgfparserdef{tcparser}{ini}{blank space}%
@@ -365,5 +366,5 @@ Unsupported character LATIN SMALL LETTER ENG (U+014B): inserted as is%
 \endinput
 
 % EOF "truecaps.sty"
-% https://de.wikipedia.org/wiki/Afrika-Alphabet
+% 
 % revised up until m

@@ -1,13 +1,30 @@
-%	LATIN SMALL LETTER X (U+0078) is the only regular letter without a 
-%	matching LATIN LETTER SMALL CAPITAL *
 
-%	The best we can do is issue a warning (see line #115) and use 
-%	plain LATIN SMALL LETTER X (U+0078):
+%-----------------------------------------------------------------------------
+%
+%	The required glyph for LATIN SMALL LETTER X				(U+0078)
+%	is missing from Unicode. The best we can do is issue a 
+%	warning and use plain LATIN SMALL LETTER X (U+0078) as is.
 
-	\pgfparserdef{tcparser}{ini}x{\TC@write{x}%
-		%\PackageWarning{\truecapsname}{\xwarning} %FIXME AFTER DEBUGGING
+	\pgfparserdef{tcparser}{ini}x {\TC@write{x}%
+		\PackageWarning{\truecapsname}{\xwarning}%
 	}%
-%	LATIN CAPITAL LETTER X (U+0058) is not an issue, however:
+
+%	LATIN CAPITAL LETTER X									(U+0058)
+%	is not an issue, however:
 	\pgfparserdef{tcparser}{ini}X {\TC@write{X}}
 
-% TODO	Ẋ Ẍ
+	%	LATIN SMALL LETTER X								(U+0078)
+	%	with	COMBINING DOT ABOVE							(U+0307)
+		\pgfparserdef{tcparser}{ini}ẋ {\TC@write{ẋ}%
+			\PackageWarning{\truecapsname}{\xwarning}%
+		}%
+		\pgfparserdef{tcparser}{ini}Ẋ {\TC@write{Ẋ}}
+
+	%	LATIN SMALL LETTER X								(U+0078)
+	%	with	COMBINING DIAERESIS							(U+0308)
+		\pgfparserdef{tcparser}{ini}ẍ {\TC@write{ẍ}%
+			\PackageWarning{\truecapsname}{\xwarning}%
+		}%
+		\pgfparserdef{tcparser}{ini}Ẍ {\TC@write{Ẍ}}
+
+%-----------------------------------------------------------------------------

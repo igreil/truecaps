@@ -1,19 +1,23 @@
-% LATIN LETTER SMALL CAPITAL Z (U+1D22)
-\pgfparserdef{tcparser}{ini}z {\TC@write{ᴢ}}
-\pgfparserdef{tcparser}{ini}Z {\TC@write{Z}}
 
-	% LATIN LETTER SMALL CAPITAL Z (U+1D22) + COMBINING CARON (U+030C)
-	\pgfparserdef{tcparser}{ini}ž {\TC@write{ᴢ̌}}
-	\pgfparserdef{tcparser}{ini}Ž {\TC@write{Ž}}
+%-----------------------------------------------------------------------------
+%
+%	LATIN LETTER SMALL CAPITAL Z							(U+1D22)
+	\pgfparserdef{tcparser}{ini}z {\TC@write{ᴢ}}
+	\pgfparserdef{tcparser}{ini}Z {\TC@write{Z}}
 
-% LATIN LETTER SMALL CAPITAL Z							(U+1D22)
-	%	with	COMBINING ACUTE ACCENT 					(U+0301)
+	%	LATIN LETTER SMALL CAPITAL Z						(U+1D22)
+	%	with	COMBINING ACUTE ACCENT						(U+0301)
 		\pgfparserdef{tcparser}{ini}ź {\TC@write{ᴢ́}}
 		\pgfparserdef{tcparser}{ini}Ź {\TC@write{Ź}}
 
-% LATIN LETTER SMALL CAPITAL Z							(U+1D22)
-	%	with	COMBINING DOT ABOVE						(U+0307)
-		\pgfparserdef{tcparser}{ini}ż {\TC@write{ᴢ̇}}
-		\pgfparserdef{tcparser}{ini}Ż {\TC@write{Ż}}
+	%	LATIN SMALL LETTER Y								(U+1D22)
+	%	with	COMBINING CIRCUMFLEX ACCENT					(U+0302)
+		\pgfparserdef{tcparser}{ini}ẑ {\TC@write{ᴢ̂}}
+		\pgfparserdef{tcparser}{ini}Ẑ {\TC@write{Ẑ}}
 
-	% TODO Ź Ž Ẑ
+	%	LATIN SMALL LETTER Y								(U+1D22)
+	%	with	COMBINING CARON								(U+030C)
+		\pgfparserdef{tcparser}{ini}ž {\TC@write{ᴢ̌}}
+		\pgfparserdef{tcparser}{ini}Ž {\TC@write{Ž}}
+
+%-----------------------------------------------------------------------------
