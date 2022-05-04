@@ -6,6 +6,19 @@ Unicode TʀᴜᴇCᴀᴘꜱ with LuaLaTeX.
 Tʜᴇ ᴘᴜʀᴘᴏꜱᴇ ᴏꜰ ᴛʜɪꜱ LᴜᴀLᴀTᴇX ᴘᴀᴄᴋᴀɢᴇ ɪꜱ ᴛᴏ ꜱᴇᴀᴍʟᴇꜱꜱʟʏ ᴘʀᴏᴠɪᴅᴇ ʀᴇᴀʟ Uɴɪᴄᴏᴅᴇ Sᴍᴀʟʟ
 Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ Uɴɪᴄᴏᴅᴇ ʙʟᴏᴄᴋ. (U+1D00 .. U+1D7F)
 
+### Supported Languages
+
+Albanian • Bosnian • Catalan • Croatian • Czech • Danish • Dutch • Esperanto •
+Estonian • Faroese • Finnish • French • Gaelic • German • Hungarian •
+Icelandic • Italian • Latvian • Lithuanian • Luxembourgish • Moldovan •
+Norwegian (Bokmål and Nynorsk) • Polish • Portuguese • Romanian • Romansh •
+Serbian • Slovak • Slovene • Spanish • Swedish • Turkish • Vietnamese •
+Welsh • Yoruba • others.
+
+Basically, all letter characters from the "Latin-1 Supplement", the 
+"Latin Extended-A" and B and the "Latin Extended Additional" Unicode blocks 
+are fully supported.
+
 ## Usage
 
 `\usepackage{truecaps}` will provide a new command `\texttc{…}`, while
@@ -35,21 +48,16 @@ Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ U�
 
 \end{document}
 ```
+## Known Issues
 
-## Supported Languages
+The glyphs produced by `truecaps` are from Unicode's “Phonetic Extensions”
+block. They were never meant to be used as small caps the way we use them
+here. CEDILLAS and OGONEKS can look ugly (ᴀ̨ ʜ̧ ᴋ̧ ᴊ̂ ᴊ̌ ɴ̧  ɪ̨) This is
+especially true if you stack them (Looking at you, HORN!) (ᴏ̛̀ ᴏ̛́ ᴏ̛̉ ᴏ̛̃).
 
-Albanian • Bosnian • Catalan • Croatian • Czech • Danish • Dutch • Esperanto •
-Estonian • Faroese • Finnish • French • Gaelic • German • Hungarian •
-Icelandic • Italian • Latvian • Lithuanian • Luxembourgish • Moldovan •
-Norwegian (Bokmål and Nynorsk) • Polish • Portuguese • Romanian • Romansh •
-Serbian • Slovak • Slovene • Spanish • Swedish • Turkish • Vietnamese •
-Welsh • Yoruba • others.
+Some of the language files (Turkish) need more work.
 
-Basically, all letter characters from the "Latin-1 Supplement", the 
-"Latin Extended-A" and B and the "Latin Extended Additional" Unicode blocks 
-are fully supported.
-
-## Todo
+### Todo
 
 * Test suite for common Latin (European) languages (>80% done)
 * Take care of punctuation and numbers (OTF features?)
@@ -63,15 +71,6 @@ are fully supported.
 * Simplify and optimize code, remove redundancies
 * Some more documentation and examples
 * Submit v1.0 to CTAN
-
-## Known Issues
-
-The glyphs produced by `truecaps` are from Unicode's “Phonetic Extensions”
-block. They were never meant to be used as small caps the way we use them
-here. CEDILLAS and OGONEKS can look ugly (ᴀ̨ ʜ̧ ᴋ̧ ᴊ̂ ᴊ̌ ɴ̧  ɪ̨) This is
-especially true if you stack them (Looking at you, HORN!) (ᴏ̛̀ ᴏ̛́ ᴏ̛̉ ᴏ̛̃) 
-
-Some of the language files (Turkish) need more work
 
 ## History
 * v0.7 All usable characters (Latin-1 Supplement; Latin Extended-A, B; Latin
