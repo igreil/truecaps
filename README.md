@@ -41,7 +41,7 @@ Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ U�
 Croatian • Czech • Danish • Esperanto • Estonian • Finnish • French • Gaelic •
 German • Hungarian • Icelandic • Italian • Latvian • Lithuanian • Maltese •
 Norwegian • Polish • Portuguese • Romanian • Serbian • Slovak • Slovenian •
-Spanish • Swedish • Turkish • Vietnamese • Welsh • Yoruba • others.
+Spanish • Swedish • Vietnamese • Welsh • Yoruba • others.
 
 Basically, all letter characters from the "Latin-1 Supplement", the 
 "Latin Extended-A" and B and the "Latin Extended Additional" Unicode blocks 
@@ -68,6 +68,8 @@ The glyphs produced by `truecaps` are from Unicode's “Phonetic Extensions”
 block. They were never meant to be used as small caps the way we use them
 here. CEDILLAS and OGONEKS can look ugly (ᴀ̨ ʜ̧ ᴋ̧ ᴊ̂ ᴊ̌ ɴ̧  ɪ̨) This is
 especially true if you stack them (Looking at you, HORN!) (ᴏ̛̀ ᴏ̛́ ᴏ̛̉ ᴏ̛̃) 
+
+Some of the language files (Turkish) need more work
 
 ## History
 * v0.7 All usable characters (Latin-1 Supplement; Latin Extended-A, B; Latin
