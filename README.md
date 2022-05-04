@@ -38,10 +38,12 @@ Cᴀᴘꜱ, ᴜꜱɪɴɢ ᴛʜᴇ Pʜᴏɴᴇᴛɪᴄ Exᴛᴇɴꜱɪᴏɴꜱ U�
 
 ## Supported Languages
 
-Croatian • Czech • Danish • Esperanto • Estonian • Finnish • French • Gaelic •
-German • Hungarian • Icelandic • Italian • Latvian • Lithuanian • Maltese •
-Norwegian • Polish • Portuguese • Romanian • Serbian • Slovak • Slovenian •
-Spanish • Swedish • Vietnamese • Welsh • Yoruba • others.
+Albanian • Bosnian • Catalan • Croatian • Czech • Danish • Dutch • Esperanto •
+Estonian • Faroese • Finnish • French • Gaelic • German • Hungarian •
+Icelandic • Italian • Latvian • Lithuanian • Luxembourgish • Moldovan •
+Norwegian (Bokmål and Nynorsk) • Polish • Portuguese • Romanian • Romansh •
+Serbian • Slovak • Slovene • Spanish • Swedish • Turkish • Vietnamese •
+Welsh • Yoruba • others.
 
 Basically, all letter characters from the "Latin-1 Supplement", the 
 "Latin Extended-A" and B and the "Latin Extended Additional" Unicode blocks 
